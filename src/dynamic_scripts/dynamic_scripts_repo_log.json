@@ -1,0 +1,19 @@
+{
+  "meditations": [
+    {
+      "id": "443519b2-6db0-4a12-92cb-2823ff6a1d78",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "date_generated": "2026-07-06"
+    },
+    {
+      "id": "3799f2b8-aa67-447d-9cd2-fdc428a3c322",
+      "model": "poolside/laguna-m.1:free",
+      "date_generated": "2026-07-06"
+    },
+    {
+      "id": "dcf01fb1-edb9-48dd-80f1-955b815b5203",
+      "model": "poolside/laguna-m.1:free",
+      "date_generated": "2026-07-06"
+    }
+  ]
+}
