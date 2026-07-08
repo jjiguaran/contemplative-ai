@@ -49,8 +49,13 @@ export default function PillSelectors({
   const getUniqueLevels = () =>
     Array.from(new Set(allEntries.map(e => e.level))).filter((l): l is string => l !== null).sort().reverse();
 
-  const getUniqueMusicOptions = () =>
-    Array.from(new Set(allEntries.map(e => e.music))).sort();
+  const getUniqueMusicOptions = () => {
+    // Get music types from available backgrounds (nature, binaural) plus always include silence
+    const bgMusicTypes = backgroundsLog
+      ? Array.from(new Set(backgroundsLog.backgrounds.map(b => b.music)))
+      : [];
+    return Array.from(new Set([...bgMusicTypes, 'silence'])).sort();
+  };
 
   /** Normalize guided: missing guided field + non-null level → guided=true */
   const getGuidedNormalized = (e: MeditationLogEntry): boolean =>

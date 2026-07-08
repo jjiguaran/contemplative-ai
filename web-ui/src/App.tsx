@@ -152,8 +152,11 @@ export default function App() {
     if (!duracion || !musica || tipo === null) return [];
     if (tipo === true && !nivel) return [];
     if (tipo === true) {
+      // Guided entries: the voice track is recorded without background (music: "silence"),
+      // so we don't filter by e.music here. The music selection only controls the
+      // separate background track played alongside the voice.
       return allEntries.filter(
-        e => e.duration === duracion && e.level === nivel && e.music === musica && (e.guided === undefined ? e.level !== null : e.guided) === true
+        e => e.duration === duracion && e.level === nivel && (e.guided === undefined ? e.level !== null : e.guided) === true
       );
     }
     return allEntries.filter(
@@ -191,7 +194,9 @@ export default function App() {
 
     const entry = matches[Math.floor(Math.random() * matches.length)];
     const urls = buildSegmentUrls(entry);
-    const bgUrl = entry.music !== 'silence' ? buildBackgroundUrl(entry) : null;
+    // Use the user's music selection for the background track, not the entry's music field
+    // (guided entries always have music: "silence" since the voice is recorded clean)
+    const bgUrl = musica !== 'silence' ? buildBackgroundUrl(entry, musica) : null;
 
     if (concatenatedUrl) URL.revokeObjectURL(concatenatedUrl);
 

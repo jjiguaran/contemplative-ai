@@ -44,9 +44,10 @@ export function isBackgroundAvailable(
  * Build the URL for the background audio track.
  * Files are stored in sounds/backgrounds/ and named like 5_nature.opus
  */
-export function buildBackgroundUrl(entry: MeditationLogEntry): string {
+export function buildBackgroundUrl(entry: MeditationLogEntry, musicOverride?: string): string {
   const durationNum = parseDurationMinutes(entry.duration);
-  return `${R2_BUCKET_URL}/sounds/backgrounds/${durationNum}_${entry.music}.opus`;
+  const music = musicOverride ?? entry.music;
+  return `${R2_BUCKET_URL}/sounds/backgrounds/${durationNum}_${music}.opus`;
 }
 
 export function formatDuration(duration: string): string {
