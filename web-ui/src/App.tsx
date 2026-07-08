@@ -124,6 +124,23 @@ export default function App() {
     if (backgroundAudioRef.current) backgroundAudioRef.current.volume = backgroundVolume;
   }, [backgroundVolume]);
 
+  /* Start/stop background audio when the URL changes.
+   * This must be a useEffect rather than inline code in handlePlay because
+   * React state updates (setBackgroundAudioUrl) are async — the <audio>
+   * element won't be mounted yet when handlePlay tries to access the ref. */
+  useEffect(() => {
+    const bg = backgroundAudioRef.current;
+    if (!bg) return;
+    if (backgroundAudioUrl) {
+      bg.currentTime = 0;
+      bg.volume = backgroundVolume;
+      bg.play().catch(console.error);
+    } else {
+      bg.pause();
+      bg.currentTime = 0;
+    }
+  }, [backgroundAudioUrl]);
+
   const allEntries = repoLog?.meditations ?? [];
 
   const getMatchingEntries = (): MeditationLogEntry[] => {
@@ -238,13 +255,6 @@ export default function App() {
         setAudioError('No se pudo preparar el audio. Intenta de nuevo.');
         setPreparingAudio(false);
       });
-
-      const bg = backgroundAudioRef.current;
-      if (bg && bgUrl) {
-        bg.currentTime = 0;
-        bg.volume = backgroundVolume;
-        bg.play().catch(console.error);
-      }
 
       player.play();
 
