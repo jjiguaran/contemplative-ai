@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { initPostHog, captureEvent } from './posthog';
 import { MeditationLog, MeditationLogEntry, BackgroundLog, AppScreen } from './types';
 import { buildSegmentUrls, buildBackgroundUrl, isBackgroundAvailable, parseDurationMinutes, getTimeOfDay } from './utils';
-import { buildConcatenatedAudioUrl } from './audio';
+import { createSegmentedPlayer, buildDownloadableWav, SegmentedPlayerHandle } from './audio';
 import css from './styles';
 import FeedbackScreen from './FeedbackScreen';
 import ThankyouScreen from './ThankyouScreen';
@@ -19,11 +19,17 @@ export default function App() {
   const [musica, setMusica] = useState<string>('');
   const [tipo, setTipo] = useState<boolean | null>(null);
 
-  // Single fully-concatenated playable file for the current session (or null
-  // while nothing has been prepared / a new session hasn't been built yet).
+  // Downloadable WAV for the current session. This is now built lazily/in the
+  // background AFTER playback has already started (playback itself streams
+  // segments directly, it no longer waits on this), so it may still be null
+  // for a bit even while audio is already playing.
   const [concatenatedUrl, setConcatenatedUrl] = useState<string | null>(null);
-  // True while segments are being fetched, decoded, and rendered into that file.
+  // True only very briefly: from hitting play until the first segment has
+  // decoded and sound has actually started (previously this covered the
+  // entire fetch+decode+render+encode pipeline for the whole meditation).
   const [preparingAudio, setPreparingAudio] = useState<boolean>(false);
+  // True once a streaming playback session exists for the current entry.
+  const [sessionActive, setSessionActive] = useState<boolean>(false);
   const [audioError, setAudioError] = useState<string | null>(null);
 
   const [backgroundAudioUrl, setBackgroundAudioUrl] = useState<string | null>(null);
@@ -49,11 +55,11 @@ export default function App() {
   // The entry that just completed, kept for PostHog context in feedback
   const [completedEntry, setCompletedEntry] = useState<MeditationLogEntry | null>(null);
 
-  const audioRef = useRef<HTMLAudioElement>(null);
   const backgroundAudioRef = useRef<HTMLAudioElement>(null);
-  const tickRef = useRef<number | null>(null);
-  /** Reused AudioContext for decoding segments before concatenation */
+  /** Reused AudioContext — segments are decoded and played through this same context */
   const audioContextRef = useRef<AudioContext | null>(null);
+  /** The active streaming player for the current session */
+  const playerRef = useRef<SegmentedPlayerHandle | null>(null);
   /** Mirrors concatenatedUrl so the unmount cleanup effect can see the latest value */
   const concatenatedUrlRef = useRef<string | null>(null);
 
@@ -65,6 +71,7 @@ export default function App() {
   useEffect(() => {
     return () => {
       if (concatenatedUrlRef.current) URL.revokeObjectURL(concatenatedUrlRef.current);
+      if (playerRef.current) playerRef.current.destroy();
     };
   }, []);
 
@@ -109,42 +116,13 @@ export default function App() {
 
   /* sync voice volume */
   useEffect(() => {
-    if (audioRef.current) audioRef.current.volume = volume;
+    if (playerRef.current) playerRef.current.setVolume(volume);
   }, [volume]);
 
   /* sync background volume */
   useEffect(() => {
     if (backgroundAudioRef.current) backgroundAudioRef.current.volume = backgroundVolume;
   }, [backgroundVolume]);
-
-  /* Once the concatenated file is mounted, start playback (and the background track) */
-  useEffect(() => {
-    if (!concatenatedUrl) return;
-    const a = audioRef.current;
-    const bg = backgroundAudioRef.current;
-    if (!a) return;
-    a.volume = volume;
-    if (bg && backgroundAudioUrl) {
-      bg.currentTime = 0;
-      bg.volume = backgroundVolume;
-      bg.play().catch(console.error);
-    }
-    a.play().then(() => setPlaying(true)).catch(console.error);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [concatenatedUrl]);
-
-  useEffect(() => {
-    if (playing) {
-      tickRef.current = window.setInterval(() => {
-        const a = audioRef.current;
-        if (!a) return;
-        setCurrentTime(Math.floor(a.currentTime));
-      }, 500);
-    } else {
-      if (tickRef.current) clearInterval(tickRef.current);
-    }
-    return () => { if (tickRef.current) clearInterval(tickRef.current); };
-  }, [playing]);
 
   const allEntries = repoLog?.meditations ?? [];
 
@@ -179,10 +157,15 @@ export default function App() {
 
   /** Clears out everything about the current/previous session, revoking the blob URL */
   const resetPlayback = () => {
+    if (playerRef.current) {
+      playerRef.current.destroy();
+      playerRef.current = null;
+    }
     if (concatenatedUrl) URL.revokeObjectURL(concatenatedUrl);
     setConcatenatedUrl(null);
     setBackgroundAudioUrl(null);
     setSelectedEntry(null);
+    setSessionActive(false);
     setPlaying(false);
     setCurrentTime(0);
     setAudioError(null);
@@ -198,6 +181,10 @@ export default function App() {
     // (guided entries always have music: "silence" since the voice is recorded clean)
     const bgUrl = musica !== 'silence' ? buildBackgroundUrl(entry, musica) : null;
 
+    if (playerRef.current) {
+      playerRef.current.destroy();
+      playerRef.current = null;
+    }
     if (concatenatedUrl) URL.revokeObjectURL(concatenatedUrl);
 
     setSelectedEntry(entry);
@@ -207,6 +194,7 @@ export default function App() {
     setPlaying(false);
     setAudioError(null);
     setConcatenatedUrl(null);
+    setSessionActive(false);
     setScreen('player');
 
     captureEvent('meditation_started', {
@@ -226,14 +214,51 @@ export default function App() {
       if (audioContextRef.current.state === 'suspended') {
         await audioContextRef.current.resume();
       }
+      const ctx = audioContextRef.current;
 
-      const { url, durationSeconds } = await buildConcatenatedAudioUrl(urls, audioContextRef.current);
-      setConcatenatedUrl(url);
-      setDuration(durationSeconds);
+      const player = createSegmentedPlayer(urls, ctx);
+      playerRef.current = player;
+      setSessionActive(true);
+
+      let startedPlayingUI = false;
+      player.onDurationChange(d => {
+        setDuration(d);
+        // The first segment has decoded and playback has been scheduled —
+        // this is as close as we get to "sound has actually started".
+        if (!startedPlayingUI) {
+          startedPlayingUI = true;
+          setPreparingAudio(false);
+          setPlaying(true);
+        }
+      });
+      player.onTimeUpdate(t => setCurrentTime(Math.floor(t)));
+      player.onEnded(() => handleAudioEnded());
+      player.onError(err => {
+        console.error('Error reproduciendo el audio:', err);
+        setAudioError('No se pudo preparar el audio. Intenta de nuevo.');
+        setPreparingAudio(false);
+      });
+
+      const bg = backgroundAudioRef.current;
+      if (bg && bgUrl) {
+        bg.currentTime = 0;
+        bg.volume = backgroundVolume;
+        bg.play().catch(console.error);
+      }
+
+      player.play();
+
+      // Build the downloadable WAV in the background, in parallel with
+      // playback. It reuses whatever segments the player has already
+      // fetched/decoded, so this is now just a render + encode pass rather
+      // than a full fetch+decode+render+encode pipeline — and crucially, it
+      // no longer blocks the moment sound starts.
+      buildDownloadableWav(urls, ctx)
+        .then(({ url }) => setConcatenatedUrl(url))
+        .catch(err => console.error('Error preparando la descarga:', err));
     } catch (err) {
-      console.error('Error preparando el audio concatenado:', err);
+      console.error('Error preparando el audio:', err);
       setAudioError('No se pudo preparar el audio. Intenta de nuevo.');
-    } finally {
       setPreparingAudio(false);
     }
   };
@@ -252,53 +277,33 @@ export default function App() {
     setScreen('feedback');
   };
 
-  const handleLoadedMetadata = () => {
-    const a = audioRef.current;
-    if (a && isFinite(a.duration) && a.duration > 0) {
-      setDuration(a.duration);
-    }
-  };
-
   const togglePlayPause = () => {
-    const a = audioRef.current;
+    const player = playerRef.current;
     const bg = backgroundAudioRef.current;
-    if (!a || !concatenatedUrl) return;
+    if (!player || !sessionActive) return;
     if (playing) {
-      a.pause();
+      player.pause();
       if (bg) bg.pause();
       setPlaying(false);
     } else {
-      a.play().then(() => setPlaying(true)).catch(console.error);
+      player.play();
+      setPlaying(true);
       if (bg) bg.play().catch(console.error);
     }
   };
 
-  /** Seeking now works natively */
+  /** Seeking */
   const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
-    const a = audioRef.current;
+    const player = playerRef.current;
     const bg = backgroundAudioRef.current;
-    if (!a || !duration) return;
+    if (!player || !duration) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
     const newTime = pct * duration;
-    a.currentTime = newTime;
+    player.seek(newTime);
     if (bg) bg.currentTime = newTime;
     setCurrentTime(Math.floor(newTime));
   };
-
-  /* Keep the background track's position aligned with the voice track whenever it (re)loads */
-  useEffect(() => {
-    const bg = backgroundAudioRef.current;
-    const a = audioRef.current;
-    if (!bg || !a) return;
-
-    const onBgLoaded = () => {
-      bg.currentTime = a.currentTime;
-    };
-
-    bg.addEventListener('loadedmetadata', onBgLoaded);
-    return () => bg.removeEventListener('loadedmetadata', onBgLoaded);
-  }, [backgroundAudioUrl]);
 
   const handleFeedbackDone = () => { setScreen('thankyou'); };
 
@@ -311,7 +316,7 @@ export default function App() {
   const progressPct = duration > 0 ? Math.round((currentTime / duration) * 100) : 0;
   const selectionComplete = allSelected && isAvailable();
   const isGuided = tipo === true;
-  const hasActiveAudio = concatenatedUrl !== null;
+  const hasActiveAudio = sessionActive;
 
   return (
     <>
@@ -418,16 +423,6 @@ export default function App() {
           onInstall={handleInstallClick}
         />
       </div>
-
-      {/* Hidden voice audio element */}
-      {hasActiveAudio && (
-        <audio
-          ref={audioRef}
-          src={concatenatedUrl ?? undefined}
-          onEnded={handleAudioEnded}
-          onLoadedMetadata={handleLoadedMetadata}
-        />
-      )}
 
       {/* Hidden background audio element */}
       {isGuided && backgroundAudioUrl && (
