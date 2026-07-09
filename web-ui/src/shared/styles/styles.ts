@@ -28,7 +28,6 @@ const css = `
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── Full-viewport atmospheric backdrop ── */
   .backdrop {
     position: fixed;
     inset: 0;
@@ -36,7 +35,6 @@ const css = `
     z-index: 0;
   }
 
-  /* ── Layout ── */
   .shell {
     min-height: 100vh;
     display: flex;
@@ -48,7 +46,6 @@ const css = `
     z-index: 1;
   }
 
-  /* ── Ambient orbs ── */
   .orb {
     position: fixed;
     border-radius: 50%;
@@ -67,7 +64,6 @@ const css = `
     to   { transform: translate(16px, 24px) scale(1.06); }
   }
 
-  /* ── Card ── */
   .card {
     position: relative;
     z-index: 1;
@@ -81,7 +77,6 @@ const css = `
     padding: 2.5rem 2rem 2rem;
   }
 
-  /* ── Crossfade wrapper ── */
   .fade-wrap {
     transition: opacity 0.9s var(--ease-breath);
   }
@@ -90,7 +85,6 @@ const css = `
     pointer-events: none;
   }
 
-  /* ── Header ── */
   .tod {
     text-align: center;
     font-size: 10px;
@@ -119,7 +113,6 @@ const css = `
     margin-bottom: 2rem;
   }
 
-  /* ── Loading state ── */
   .loading-msg {
     text-align: center;
     font-size: 12px;
@@ -134,7 +127,6 @@ const css = `
     50%       { opacity: 1; }
   }
 
-  /* ── Pill groups ── */
   .pill-group { margin-bottom: 1.1rem; }
 
   .pill-label {
@@ -179,7 +171,6 @@ const css = `
     cursor: not-allowed;
   }
 
-  /* ── Unavailable notice ── */
   .unavailable {
     font-size: 12px;
     color: rgba(232,184,122,0.7);
@@ -188,14 +179,12 @@ const css = `
     text-align: center;
   }
 
-  /* ── Divider ── */
   .divider {
     height: 0.5px;
     background: var(--border);
     margin: 1.5rem 0;
   }
 
-  /* ── Breathing ring ── */
   .ring-wrap {
     display: flex;
     flex-direction: column;
@@ -275,7 +264,6 @@ const css = `
 
   .session-label.active { color: rgba(168,159,232,0.85); }
 
-  /* ── Progress ── */
   .progress-area { margin-bottom: 1.25rem; }
 
   .progress-track {
@@ -305,14 +293,12 @@ const css = `
     letter-spacing: 0.04em;
   }
 
-  /* ── Bottom row: play ring on left, volume sliders toward center-right ── */
   .bottom-row {
     display: flex;
     align-items: center;
     gap: 8px;
   }
 
-  /* ── Left side: play ring ── */
   .bottom-left {
     display: flex;
     align-items: center;
@@ -326,7 +312,6 @@ const css = `
     gap: 4px;
   }
 
-  /* ── Right side: stacked volume sliders ── */
   .vol-stack {
     display: flex;
     flex-direction: column;
@@ -387,7 +372,6 @@ const css = `
     cursor: pointer;
   }
 
-  /* ── Volume label for dual sliders ── */
   .vol-label {
     font-size: 8px;
     letter-spacing: 0.12em;
@@ -398,14 +382,12 @@ const css = `
     text-align: center;
   }
 
-  /* ── Download row below progress bar ── */
   .download-row {
     display: flex;
     justify-content: center;
     margin-bottom: 0.75rem;
   }
 
-  /* ── Variation hint ── */
   .var-hint {
     text-align: center;
     font-size: 11px;
@@ -440,11 +422,6 @@ const css = `
     letter-spacing: 0.03em;
   }
 
-  /* ════════════════════════════════════════════════════════════════════
-     FEEDBACK SCREEN
-  ════════════════════════════════════════════════════════════════════ */
-
-  /* Outer container that sits on top of the player via absolute positioning */
   .feedback-wrap {
     position: absolute;
     inset: 0;
@@ -481,7 +458,6 @@ const css = `
     gap: 0;
   }
 
-  /* Soft checkmark glyph shown after session ends */
   .session-end-glyph {
     font-size: 28px;
     margin-bottom: 1.2rem;
@@ -512,7 +488,6 @@ const css = `
     margin-bottom: 2.2rem;
   }
 
-  /* ── Mood options ── */
   .mood-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -546,7 +521,6 @@ const css = `
     transition: opacity 0.22s ease;
   }
 
-  /* Per-mood accent colours on hover/active */
   .mood-btn[data-mood="flowing"]::before  { background: radial-gradient(ellipse at 50% 120%, rgba(77,184,150,0.18), transparent 70%); }
   .mood-btn[data-mood="clear"]::before    { background: radial-gradient(ellipse at 50% 120%, rgba(232,184,122,0.18), transparent 70%); }
   .mood-btn[data-mood="drifting"]::before { background: radial-gradient(ellipse at 50% 120%, rgba(168,159,232,0.15), transparent 70%); }
@@ -588,7 +562,6 @@ const css = `
     color: rgba(200,190,255,0.9);
   }
 
-  /* ── Text expansion ── */
   .nota-reveal {
     width: 100%;
     overflow: hidden;
@@ -644,7 +617,6 @@ const css = `
   .nota-box::placeholder { color: rgba(192,189,232,0.22); }
   .nota-box:focus { border-color: rgba(160,148,240,0.45); }
 
-  /* ── Submit button ── */
   .feedback-submit {
     width: 100%;
     padding: 12px 0;
@@ -665,7 +637,6 @@ const css = `
     border-color: rgba(123,111,208,0.7);
   }
 
-  /* ── Skip link ── */
   .feedback-skip {
     margin-top: 1.4rem;
     background: none;
@@ -680,7 +651,6 @@ const css = `
 
   .feedback-skip:hover { color: rgba(192,189,232,0.5); }
 
-  /* ── Thank-you state ── */
   .thankyou-wrap {
     display: flex;
     flex-direction: column;
@@ -728,9 +698,6 @@ const css = `
     border-color: rgba(123,111,208,0.65);
   }
 
-  /* ════════════════════════════════════════════════════════════════════
-     PWA INSTALL BANNER
-  ════════════════════════════════════════════════════════════════════ */
   .install-banner {
     display: flex;
     align-items: center;

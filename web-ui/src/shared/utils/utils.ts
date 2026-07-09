@@ -1,5 +1,5 @@
-import { MeditationLogEntry, BackgroundLog } from './types';
-import { R2_BUCKET_URL } from './constants';
+import { MeditationLogEntry, BackgroundLog } from '../types/types';
+import { R2_BUCKET_URL } from '../constants/constants';
 
 export function parseDurationMinutes(duration: string): number {
   const match = duration.match(/(\d+)/);
@@ -9,7 +9,6 @@ export function parseDurationMinutes(duration: string): number {
 export function buildR2Url(entry: MeditationLogEntry): string {
   const durationNum = parseDurationMinutes(entry.duration);
   if (entry.guided) {
-    // Voice track is always the pure voice from meditations/silence/
     return `${R2_BUCKET_URL}/meditations/silence/${durationNum}_${entry.level}_${entry.variation}.opus`;
   } else {
     return `${R2_BUCKET_URL}/meditations/mute/${durationNum}_${entry.music}.opus`;
@@ -20,14 +19,9 @@ export function buildSegmentUrls(entry: MeditationLogEntry): string[] {
   if (entry.segments && entry.segments.length > 0) {
     return entry.segments.map(s => `${R2_BUCKET_URL}/${s}`);
   }
-  // Fallback: return a single-element array with the old-style URL
   return [buildR2Url(entry)];
 }
 
-/**
- * Check if a background audio file exists for the given duration and music type,
- * based on the backgrounds_log.json registry.
- */
 export function isBackgroundAvailable(
   backgroundsLog: BackgroundLog | null,
   duration: string,
@@ -40,10 +34,6 @@ export function isBackgroundAvailable(
   );
 }
 
-/**
- * Build the URL for the background audio track.
- * Files are stored in sounds/backgrounds/ and named like 5_nature.opus
- */
 export function buildBackgroundUrl(entry: MeditationLogEntry, musicOverride?: string): string {
   const durationNum = parseDurationMinutes(entry.duration);
   const music = musicOverride ?? entry.music;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { MeditationLogEntry } from './types';
-import { formatDuration, capitalize, musicDisplayName, parseDurationMinutes } from './utils';
-import { IconPlay, IconPause, IconDownload, IconVolume, IconLeaf } from './icons';
+import { MeditationLogEntry } from '../../../shared/types/types';
+import { formatDuration, capitalize, musicDisplayName, parseDurationMinutes } from '../../../shared/utils/utils';
+import { IconPlay, IconPause, IconDownload, IconVolume, IconLeaf } from '../../../shared/utils/icons';
 
 interface PlayerControlsProps {
   playing: boolean;
@@ -60,7 +60,6 @@ export default function PlayerControls({
 
       {preparingAudio && <p className="loading-msg">preparando tu meditación…</p>}
 
-      {/* Bottom row: play ring on left, volume sliders stacked on right */}
       <div className="bottom-row">
         <div className="bottom-left">
           <div
@@ -118,7 +117,6 @@ export default function PlayerControls({
               : 'elige tu sesión y presiona para comenzar'}
       </p>
 
-      {/* Progress */}
       <div className="progress-area">
         <div className="progress-track" onClick={onSeek}>
           <div className="progress-fill" style={{ width: `${progressPct}%` }} />
@@ -129,7 +127,6 @@ export default function PlayerControls({
         </div>
       </div>
 
-      {/* Download button below progress bar — now always a single real file */}
       <div className="download-row">
         <a
           className="icon-btn"

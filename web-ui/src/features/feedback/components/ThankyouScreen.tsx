@@ -20,7 +20,6 @@ export default function ThankyouScreen({ visible, onNewSession, installAvailable
           <h2 className="thankyou-title">Gracias</h2>
           <p className="thankyou-sub">Tu experiencia nos ayuda a mejorar.</p>
 
-          {/* Post-session install prompt */}
           {showInstallCta && (
             isIOS ? (
               <p style={{

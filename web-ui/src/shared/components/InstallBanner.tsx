@@ -24,7 +24,6 @@ export default function InstallBanner({
 
   return (
     <>
-      {/* Chrome / Android: show banner when beforeinstallprompt has fired */}
       {showInstallBanner && (
         <div className="install-banner">
           <span className="install-banner-text">
@@ -43,8 +42,6 @@ export default function InstallBanner({
         </div>
       )}
 
-      {/* Chrome / Android: subtle text link as fallback when banner was dismissed
-          or hasn't appeared yet but the prompt is available */}
       {!showInstallBanner && installPrompt && (
         <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
           <button
@@ -70,7 +67,6 @@ export default function InstallBanner({
         </div>
       )}
 
-      {/* iOS Safari: no beforeinstallprompt — show manual instructions */}
       {isIOS && !installPrompt && (
         <div className="install-banner ios-install-banner" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '6px' }}>
           <span className="install-banner-text" style={{ fontWeight: 400 }}>

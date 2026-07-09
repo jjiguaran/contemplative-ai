@@ -1,6 +1,6 @@
 import React from 'react';
-import { MeditationLogEntry, MeditationLog, BackgroundLog } from './types';
-import { parseDurationMinutes, formatDuration, capitalize, musicDisplayName } from './utils';
+import { MeditationLogEntry, MeditationLog, BackgroundLog } from '../../../shared/types/types';
+import { parseDurationMinutes, formatDuration, capitalize, musicDisplayName } from '../../../shared/utils/utils';
 
 interface PillSelectorsProps {
   repoLog: MeditationLog | null;
@@ -50,14 +50,12 @@ export default function PillSelectors({
     Array.from(new Set(allEntries.map(e => e.level))).filter((l): l is string => l !== null).sort().reverse();
 
   const getUniqueMusicOptions = () => {
-    // Get music types from available backgrounds (nature, binaural) plus always include silence
     const bgMusicTypes = backgroundsLog
       ? Array.from(new Set(backgroundsLog.backgrounds.map(b => b.music)))
       : [];
     return Array.from(new Set([...bgMusicTypes, 'silence'])).sort();
   };
 
-  /** Normalize guided: missing guided field + non-null level → guided=true */
   const getGuidedNormalized = (e: MeditationLogEntry): boolean =>
     e.guided === undefined ? e.level !== null : e.guided;
 
@@ -125,13 +123,12 @@ export default function PillSelectors({
               onClick={() => { 
                 onSetMusica(m); 
                 
-                // Set dynamic initial volume based on the selection
                 if (m === 'nature') {
                   onSetBackgroundVolume(0.15);
                 } else if (m === 'binaural') {
                   onSetBackgroundVolume(0.75);
                 } else {
-                  onSetBackgroundVolume(0.50); // Default fallback for silence or others
+                  onSetBackgroundVolume(0.50);
                 }
 
                 onResetPlayback();

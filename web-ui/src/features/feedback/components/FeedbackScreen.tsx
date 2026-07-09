@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import { captureEvent } from './posthog';
-import { MeditationLogEntry, MoodId } from './types';
-import { MOOD_OPTIONS } from './constants';
-import { IconInstagram, IconTikTok, IconFacebook, IconYouTube } from './icons';
+import { captureEvent } from '../../../posthog';
+import { MeditationLogEntry, MoodId } from '../../../shared/types/types';
+import { MOOD_OPTIONS } from '../../../shared/constants/constants';
+import { IconInstagram, IconTikTok, IconFacebook, IconYouTube } from '../../../shared/utils/icons';
 
 const supabase = createClient(
   process.env.REACT_APP_SUPABASE_URL!,
@@ -14,8 +14,8 @@ const supabase = createClient(
 interface FeedbackScreenProps {
   visible: boolean;
   completedEntry: MeditationLogEntry | null;
-  onDone: () => void;         // go to thank-you
-  onNewSession: () => void;   // skip → back to player
+  onDone: () => void;
+  onNewSession: () => void;
 }
 
 export default function FeedbackScreen({ visible, completedEntry, onDone, onNewSession }: FeedbackScreenProps) {
@@ -33,7 +33,6 @@ export default function FeedbackScreen({ visible, completedEntry, onDone, onNewS
       music: completedEntry?.music ?? undefined,
       variation: completedEntry?.variation ?? undefined,
     });
-    // Auto-focus textarea so mobile keyboard opens immediately
     setTimeout(() => textareaRef.current?.focus(), 300);
   };
 
@@ -65,7 +64,6 @@ export default function FeedbackScreen({ visible, completedEntry, onDone, onNewS
     }
   };
 
-  // Reset state whenever the screen becomes visible again
   useEffect(() => {
     if (visible) {
       setSelectedMood(null);
@@ -81,7 +79,6 @@ export default function FeedbackScreen({ visible, completedEntry, onDone, onNewS
         <h2 className="feedback-title">Sesión completa</h2>
         <p className="feedback-subtitle">¿Cómo fue tu práctica?</p>
 
-        {/* Mood grid */}
         <div className="mood-grid">
           {MOOD_OPTIONS.map(({ id, emoji, label }) => (
             <button
@@ -96,7 +93,6 @@ export default function FeedbackScreen({ visible, completedEntry, onDone, onNewS
           ))}
         </div>
 
-        {/* Textarea — appears immediately after mood tap, no extra click needed */}
         <div className={`nota-reveal${selectedMood ? ' open' : ''}`}>
           <textarea
             ref={textareaRef}
