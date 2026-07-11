@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { MeditationLog, MeditationLogEntry, BackgroundLog } from '../../../shared/types/types';
-import { isBackgroundAvailable } from '../../../shared/utils/utils';
+import { MeditationLog, MeditationLogEntry, BackgroundLog, MeditationsConfig } from '../../../shared/types/types';
+import { parseDurationMinutes, isBackgroundAvailable } from '../../../shared/utils/utils';
 
-export function useSelectionState(repoLog: MeditationLog | null, backgroundsLog: BackgroundLog | null) {
+export function useSelectionState(repoLog: MeditationLog | null, backgroundsLog: BackgroundLog | null, meditationsConfig: MeditationsConfig | null) {
   const [duracion, setDuracion] = useState<string>('');
   const [nivel, setNivel] = useState<string>('');
   const [musica, setMusica] = useState<string>('');
@@ -10,23 +10,27 @@ export function useSelectionState(repoLog: MeditationLog | null, backgroundsLog:
 
   const allEntries = repoLog?.meditations ?? [];
 
+  const durationMinutes = duracion ? parseInt(duracion, 10) : 0;
+  const durationLabel = durationMinutes > 0 ? `${durationMinutes} min` : '';
+
   const getMatchingEntries = (): MeditationLogEntry[] => {
     if (!duracion || !musica || tipo === null) return [];
     if (tipo === true && !nivel) return [];
+    const requiredSegments = meditationsConfig?.sentencesByDuration?.[duracion] ?? 0;
     if (tipo === true) {
       return allEntries.filter(
-        e => e.duration === duracion && e.level === nivel && (e.guided === undefined ? e.level !== null : e.guided) === true
+        e => (e.segments?.length ?? 0) >= requiredSegments && e.level === nivel && (e.guided === undefined ? e.level !== null : e.guided) === true
       );
     }
     return allEntries.filter(
-      e => e.duration === duracion && e.level === null && e.music === musica && (e.guided === undefined ? e.level !== null : e.guided) === false
+      e => (e.segments?.length ?? 0) >= requiredSegments && e.level === null && e.music === musica && (e.guided === undefined ? e.level !== null : e.guided) === false
     );
   };
 
   const available = (): boolean => {
     const matches = getMatchingEntries();
     if (matches.length === 0) return false;
-    if (tipo === true && musica !== 'silence' && !isBackgroundAvailable(backgroundsLog, duracion, musica)) return false;
+    if (tipo === true && musica !== 'silence' && !isBackgroundAvailable(backgroundsLog, durationLabel, musica)) return false;
     return true;
   };
 

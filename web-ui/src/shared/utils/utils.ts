@@ -6,20 +6,20 @@ export function parseDurationMinutes(duration: string): number {
   return match ? parseInt(match[1], 10) : 0;
 }
 
-export function buildR2Url(entry: MeditationLogEntry): string {
-  const durationNum = parseDurationMinutes(entry.duration);
+export function buildR2Url(entry: MeditationLogEntry, durationMinutes: number): string {
   if (entry.guided) {
-    return `${R2_BUCKET_URL}/meditations/silence/${durationNum}_${entry.level}_${entry.variation}.opus`;
+    return `${R2_BUCKET_URL}/meditations/silence/${durationMinutes}_${entry.level}_${entry.variation}.opus`;
   } else {
-    return `${R2_BUCKET_URL}/meditations/mute/${durationNum}_${entry.music}.opus`;
+    return `${R2_BUCKET_URL}/meditations/mute/${durationMinutes}_${entry.music}.opus`;
   }
 }
 
-export function buildSegmentUrls(entry: MeditationLogEntry): string[] {
+export function buildSegmentUrls(entry: MeditationLogEntry, durationMinutes: number): string[] {
   if (entry.segments && entry.segments.length > 0) {
-    return entry.segments.map(s => `${R2_BUCKET_URL}/${s}`);
+    const segments = entry.segments.map(s => `${R2_BUCKET_URL}/${s.audioUrl}`);
+    return durationMinutes > 0 ? segments.slice(0, durationMinutes) : segments;
   }
-  return [buildR2Url(entry)];
+  return [buildR2Url(entry, durationMinutes)];
 }
 
 export function isBackgroundAvailable(
@@ -34,10 +34,9 @@ export function isBackgroundAvailable(
   );
 }
 
-export function buildBackgroundUrl(entry: MeditationLogEntry, musicOverride?: string): string {
-  const durationNum = parseDurationMinutes(entry.duration);
+export function buildBackgroundUrl(entry: MeditationLogEntry, durationMinutes: number, musicOverride?: string): string {
   const music = musicOverride ?? entry.music;
-  return `${R2_BUCKET_URL}/sounds/backgrounds/${durationNum}_${music}.opus`;
+  return `${R2_BUCKET_URL}/sounds/backgrounds/${durationMinutes}_${music}.opus`;
 }
 
 export function formatDuration(duration: string): string {

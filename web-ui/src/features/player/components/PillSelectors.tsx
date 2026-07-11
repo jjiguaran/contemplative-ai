@@ -1,10 +1,11 @@
 import React from 'react';
-import { MeditationLogEntry, MeditationLog, BackgroundLog } from '../../../shared/types/types';
+import { MeditationLogEntry, MeditationLog, BackgroundLog, MeditationsConfig } from '../../../shared/types/types';
 import { parseDurationMinutes, formatDuration, capitalize, musicDisplayName } from '../../../shared/utils/utils';
 
 interface PillSelectorsProps {
   repoLog: MeditationLog | null;
   backgroundsLog: BackgroundLog | null;
+  meditationsConfig: MeditationsConfig | null;
   duracion: string;
   nivel: string;
   musica: string;
@@ -24,6 +25,7 @@ interface PillSelectorsProps {
 export default function PillSelectors({
   repoLog,
   backgroundsLog,
+  meditationsConfig,
   duracion,
   nivel,
   musica,
@@ -41,10 +43,21 @@ export default function PillSelectors({
 }: PillSelectorsProps) {
   const allEntries = repoLog?.meditations ?? [];
 
-  const getUniqueDurations = () =>
-    Array.from(new Set(allEntries.map(e => e.duration))).sort(
-      (a, b) => parseDurationMinutes(a) - parseDurationMinutes(b)
+  const getUniqueDurations = () => {
+    if (meditationsConfig?.sentencesByDuration) {
+      // Show config keys that have entries with enough segments
+      return Object.keys(meditationsConfig.sentencesByDuration)
+        .filter(d => {
+          const requiredSegments = meditationsConfig.sentencesByDuration[d];
+          return allEntries.some(e => (e.segments?.length ?? 0) >= requiredSegments);
+        })
+        .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+    }
+    // Fallback: use segment lengths from entries
+    return Array.from(new Set(allEntries.map(e => String(e.segments?.length ?? 0)))).sort(
+      (a, b) => parseInt(a, 10) - parseInt(b, 10)
     );
+  };
 
   const getUniqueLevels = () =>
     Array.from(new Set(allEntries.map(e => e.level))).filter((l): l is string => l !== null).sort().reverse();

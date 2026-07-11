@@ -16,9 +16,9 @@ import { usePlayerSession } from '../features/player/hooks/usePlayerSession';
 
 /* ─── App ───────────────────────────────────────────────────────────── */
 export default function App() {
-  const { repoLog, backgroundsLog, loadingOptions } = useRepoLogs();
+  const { repoLog, backgroundsLog, meditationsConfig, loadingOptions } = useRepoLogs();
   const pwa = usePWAInstall();
-  const selection = useSelectionState(repoLog, backgroundsLog);
+  const selection = useSelectionState(repoLog, backgroundsLog, meditationsConfig);
 
   const [screen, setScreen] = useState<AppScreen>('player');
   const [completedEntry, setCompletedEntry] = useState<MeditationLogEntry | null>(null);
@@ -28,7 +28,7 @@ export default function App() {
     setScreen('feedback');
   }, []);
 
-  const player = usePlayerSession(selection.musica, selection.getMatchingEntries, handleSessionEnded);
+  const player = usePlayerSession(selection.musica, selection.getMatchingEntries, meditationsConfig, selection.duracion, handleSessionEnded);
 
   /* init PostHog */
   useEffect(() => { initPostHog(); }, []);
@@ -73,6 +73,7 @@ export default function App() {
             <PillSelectors
               repoLog={repoLog}
               backgroundsLog={backgroundsLog}
+              meditationsConfig={meditationsConfig}
               duracion={selection.duracion}
               nivel={selection.nivel}
               musica={selection.musica}
@@ -98,6 +99,7 @@ export default function App() {
               progressPct={player.progressPct}
               concatenatedUrl={player.concatenatedUrl}
               selectedEntry={player.selectedEntry}
+              selectedDuration={selection.duracion}
               isGuided={isGuided}
               hasActiveAudio={hasActiveAudio}
               selectionComplete={selection.allSelected && selection.isAvailable()}

@@ -8,7 +8,7 @@ export interface MeditationLogEntry {
   music: string;
   guided: boolean;
   /** Paths to individual audio segments (dynamic meditations) */
-  segments?: string[];
+  segments?: { audioUrl: string }[];
   num_segments?: number;
 }
 
@@ -25,6 +25,10 @@ export interface BackgroundLogEntry {
 
 export interface BackgroundLog {
   backgrounds: BackgroundLogEntry[];
+}
+
+export interface MeditationsConfig {
+  sentencesByDuration: Record<string, number>;
 }
 
 export type AppScreen = 'player' | 'feedback' | 'thankyou';

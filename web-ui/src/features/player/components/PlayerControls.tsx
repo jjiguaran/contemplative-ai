@@ -1,6 +1,6 @@
 import React from 'react';
 import { MeditationLogEntry } from '../../../shared/types/types';
-import { formatDuration, capitalize, musicDisplayName, parseDurationMinutes } from '../../../shared/utils/utils';
+import { capitalize, musicDisplayName } from '../../../shared/utils/utils';
 import { IconPlay, IconPause, IconDownload, IconVolume, IconLeaf } from '../../../shared/utils/icons';
 
 interface PlayerControlsProps {
@@ -12,6 +12,7 @@ interface PlayerControlsProps {
   progressPct: number;
   concatenatedUrl: string | null;
   selectedEntry: MeditationLogEntry | null;
+  selectedDuration: string;
   isGuided: boolean;
   hasActiveAudio: boolean;
   selectionComplete: boolean;
@@ -41,6 +42,7 @@ export default function PlayerControls({
   progressPct,
   concatenatedUrl,
   selectedEntry,
+  selectedDuration,
   isGuided,
   hasActiveAudio,
   selectionComplete,
@@ -111,7 +113,7 @@ export default function PlayerControls({
         {preparingAudio
           ? ''
           : selectedEntry
-            ? `${formatDuration(selectedEntry.duration)} · ${capitalize(selectedEntry.level ?? '')} · ${musicDisplayName(selectedEntry.music)} · var. ${selectedEntry.variation ?? '-'}`
+            ? `${selectedDuration} min · ${capitalize(selectedEntry.level ?? '')} · ${musicDisplayName(selectedEntry.music)} · var. ${selectedEntry.variation ?? '-'}`
             : allSelected && !isAvailable
               ? ''
               : 'elige tu sesión y presiona para comenzar'}
@@ -131,7 +133,7 @@ export default function PlayerControls({
         <a
           className="icon-btn"
           href={concatenatedUrl ?? '#'}
-          download={selectedEntry && concatenatedUrl ? `${parseDurationMinutes(selectedEntry.duration)}_${selectedEntry.level ?? 'silencio'}_${selectedEntry.variation ?? ''}.wav` : undefined}
+          download={selectedEntry && concatenatedUrl ? `${selectedDuration}_${selectedEntry.level ?? 'silencio'}_${selectedEntry.variation ?? ''}.wav` : undefined}
           aria-label="Descargar meditación"
           title="Descargar"
           style={{ pointerEvents: hasActiveAudio ? 'auto' : 'none', opacity: hasActiveAudio ? 1 : 0.2, textDecoration: 'none' }}
