@@ -1,6 +1,46 @@
 {
-  "sentencesByDuration": {
-    "5": 9,
-    "10": 18
+  "version": "2026-07-17-04",
+  "meditations": {
+    "anapanasati": {
+      "label": "Anapanasati",
+      "fixedSlots": {
+        "inicio": 1,
+        "cierre": 1
+      },
+      "durationTiers": {
+        "5min":  { "totalSlots": 7 },
+        "10min": { "totalSlots": 15 },
+        "15min": { "totalSlots": 22 },
+        "20min": { "totalSlots": 30 },
+        "30min": { "totalSlots": 45},
+        "45min": { "totalSlots": 67 },
+        "60min": { "totalSlots": 90}
+      },
+      "level": {
+        "principiante": {
+          "phaseOrder": ["inicio", "cuerpo", "cierre"],
+          "ratios": {
+            "cuerpo": 1.0
+          }
+        },
+        "intermedio": {
+          "phaseOrder": ["inicio", "cuerpo", "sensaciones", "mente", "cierre"],
+          "ratios": {
+            "cuerpo": 0.4,
+            "sensaciones": 0.3,
+            "mente": 0.3
+          }
+        },
+        "avanzado": {
+          "phaseOrder": ["inicio", "cuerpo", "sensaciones", "mente", "dhammas", "cierre"],
+          "ratios": {
+            "cuerpo": 0.28,
+            "sensaciones": 0.22,
+            "mente": 0.25,
+            "dhammas": 0.25
+          }
+        }
+      }
+    }
   }
 }

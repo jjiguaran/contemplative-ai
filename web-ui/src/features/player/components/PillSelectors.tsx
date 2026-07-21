@@ -1,9 +1,9 @@
 import React from 'react';
-import { MeditationLogEntry, MeditationLog, BackgroundLog, MeditationsConfig } from '../../../shared/types/types';
-import { parseDurationMinutes, formatDuration, capitalize, musicDisplayName } from '../../../shared/utils/utils';
+import { SentenceEntry, SentencesRepo, BackgroundLog, MeditationsConfig } from '../../../shared/types/types';
+import { parseDurationMinutes, formatDuration, capitalize, musicDisplayName, getComputedSentencesByDuration } from '../../../shared/utils/utils';
 
 interface PillSelectorsProps {
-  repoLog: MeditationLog | null;
+  sentencesRepo: SentencesRepo | null;
   backgroundsLog: BackgroundLog | null;
   meditationsConfig: MeditationsConfig | null;
   duracion: string;
@@ -20,10 +20,11 @@ interface PillSelectorsProps {
   onSetMusica: (m: string) => void;
   onSetBackgroundVolume: (v: number) => void;
   onResetPlayback: () => void;
+  getLevelOptions: () => string[];
 }
 
 export default function PillSelectors({
-  repoLog,
+  sentencesRepo,
   backgroundsLog,
   meditationsConfig,
   duracion,
@@ -40,27 +41,26 @@ export default function PillSelectors({
   onSetMusica,
   onSetBackgroundVolume,
   onResetPlayback,
+  getLevelOptions,
 }: PillSelectorsProps) {
-  const allEntries = repoLog?.meditations ?? [];
+  const allSentences = sentencesRepo?.sentences ?? [];
 
   const getUniqueDurations = () => {
-    if (meditationsConfig?.sentencesByDuration) {
-      // Show config keys that have entries with enough segments
-      return Object.keys(meditationsConfig.sentencesByDuration)
+    if (meditationsConfig) {
+      const sentencesByDuration = getComputedSentencesByDuration(meditationsConfig);
+      // Show config keys that have entries with enough sentences
+      return Object.keys(sentencesByDuration)
         .filter(d => {
-          const requiredSegments = meditationsConfig.sentencesByDuration[d];
-          return allEntries.some(e => (e.segments?.length ?? 0) >= requiredSegments);
+          const requiredSegments = sentencesByDuration[d];
+          return allSentences.length >= requiredSegments;
         })
         .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
     }
-    // Fallback: use segment lengths from entries
-    return Array.from(new Set(allEntries.map(e => String(e.segments?.length ?? 0)))).sort(
-      (a, b) => parseInt(a, 10) - parseInt(b, 10)
-    );
+    return [];
   };
 
   const getUniqueLevels = () =>
-    Array.from(new Set(allEntries.map(e => e.level))).filter((l): l is string => l !== null).sort().reverse();
+    getLevelOptions();
 
   const getUniqueMusicOptions = () => {
     const bgMusicTypes = backgroundsLog
@@ -69,11 +69,12 @@ export default function PillSelectors({
     return Array.from(new Set([...bgMusicTypes, 'silence'])).sort();
   };
 
-  const getGuidedNormalized = (e: MeditationLogEntry): boolean =>
-    e.guided === undefined ? e.level !== null : e.guided;
-
-  const getUniqueGuidedOptions = (): boolean[] =>
-    Array.from(new Set(allEntries.map(e => getGuidedNormalized(e)))).sort((a, b) => a === b ? 0 : a ? -1 : 1);
+  const getUniqueGuidedOptions = (): boolean[] => {
+    const options: boolean[] = [];
+    if (allSentences.length > 0) options.push(true);
+    options.push(false);
+    return options;
+  };
 
   if (loadingOptions) return <p className="loading-msg">cargando sesiones…</p>;
 

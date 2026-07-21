@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { captureEvent } from '../../../posthog';
-import { MeditationLogEntry, MoodId } from '../../../shared/types/types';
+import { MoodId } from '../../../shared/types/types';
 import { MOOD_OPTIONS } from '../../../shared/constants/constants';
 import { IconInstagram, IconTikTok, IconFacebook, IconYouTube } from '../../../shared/utils/icons';
 
@@ -13,12 +13,12 @@ const supabase = createClient(
 /* ─── Feedback Screen ───────────────────────────────────────────────── */
 interface FeedbackScreenProps {
   visible: boolean;
-  completedEntry: MeditationLogEntry | null;
+  completedDuration: string | null;
   onDone: () => void;
   onNewSession: () => void;
 }
 
-export default function FeedbackScreen({ visible, completedEntry, onDone, onNewSession }: FeedbackScreenProps) {
+export default function FeedbackScreen({ visible, completedDuration, onDone, onNewSession }: FeedbackScreenProps) {
   const [selectedMood, setSelectedMood] = useState<MoodId | null>(null);
   const [nota, setNota] = useState('');
   const [saving, setSaving] = useState(false);
@@ -28,10 +28,7 @@ export default function FeedbackScreen({ visible, completedEntry, onDone, onNewS
     setSelectedMood(mood);
     captureEvent('session_feedback_mood', {
       mood,
-      duration: completedEntry?.duration ?? undefined,
-      level: completedEntry?.level ?? undefined,
-      music: completedEntry?.music ?? undefined,
-      variation: completedEntry?.variation ?? undefined,
+      duration: completedDuration ?? undefined,
     });
     setTimeout(() => textareaRef.current?.focus(), 300);
   };
@@ -43,18 +40,12 @@ export default function FeedbackScreen({ visible, completedEntry, onDone, onNewS
       await supabase.from('session_feedback').insert({
         mood: selectedMood,
         nota: nota.trim() || null,
-        duration: completedEntry?.duration ?? null,
-        level: completedEntry?.level ?? null,
-        music: completedEntry?.music ?? null,
-        variation: completedEntry?.variation ?? null,
+        duration: completedDuration ?? null,
       });
       captureEvent('session_feedback_submitted', {
         mood: selectedMood ?? undefined,
         has_nota: nota.trim().length > 0,
-        duration: completedEntry?.duration ?? undefined,
-        level: completedEntry?.level ?? undefined,
-        music: completedEntry?.music ?? undefined,
-        variation: completedEntry?.variation ?? undefined,
+        duration: completedDuration ?? undefined,
       });
     } catch (err) {
       console.error('Feedback save failed:', err);

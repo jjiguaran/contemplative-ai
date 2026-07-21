@@ -1,0 +1,662 @@
+{
+  "sentences": [
+    {
+      "id": "grd_001",
+      "script": "Encuentra una postura cómoda, cierra los ojos y siente el aire entrar y salir.",
+      "section": "inicio",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_002",
+      "script": "Con cada inhalación, nota cómo tu pecho y vientre se expanden suavemente.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_003",
+      "script": "Siente el aire refrescando tus hombros mientras exhalas lentamente.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_004",
+      "script": "Observa cómo el aire toca tus manos y dedos con delicadeza.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_005",
+      "script": "Deja que el aliento deslice por tus brazos, relajando cada fibra.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_006",
+      "script": "Notar cómo el aire llega a tus muslos y piernas al inhalar.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_007",
+      "script": "Con la exhalación, permite que el peso de tus piernas se suelte.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_008",
+      "script": "Siente el aire en tus pies, como una brisa que los nutre.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_009",
+      "script": "Exhala el aire por los pies, soltando la tensión acumulada.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_010",
+      "script": "Deja que el respirar te conecte con tu columna, recta y firme.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_011",
+      "script": "Siente el aire ascender por tu espalda, aliviando cada nudo.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_012",
+      "script": "Con cada exhalación, permite que tu espalda se hunda en calma.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_013",
+      "script": "Notar cómo el aire llena tus costados con cada inhalación.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_014",
+      "script": "Siente el aire en tus costillas, como si latieran con la tierra.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_015",
+      "script": "Exhala por los costados, dejando que el cuerpo se ablande.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_016",
+      "script": "Permite que el aliento te acaricie el cuello y cabeza.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_017",
+      "script": "Siente el aire en tu mandíbula, suavizando cada tensión.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_018",
+      "script": "Con la exhalación, deja que tu rostro se suavice como papel.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_019",
+      "script": "Notar cómo el aire fluye por tus ojos, aunque están cerrados.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_020",
+      "script": "Siente el aliento en tu cerebro, como una niebla calmante.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_021",
+      "script": "Deja que el aire entre en tus pulmones como un río de luz.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_022",
+      "script": "Con cada exhalación, el cuerpo se vuelve más ligero, más abierto.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_023",
+      "script": "Observa cómo el aire te recuerda que estás vivo, aquí y ahora.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_024",
+      "script": "Permite que el respirar te una con el ambiente que te rodea.",
+      "section": "cuerpo",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_025",
+      "script": "Con cada inhalación, busca el tono agradable que surge en tu pecho.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_026",
+      "script": "Siente cómo el aire intensifica esa calidez, si es que existe.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_027",
+      "script": "Observa si hay sensaciones neutras, sin juzgar su presencia.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_028",
+      "script": "Con la exhalación, deja que el aire disuelva lo que te inquieta.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_029",
+      "script": "Siente el aliento como una ola que lleva consigo el pesar.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_030",
+      "script": "Notar cómo el aire toca una punta de alegría o neutralidad.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_031",
+      "script": "Permite que el respirar te guíe hacia esa sensación, sin apresurar.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_032",
+      "script": "Con cada inhalación, abrazas lo que sientes, tal como es.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_033",
+      "script": "Exhala el aire, suavizando la intensidad de cada sensación.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_034",
+      "script": "Siente cómo el aliento revela el cambio constante en tu ser.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_035",
+      "script": "Observa las sensaciones como nubes que pasan, sostenidas por el aire.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_036",
+      "script": "Con cada exhalación, permite que el aire suelte lo que ya no necesitas.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_037",
+      "script": "Notar cómo el aire te recuerda que todo es efímero.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_038",
+      "script": "Siente el respirar como un puente entre lo que sientes y el ahora.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_039",
+      "script": "Permite que el aliento te enseñe a no aferrarte a nada.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_040",
+      "script": "Con cada inhalación, abrazas la neutralidad como un espacio seguro.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_041",
+      "script": "Exhala el aire, observando cómo las sensaciones se renuevan.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_042",
+      "script": "Siente cómo el aire te ancla en la experiencia presente.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_043",
+      "script": "Observa las sensaciones como notas musicales, sostenidas por el respirar.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_044",
+      "script": "Con la exhalación, deja que el aire transforme lo que persiste.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_045",
+      "script": "Notar cómo el aliento te conecta con la fluidez de la vida.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_046",
+      "script": "Siente el respirar como un río que lava lo superfluo.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_047",
+      "script": "Permite que el aire te recuerde que no eres tus sensaciones.",
+      "section": "sensaciones",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_048",
+      "script": "Con cada inhalación, observa si tu mente está dispersa o quieta.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_049",
+      "script": "Siente cómo el aire refleja el estado de tu conciencia.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_050",
+      "script": "Exhala el aliento, invitando a la calma a instalarse.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_051",
+      "script": "Notar cómo la mente vaga, mientras el aire sigue su curso.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_052",
+      "script": "Permite que el respirar te recuerde que puedes volver a ti.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_053",
+      "script": "Siente el aire en tu frente, aliviando la tensión mental.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_054",
+      "script": "Con cada exhalación, suelta los pensamientos que te alejan.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_055",
+      "script": "Observa cómo el aliento te une a la claridad del momento.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_056",
+      "script": "Notar si la mente se vuelve más serena con cada respirar.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_057",
+      "script": "Siente el aire como un ancla que sostiene tu atención.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_058",
+      "script": "Con la inhalación, abrazas la quietud como un refugio.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_059",
+      "script": "Exhala el aliento, permitiendo que la mente se deslice en calma.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_060",
+      "script": "Observa cómo el respirar te enseña a observar sin juzgar.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_061",
+      "script": "Notar cómo las emociones vienen y van, sostenidas por el aire.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_062",
+      "script": "Siente el aliento como un espejo que refleja tu interior.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_063",
+      "script": "Con cada exhalación, deja que el aire aquiete la tormenta.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_064",
+      "script": "Permite que el respirar te recuerde que la mente es cambiante.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_065",
+      "script": "Siente cómo el aire te introduce en el silencio interior.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_066",
+      "script": "Observa la mente como un cielo, donde las nubes no te definen.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_067",
+      "script": "Con la inhalación, abrazas la claridad como un destello.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_068",
+      "script": "Exhala el aliento, dejando que la mente se expanda en libertad.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_069",
+      "script": "Notar cómo el respirar te conecta con la raíz de todo pensar.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_070",
+      "script": "Siente el aire como un lazo que te une a tu esencia.",
+      "section": "mente",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_071",
+      "script": "Con cada inhalación, observa cómo surgen pensamientos, imágenes o recuerdos.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_072",
+      "script": "Siente el aire mientras estos fenómenos aparecen y desaparecen.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_073",
+      "script": "Notar cómo el respirar te enseña a no aferrarte a lo efímero.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_074",
+      "script": "Con la exhalación, permite que el aire suelte lo que no pertenece.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_075",
+      "script": "Observa cómo el aliento revela el flujo constante de la mente.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_076",
+      "script": "Siente el aire mientras notas el surgir del deseo o aversión.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_077",
+      "script": "Con cada inhalación, abrazas la impermanencia como una verdad.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_078",
+      "script": "Exhala el aliento, dejando que el cambio se manifieste.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_079",
+      "script": "Notar cómo el respirar te muestra que nada se queda.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_080",
+      "script": "Siente el aire mientras observas el surgir y cese de emociones.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_081",
+      "script": "Permite que el aliento te recuerde que todo es transitorio.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_082",
+      "script": "Observa cómo el aire sostiene la experiencia de la duda o certeza.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_083",
+      "script": "Con la exhalación, suelta el aire y lo que se opone a la paz.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_084",
+      "script": "Notar cómo el respirar te enseña a no identificarte con lo pasajero.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_085",
+      "script": "Siente el aliento como un faro que ilumina la naturaleza de las cosas.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_086",
+      "script": "Con cada inhalación, abrazas la ausencia de posesión en lo que ves.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_087",
+      "script": "Exhala el aire, observando cómo el apego se disuelve.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_088",
+      "script": "Notar cómo el aire te recuerda que nada es tuyo.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_089",
+      "script": "Siente el respirar como un río que lleva consigo lo que no necesitas.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_090",
+      "script": "Observa cómo el aliento te introduce en el espacio entre los pensamientos.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_091",
+      "script": "Con cada exhalación, permite que el aire te libere de la ilusión.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_092",
+      "script": "Notar cómo el respirar te conecta con la verdad de lo esencial.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_093",
+      "script": "Siente el aire mientras el silencio interior se expande.",
+      "section": "dhammas",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "id": "grd_094",
+      "script": "Abre los ojos lentamente, mueve tu cuerpo despacio y lleva esta calma contigo.",
+      "section": "cierre",
+      "date": "2026-07-14",
+      "model": "poolside/laguna-m.1:free"
+    }
+  ]
+}

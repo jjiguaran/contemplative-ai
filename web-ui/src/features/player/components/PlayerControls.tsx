@@ -1,6 +1,6 @@
 import React from 'react';
-import { MeditationLogEntry } from '../../../shared/types/types';
-import { capitalize, musicDisplayName } from '../../../shared/utils/utils';
+import { SentenceEntry } from '../../../shared/types/types';
+import { musicDisplayName } from '../../../shared/utils/utils';
 import { IconPlay, IconPause, IconDownload, IconVolume, IconLeaf } from '../../../shared/utils/icons';
 
 interface PlayerControlsProps {
@@ -11,7 +11,7 @@ interface PlayerControlsProps {
   backgroundVolume: number;
   progressPct: number;
   concatenatedUrl: string | null;
-  selectedEntry: MeditationLogEntry | null;
+  selectedSentences: SentenceEntry[] | null;
   selectedDuration: string;
   isGuided: boolean;
   hasActiveAudio: boolean;
@@ -41,7 +41,7 @@ export default function PlayerControls({
   backgroundVolume,
   progressPct,
   concatenatedUrl,
-  selectedEntry,
+  selectedSentences,
   selectedDuration,
   isGuided,
   hasActiveAudio,
@@ -93,7 +93,7 @@ export default function PlayerControls({
             />
           </div>
 
-          {isGuided && selectedEntry && (
+          {isGuided && selectedSentences && (
             <div className="vol-wrap">
               <IconLeaf />
               <input
@@ -109,11 +109,11 @@ export default function PlayerControls({
         </div>
       </div>
 
-      <p className={`session-label${selectedEntry ? ' active' : ''}`}>
+      <p className={`session-label${selectedSentences ? ' active' : ''}`}>
         {preparingAudio
           ? ''
-          : selectedEntry
-            ? `${selectedDuration} min · ${capitalize(selectedEntry.level ?? '')} · ${musicDisplayName(selectedEntry.music)} · var. ${selectedEntry.variation ?? '-'}`
+          : selectedSentences
+            ? `${selectedDuration} min · guiada`
             : allSelected && !isAvailable
               ? ''
               : 'elige tu sesión y presiona para comenzar'}
@@ -133,7 +133,7 @@ export default function PlayerControls({
         <a
           className="icon-btn"
           href={concatenatedUrl ?? '#'}
-          download={selectedEntry && concatenatedUrl ? `${selectedDuration}_${selectedEntry.level ?? 'silencio'}_${selectedEntry.variation ?? ''}.wav` : undefined}
+          download={selectedSentences && concatenatedUrl ? `${selectedDuration}_min.wav` : undefined}
           aria-label="Descargar meditación"
           title="Descargar"
           style={{ pointerEvents: hasActiveAudio ? 'auto' : 'none', opacity: hasActiveAudio ? 1 : 0.2, textDecoration: 'none' }}

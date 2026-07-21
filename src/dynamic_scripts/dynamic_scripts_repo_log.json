@@ -14,6 +14,11 @@
       "id": "dcf01fb1-edb9-48dd-80f1-955b815b5203",
       "model": "poolside/laguna-m.1:free",
       "date_generated": "2026-07-06"
+    },
+    {
+      "id": "58f3034f-925a-48bc-8657-3815a89dc6af",
+      "model": "poolside/laguna-m.1:free",
+      "date_generated": "2026-07-14"
     }
   ]
 }

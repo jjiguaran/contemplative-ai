@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { MeditationLogEntry, MeditationsConfig } from '../../../shared/types/types';
-import { buildSegmentUrls, buildBackgroundUrl } from '../../../shared/utils/utils';
+import { SentenceEntry, MeditationsConfig } from '../../../shared/types/types';
+import { buildSentenceUrls, buildBackgroundUrl, getComputedSentencesByDuration } from '../../../shared/utils/utils';
 import { createSegmentedPlayer, SegmentedPlayerHandle } from '../api/segmentedPlayer';
 import { buildDownloadableWav } from '../api/wavExport';
 import { captureEvent } from '../../../posthog';
@@ -16,16 +16,16 @@ export interface PlayerSessionState {
   audioError: string | null;
   concatenatedUrl: string | null;
   backgroundAudioUrl: string | null;
-  selectedEntry: MeditationLogEntry | null;
+  selectedSentences: SentenceEntry[] | null;
   progressPct: number;
 }
 
 export function usePlayerSession(
   musica: string,
-  getMatchingEntries: () => MeditationLogEntry[],
+  getMatchingSentences: () => SentenceEntry[],
   meditationsConfig: MeditationsConfig | null,
   selectedDuration: string,
-  onSessionEnded: (entry: MeditationLogEntry | null) => void
+  onSessionEnded: () => void
 ) {
   const [playing, setPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -37,7 +37,7 @@ export function usePlayerSession(
   const [audioError, setAudioError] = useState<string | null>(null);
   const [concatenatedUrl, setConcatenatedUrl] = useState<string | null>(null);
   const [backgroundAudioUrl, setBackgroundAudioUrl] = useState<string | null>(null);
-  const [selectedEntry, setSelectedEntry] = useState<MeditationLogEntry | null>(null);
+  const [selectedSentences, setSelectedSentences] = useState<SentenceEntry[] | null>(null);
 
   const backgroundAudioRef = useRef<HTMLAudioElement>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -85,7 +85,7 @@ export function usePlayerSession(
     if (concatenatedUrl) URL.revokeObjectURL(concatenatedUrl);
     setConcatenatedUrl(null);
     setBackgroundAudioUrl(null);
-    setSelectedEntry(null);
+    setSelectedSentences(null);
     setSessionActive(false);
     setPlaying(false);
     setCurrentTime(0);
@@ -93,14 +93,14 @@ export function usePlayerSession(
   }, [concatenatedUrl]);
 
   const handlePlay = useCallback(async () => {
-    const matches = getMatchingEntries();
-    if (!matches.length) return;
+    const sentences = getMatchingSentences();
+    if (!sentences.length) return;
 
-    const entry = matches[Math.floor(Math.random() * matches.length)];
     const durationMinutes = parseInt(selectedDuration, 10) || 0;
-    const maxSegments = meditationsConfig?.sentencesByDuration?.[selectedDuration] ?? 0;
-    const urls = buildSegmentUrls(entry, maxSegments);
-    const bgUrl = musica !== 'silence' ? buildBackgroundUrl(entry, durationMinutes, musica) : null;
+    const sentencesByDuration = meditationsConfig ? getComputedSentencesByDuration(meditationsConfig) : {};
+    const maxSegments = sentencesByDuration[selectedDuration] ?? 0;
+    const urls = buildSentenceUrls(sentences, maxSegments);
+    const bgUrl = musica !== 'silence' ? buildBackgroundUrl(durationMinutes, musica) : null;
 
     if (playerRef.current) {
       playerRef.current.destroy();
@@ -108,7 +108,7 @@ export function usePlayerSession(
     }
     if (concatenatedUrl) URL.revokeObjectURL(concatenatedUrl);
 
-    setSelectedEntry(entry);
+    setSelectedSentences(sentences);
     setBackgroundAudioUrl(bgUrl);
     setCurrentTime(0);
     setDuration(durationMinutes * 60);
@@ -119,10 +119,7 @@ export function usePlayerSession(
 
     captureEvent('meditation_started', {
       duration: selectedDuration,
-      level: entry.level ?? undefined,
-      music: entry.music,
-      variation: entry.variation ?? undefined,
-      model: entry.model ?? undefined,
+      music: musica,
     });
 
     setPreparingAudio(true);
@@ -153,13 +150,11 @@ export function usePlayerSession(
       player.onEnded(() => {
         setPlaying(false);
         setCurrentTime(0);
-        captureEvent('meditation_completed', entry ? {
+        captureEvent('meditation_completed', {
           duration: selectedDuration,
-          level: entry.level ?? undefined,
-          music: entry.music,
-          variation: entry.variation ?? undefined,
-        } : undefined);
-        onSessionEnded(entry);
+          music: musica,
+        });
+        onSessionEnded();
       });
       player.onError(err => {
         console.error('Error reproduciendo el audio:', err);
@@ -177,7 +172,7 @@ export function usePlayerSession(
       setAudioError('No se pudo preparar el audio. Intenta de nuevo.');
       setPreparingAudio(false);
     }
-  }, [getMatchingEntries, musica, meditationsConfig, concatenatedUrl, selectedDuration, onSessionEnded]);
+  }, [getMatchingSentences, musica, meditationsConfig, concatenatedUrl, selectedDuration, onSessionEnded]);
 
   const togglePlayPause = useCallback(() => {
     const player = playerRef.current;
@@ -220,7 +215,7 @@ export function usePlayerSession(
     audioError,
     concatenatedUrl,
     backgroundAudioUrl,
-    selectedEntry,
+    selectedSentences,
     progressPct,
     backgroundAudioRef,
     // Actions

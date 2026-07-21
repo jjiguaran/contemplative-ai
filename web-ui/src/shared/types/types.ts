@@ -1,19 +1,17 @@
 /* ─── Types ─────────────────────────────────────────────────────────── */
-export interface MeditationLogEntry {
-  duration: string;
-  level: string | null;
-  variation: number | null;
-  model: string | null;
-  date_generated: string;
-  music: string;
-  guided: boolean;
-  /** Paths to individual audio segments (dynamic meditations) */
-  segments?: { audioUrl: string }[];
-  num_segments?: number;
+export interface SentenceEntry {
+  id: string;
+  script: string;
+  section: string;
+  date: string;
+  model: string;
+  audioUrl: string;
+  TTS_model: string;
 }
 
-export interface MeditationLog {
-  meditations: MeditationLogEntry[];
+export interface SentencesRepo {
+  level: string;
+  sentences: SentenceEntry[];
 }
 
 export interface BackgroundLogEntry {
@@ -27,8 +25,26 @@ export interface BackgroundLog {
   backgrounds: BackgroundLogEntry[];
 }
 
+export interface DurationTier {
+  totalSlots: number;
+}
+
+export interface LevelConfig {
+  phaseOrder: string[];
+  ratios: Record<string, number>;
+  minDurationTier?: string;
+}
+
+export interface MeditationConfig {
+  label: string;
+  fixedSlots: Record<string, number>;
+  durationTiers: Record<string, DurationTier>;
+  level: Record<string, LevelConfig>;
+}
+
 export interface MeditationsConfig {
-  sentencesByDuration: Record<string, number>;
+  version: string;
+  meditations: Record<string, MeditationConfig>;
 }
 
 export type AppScreen = 'player' | 'feedback' | 'thankyou';

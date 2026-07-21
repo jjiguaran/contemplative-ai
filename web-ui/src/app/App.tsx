@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { initPostHog } from '../posthog';
-import { AppScreen, MeditationLogEntry } from '../shared/types/types';
+import { AppScreen } from '../shared/types/types';
 import { getTimeOfDay } from '../shared/utils/utils';
 import css from '../shared/styles/styles';
 import AmbientOrbs from '../shared/components/AmbientOrbs';
@@ -16,19 +16,19 @@ import { usePlayerSession } from '../features/player/hooks/usePlayerSession';
 
 /* ─── App ───────────────────────────────────────────────────────────── */
 export default function App() {
-  const { repoLog, backgroundsLog, meditationsConfig, loadingOptions } = useRepoLogs();
+  const { sentencesRepo, backgroundsLog, meditationsConfig, loadingOptions } = useRepoLogs();
   const pwa = usePWAInstall();
-  const selection = useSelectionState(repoLog, backgroundsLog, meditationsConfig);
+  const selection = useSelectionState(sentencesRepo, backgroundsLog, meditationsConfig);
 
   const [screen, setScreen] = useState<AppScreen>('player');
-  const [completedEntry, setCompletedEntry] = useState<MeditationLogEntry | null>(null);
+  const [completedDuration, setCompletedDuration] = useState<string | null>(null);
 
-  const handleSessionEnded = useCallback((entry: MeditationLogEntry | null) => {
-    setCompletedEntry(entry);
+  const handleSessionEnded = useCallback(() => {
+    setCompletedDuration(selection.duracion);
     setScreen('feedback');
-  }, []);
+  }, [selection.duracion]);
 
-  const player = usePlayerSession(selection.musica, selection.getMatchingEntries, meditationsConfig, selection.duracion, handleSessionEnded);
+  const player = usePlayerSession(selection.musica, selection.getMatchingSentences, meditationsConfig, selection.duracion, handleSessionEnded);
 
   /* init PostHog */
   useEffect(() => { initPostHog(); }, []);
@@ -37,7 +37,7 @@ export default function App() {
   const handleNewSession = useCallback(() => {
     setScreen('player');
     player.resetPlayback();
-    setCompletedEntry(null);
+    setCompletedDuration(null);
   }, [player]);
 
   const isGuided = selection.tipo === true;
@@ -71,7 +71,7 @@ export default function App() {
             />
 
             <PillSelectors
-              repoLog={repoLog}
+              sentencesRepo={sentencesRepo}
               backgroundsLog={backgroundsLog}
               meditationsConfig={meditationsConfig}
               duracion={selection.duracion}
@@ -88,6 +88,7 @@ export default function App() {
               onSetMusica={selection.setMusica}
               onSetBackgroundVolume={player.setBackgroundVolume}
               onResetPlayback={player.resetPlayback}
+              getLevelOptions={selection.getLevelOptions}
             />
 
             <PlayerControls
@@ -98,7 +99,7 @@ export default function App() {
               backgroundVolume={player.backgroundVolume}
               progressPct={player.progressPct}
               concatenatedUrl={player.concatenatedUrl}
-              selectedEntry={player.selectedEntry}
+              selectedSentences={player.selectedSentences}
               selectedDuration={selection.duracion}
               isGuided={isGuided}
               hasActiveAudio={hasActiveAudio}
@@ -119,7 +120,7 @@ export default function App() {
         {/* ── FEEDBACK SCREEN ── */}
         <FeedbackScreen
           visible={screen === 'feedback'}
-          completedEntry={completedEntry}
+          completedDuration={completedDuration}
           onDone={handleFeedbackDone}
           onNewSession={handleNewSession}
         />

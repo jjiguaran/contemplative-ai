@@ -54,16 +54,15 @@ from botocore.exceptions import NoCredentialsError, ClientError
 import numpy as np
 
 # ── Configuration ───────────────────────────────────────────────────────────
-SCRIPT_R2_KEY = "scripts/dynamic_scripts/dynamic.json"
-DYNAMIC_MEDITATIONS_LOG_KEY = "meditations/dynamic_meditations_repo.json"
+SENTENCES_REPO_R2_KEY = "scripts/dynamic_scripts/sentences_repo.json"
 
 VOICE_FILENAME = "tmpteeduw43.mp3"
 REF_TEXT = "Siéntate con comodidad, cierra los ojos suavemente. Siente cómo tu cuerpo respira solo."
 
 HUM_LEVEL = 0.00005  # organic background hum level
 TARGET_SR = 24000
-GONG_FILENAME = "freesound_community-gong-79191.mp3"
-SILENCE_DURATION = 30  # fixed silence for each [silencio] tag (in seconds)
+
+TARGET_DURATION = 40  # target total duration in seconds for each sentence
 
 
 def get_r2_credentials():
@@ -109,7 +108,7 @@ def upload_json_to_r2(r2_client, bucket_name, file_key, data):
     try:
         json_bytes = json.dumps(data, indent=2, ensure_ascii=False).encode('utf-8')
         r2_client.put_object(Bucket=bucket_name, Key=file_key, Body=json_bytes)
-        print(f"  ✅ Updated log: {file_key}")
+        print(f"  ✅ Updated: {file_key}")
         return True
     except Exception as e:
         print(f"  ❌ Error uploading JSON to R2: {e}")
@@ -205,34 +204,6 @@ def export_audio_to_opus(audio_data, sr, output_path):
     audio_segment.export(output_path, format="opus")
 
 
-def parse_instruction_silence_pairs(content):
-    """Parse meditation content into (instruction_text, silence_duration) pairs.
-
-    The script alternates between instruction lines and [silencio] tags.
-    Each instruction is paired with the silence that follows it.
-    """
-    lines = [line.strip() for line in content.strip().split('\n') if line.strip()]
-    pairs = []
-    current_instruction = None
-
-    for line in lines:
-        silence_match = re.match(r'\[silencio(?::\s*(\d+)\s*segundos?)?\]', line, re.IGNORECASE)
-        if silence_match:
-            if current_instruction is not None:
-                duration = int(silence_match.group(1)) if silence_match.group(1) else SILENCE_DURATION
-                pairs.append((current_instruction, duration))
-                current_instruction = None
-        else:
-            if current_instruction is not None:
-                pairs.append((current_instruction, SILENCE_DURATION))
-            current_instruction = line
-
-    if current_instruction is not None:
-        pairs.append((current_instruction, SILENCE_DURATION))
-
-    return pairs
-
-
 # cell 3
 try:
     # 1. Connect to R2
@@ -242,28 +213,19 @@ try:
     r2.head_bucket(Bucket=credentials['bucket_name'])
     print("✅ R2 connection successful")
 
-    # 2. Load the dynamic meditation script from R2
-    print(f"\n📖 Reading script from R2: {SCRIPT_R2_KEY}")
-    script_data = read_json_from_r2(r2, credentials['bucket_name'], SCRIPT_R2_KEY)
-    if script_data is None:
-        print("❌ Script not found in R2. Run dynamic_script.py first.")
+    # 2. Load the sentences repo from R2
+    print(f"\n📖 Reading sentences repo from R2: {SENTENCES_REPO_R2_KEY}")
+    sentences_data = read_json_from_r2(r2, credentials['bucket_name'], SENTENCES_REPO_R2_KEY)
+    if sentences_data is None:
+        print("❌ Sentences repo not found in R2.")
     else:
-        meditation_content = (
-            script_data.get('meditation_content') or
-            script_data.get('text') or
-            script_data.get('content') or
-            script_data.get('meditation_text')
-        )
-        if not meditation_content:
-            print("❌ Script has no meditation content.")
+        sentences = sentences_data.get('sentences', [])
+        if not sentences:
+            print("❌ Sentences repo has no sentences.")
         else:
-            print(f"   📝 Content: {len(meditation_content)} chars")
+            print(f"   📝 Found {len(sentences)} sentences in the repo")
 
-            # 3. Parse instruction/silence pairs
-            pairs = parse_instruction_silence_pairs(meditation_content)
-            print(f"   📋 Found {len(pairs)} instruction + silence pairs")
-
-            # 4. Find and download the voice file for cloning
+            # 3. Find and download the voice file for cloning
             print(f"\n🎙️ Finding voice file '{VOICE_FILENAME}' in R2...")
             voice_key = None
             try:
@@ -283,94 +245,76 @@ try:
                 if not reference_audio_path:
                     print("❌ Failed to download voice file.")
                 else:
-                    # 5. Download gong sound (for opening and closing)
-                    print(f"\n🔔 Downloading gong sound...")
-                    gong_key = f"sounds/{GONG_FILENAME}"
-                    gong_path = download_from_r2(r2, credentials['bucket_name'], gong_key)
-                    gong_audio = None
-                    if gong_path:
-                        gong_audio, _ = load_audio_as_numpy(gong_path)
-                        print(f"   Gong loaded: {len(gong_audio) / TARGET_SR:.1f}s")
-                    else:
-                        print("   ⚠️ No gong sound found — proceeding without it")
-
-                    # 6. Generate and upload each instruction + silence pair as an independent file
-                    meditation_id = str(uuid.uuid4())
-                    segment_keys = []
+                    # 4. Generate audio for each sentence that doesn't already have it
                     temp_files_to_clean = [reference_audio_path]
 
-                    print(f"\n🎵 Generating {len(pairs)} segment audio files...")
-                    for idx, (instruction_text, silence_dur) in enumerate(pairs, start=1):
-                        print(f"\n   [{idx}/{len(pairs)}] Generating segment...")
-                        print(f"       Instruction: {instruction_text[:60]}{'...' if len(instruction_text) > 60 else ''}")
+                    print(f"\n🎵 Generating audio for sentences...")
+                    batch_id = str(uuid.uuid4())
+                    updated_count = 0
 
-                        # Generate speech for the instruction
+                    for idx, sentence in enumerate(sentences):
+                        sentence_id = sentence.get('id', f'unknown_{idx}')
+                        script_text = sentence.get('script', '')
+                        
+                        # Skip if already has audio
+                        if sentence.get('audioUrl'):
+                            print(f"   [{idx+1}/{len(sentences)}] ⏭️  Skipping {sentence_id}: already has audio")
+                            continue
+                        
+                        if not script_text:
+                            print(f"   [{idx+1}/{len(sentences)}] ⏭️  Skipping {sentence_id}: no script text")
+                            continue
+
+                        print(f"\n   [{idx+1}/{len(sentences)}] Generating audio for {sentence_id}...")
+                        print(f"       Script: {script_text[:60]}{'...' if len(script_text) > 60 else ''}")
+
+                        # Generate speech for the sentence text
                         speech_audio = generate_speech_segment(
-                            model, instruction_text, LANGUAGE, reference_audio_path, REF_TEXT, VOICE_DESC
+                            model, script_text, LANGUAGE, reference_audio_path, REF_TEXT, VOICE_DESC
                         )
 
-                        # Generate silence (comfort noise)
-                        silence_audio = generate_silence_audio(silence_dur)
-
-                        # Concatenate speech + silence
-                        segment_audio = np.concatenate([speech_audio, silence_audio])
-
-                        # Add gong to the first and last segment
-                        if idx == 1 and gong_audio is not None:
-                            segment_audio = np.concatenate([gong_audio, segment_audio])
-                        if idx == len(pairs) and gong_audio is not None:
-                            segment_audio = np.concatenate([segment_audio, gong_audio])
+                        # Pad with comfort noise to reach exactly TARGET_DURATION seconds
+                        speech_duration = len(speech_audio) / TARGET_SR
+                        silence_needed = TARGET_DURATION - speech_duration
+                        if silence_needed > 0:
+                            silence_audio = generate_silence_audio(silence_needed)
+                            segment_audio = np.concatenate([speech_audio, silence_audio])
+                        else:
+                            segment_audio = speech_audio
 
                         # Export to Opus
-                        segment_id = f"{meditation_id}_{idx:03d}"
+                        segment_id = f"{batch_id}_{sentence_id}"
                         local_opus = f"/tmp/dynamic_segment_{segment_id}.opus"
                         temp_files_to_clean.append(local_opus)
 
                         export_audio_to_opus(segment_audio, TARGET_SR, local_opus)
 
                         # Upload to R2
-                        segment_r2_key = f"meditations/dynamic_audio/{segment_id}.opus"
+                        segment_r2_key = f"meditations/dynamic_audio/anapanasati/{segment_id}.opus"
                         result = upload_file_to_r2(r2, credentials['bucket_name'], local_opus, segment_r2_key)
                         if result:
-                            segment_keys.append(segment_r2_key)
+                            # Update the sentence with audioUrl and TTS_model
+                            sentence['audioUrl'] = segment_r2_key
+                            sentence['TTS_model'] = MODEL_ID
                             duration = len(segment_audio) / TARGET_SR
                             print(f"       ✅ Uploaded ({duration:.1f}s): {segment_r2_key}")
+                            updated_count += 1
                         else:
-                            print(f"       ❌ Failed to upload segment {idx}")
+                            print(f"       ❌ Failed to upload segment for {sentence_id}")
 
-                    # 7. Update the dynamic meditations repo log
-                    print(f"\n📋 Updating log...")
-                    log_data = read_json_from_r2(r2, credentials['bucket_name'], DYNAMIC_MEDITATIONS_LOG_KEY)
-                    if log_data is None:
-                        log_data = {"meditations": []}
+                    if updated_count > 0:
+                        # 5. Save the updated sentences repo back to R2
+                        print(f"\n📋 Saving updated sentences repo to R2...")
+                        upload_json_to_r2(r2, credentials['bucket_name'], SENTENCES_REPO_R2_KEY, sentences_data)
 
-                    new_entry = {
-                        "id": meditation_id,
-                        "script_id": script_data.get('id'),
-                        "model": MODEL_ID,
-                        "date_generated": datetime.now().strftime("%Y-%m-%d"),
-                        "music": "silence",
-                        "guided": True,
-                        "num_segments": len(segment_keys),
-                        "segments": segment_keys
-                    }
-                    log_data['meditations'].append(new_entry)
-                    upload_json_to_r2(r2, credentials['bucket_name'], DYNAMIC_MEDITATIONS_LOG_KEY, log_data)
-
-                    # Also update the local web-ui copy
-                    local_log_path = Path.cwd() / 'web-ui' / 'public' / 'dynamic_meditations_repo.json'
-                    if local_log_path.exists():
-                        try:
-                            with open(local_log_path, 'r', encoding='utf-8') as f:
-                                local_log = json.load(f)
-                        except Exception:
-                            local_log = {"meditations": []}
-                        if 'meditations' not in local_log:
-                            local_log['meditations'] = []
-                        local_log['meditations'].append(new_entry)
-                        with open(local_log_path, 'w', encoding='utf-8') as f:
-                            json.dump(local_log, f, ensure_ascii=False, indent=2)
-                        print(f"   ✅ Updated local log: {local_log_path}")
+                        # Also update the local copy if it exists
+                        local_sentences_path = Path.cwd() / 'src' / 'dynamic_scripts' / 'sentences_repo.json'
+                        if local_sentences_path.exists():
+                            with open(local_sentences_path, 'w', encoding='utf-8') as f:
+                                json.dump(sentences_data, f, ensure_ascii=False, indent=2)
+                            print(f"   ✅ Updated local copy: {local_sentences_path}")
+                    else:
+                        print(f"\n   No new sentences to process — all already have audio.")
 
                     # Clean up temp files
                     for tmp in temp_files_to_clean:
@@ -381,11 +325,10 @@ try:
 
                     print()
                     print("=== Summary ===")
-                    print(f"✅ Dynamic meditation audio generated and uploaded successfully.")
-                    print(f"   Meditation ID : {meditation_id}")
-                    print(f"   Segments      : {len(segment_keys)}")
-                    for key in segment_keys:
-                        print(f"     - {key}")
+                    print(f"✅ Sentence audio generation complete.")
+                    print(f"   Sentences processed : {updated_count}")
+                    print(f"   Total in repo       : {len(sentences)}")
+                    print(f"   Model               : {MODEL_ID}")
 
 except NoCredentialsError:
     print("❌ Invalid R2 credentials")
