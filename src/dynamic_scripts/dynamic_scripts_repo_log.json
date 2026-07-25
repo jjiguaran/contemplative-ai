@@ -19,6 +19,16 @@
       "id": "58f3034f-925a-48bc-8657-3815a89dc6af",
       "model": "poolside/laguna-m.1:free",
       "date_generated": "2026-07-14"
+    },
+    {
+      "id": "f498a45b-418f-435b-9813-aadc45302fa1",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "date_generated": "2026-07-24"
+    },
+    {
+      "id": "68d048e6-bdee-4e55-9e8d-34ec5a3481cb",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "date_generated": "2026-07-24"
     }
   ]
 }

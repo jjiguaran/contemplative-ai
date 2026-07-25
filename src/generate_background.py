@@ -16,6 +16,8 @@ found in the meditations_repo_log.json.
 Usage:
     python src/generate_background.py --mode nature
     python src/generate_background.py --mode binaural
+    python src/generate_background.py --extend-gong 60
+    python src/generate_background.py --organic-silence 30
 
 Optional arguments:
     --mode              'nature' or 'binaural' (default: nature)
@@ -26,6 +28,16 @@ Optional arguments:
                         (default: sounds/freesound_community-gong-79191.mp3)
     --background-volume Volume level for background (0.0-1.0, default: 0.05)
     --fade-duration     Fade in/out duration in seconds (default: 4.0)
+    --extend-gong       Instead of batch generation, extend the gong audio to the specified
+                        total target duration (in seconds) by appending organic comfort noise.
+                        The gong itself plays first, followed by enough organic silence to reach
+                        the target. Example: --extend-gong 60  (gong + silence = 60s total)
+    --extend-output     R2 output key for the extended gong (default: auto-generated from
+                        --gong-key with "--extended" suffix).
+    --organic-silence   Instead of batch generation, generate a standalone track of pure organic
+                        comfort noise (microscopic Gaussian noise) for the specified duration
+                        in seconds. Saves to a local .opus file in the current directory.
+                        Example: --organic-silence 30  (30 seconds of organic silence)
 """
 
 import os
@@ -44,6 +56,10 @@ from pydub import AudioSegment
 
 # Load environment variables from .env file
 load_dotenv()
+
+# Organic background hum level used in the meditation audio generation scripts.
+# This creates a microscopic comfort noise floor that prevents "dead air" silence.
+HUM_LEVEL = 0.00005
 
 
 def connect_to_r2():
@@ -124,6 +140,184 @@ def extract_minutes(duration_str):
     """Extract the number of minutes from a duration string like '5 min' or '30 min'."""
     match = re.match(r'(\d+)', str(duration_str))
     return int(match.group(1)) if match else None
+
+
+def generate_organic_silence(duration_seconds, sample_rate=44100):
+    """Generate organic comfort noise (microscopic Gaussian noise) for the given duration.
+
+    This produces the same kind of "organic silence" used in the meditation audio
+    generation scripts (generate_audio.py, dynamic_audio.py) — a low-level noise
+    floor that prevents headphones from sounding "dead" during silence sections.
+
+    Args:
+        duration_seconds: Duration of the silence in seconds.
+        sample_rate: Sample rate of the output audio.
+
+    Returns:
+        AudioSegment filled with microscopic comfort noise (stereo).
+    """
+    num_frames = int(duration_seconds * sample_rate)
+    # Generate stereo interleaved noise: two channels (L, R) with identical noise
+    noise_mono = np.random.normal(0, HUM_LEVEL, num_frames).astype(np.float32)
+    # Interleave: [L0, R0, L1, R1, ...] with L=R for each frame
+    noise_stereo = np.repeat(noise_mono, 2)
+    noise_bytes = (noise_stereo * 32767).astype(np.int16).tobytes()
+    noise_audio = AudioSegment(
+        noise_bytes,
+        frame_rate=sample_rate,
+        sample_width=2,
+        channels=2
+    )
+    return noise_audio
+
+
+def generate_organic_silence_track(duration_seconds, sample_rate=44100,
+                                    r2=None, bucket_name=None, output_key=None):
+    """Generate a standalone organic silence audio track and save/upload it.
+
+    This produces pure organic comfort noise (microscopic Gaussian noise) for the
+    specified duration. By default, the output is uploaded to the R2 bucket under
+    'sounds/organic_silence_{duration_seconds}s.opus'. If no R2 client is provided,
+    it falls back to saving locally in the current working directory.
+
+    Args:
+        duration_seconds: Duration of the organic silence in seconds.
+        sample_rate: Sample rate of the output audio.
+        r2: R2 client. If provided, the audio is uploaded to R2.
+        bucket_name: R2 bucket name (required if r2 is provided).
+        output_key: R2 key for the output file. If None and r2 is provided,
+                    defaults to 'sounds/organic_silence_{duration_seconds}s.opus'.
+                    If r2 is None, defaults to a local file in the current directory.
+
+    Returns:
+        str: Path to the saved .opus file on success, or None on failure.
+             When uploading to R2, returns the R2 key on success.
+    """
+    print(f"\n🌱 Generating {duration_seconds}s of organic comfort noise...")
+
+    # Generate the organic silence audio
+    organic_audio = generate_organic_silence(duration_seconds, sample_rate)
+
+    # Validate duration
+    actual_duration_s = len(organic_audio) / 1000.0
+    print(f"  Generated audio duration: {actual_duration_s:.2f} s")
+
+    # Export to memory buffer
+    print("\n💾 Exporting audio to memory...")
+    buf = io.BytesIO()
+    organic_audio.export(buf, format="opus")
+    opus_bytes = buf.getvalue()
+    buf.close()
+
+    if r2 is not None and bucket_name is not None:
+        # ── Upload to R2 ────────────────────────────────────────────────
+        if output_key is None:
+            output_key = f"sounds/organic_silence_{duration_seconds}s.opus"
+        print(f"\n☁️  Uploading to Cloudflare R2: {output_key}")
+        upload_bytes_to_r2(r2, bucket_name, opus_bytes, output_key)
+        file_size = len(opus_bytes)
+        print(f"  ✅ Uploaded: {output_key} ({file_size / 1024:.1f} KB)")
+        return output_key
+    else:
+        # ── Save to local file ──────────────────────────────────────────
+        if output_key is None:
+            output_filename = f"organic_silence_{duration_seconds}s.opus"
+            output_path = os.path.join(os.getcwd(), output_filename)
+        else:
+            output_path = output_key
+        print(f"\n💾 Exporting to local file: {output_path}")
+        try:
+            with open(output_path, 'wb') as f:
+                f.write(opus_bytes)
+            file_size = os.path.getsize(output_path)
+            print(f"  ✅ Saved: {output_path} ({file_size / 1024:.1f} KB)")
+            return output_path
+        except Exception as e:
+            print(f"  ❌ Failed to export audio: {e}")
+            return None
+
+
+def extend_gong_with_organic_silence(r2, bucket_name, gong_key,
+                                     target_duration_seconds, output_key=None,
+                                     target_sr=44100):
+    """Download the gong audio, append organic silence to reach a target total duration,
+    and upload the extended version.
+
+    The organic silence is the same microscopic Gaussian comfort noise used in the
+    meditation audio generation scripts, providing a natural ambient floor rather
+    than digital silence.
+
+    The total length of the output will be exactly `target_duration_seconds`, consisting
+    of the original gong followed by enough organic comfort noise to fill the remainder.
+
+    Args:
+        r2: R2 client
+        bucket_name: R2 bucket name
+        gong_key: R2 key for the gong sound file
+        target_duration_seconds: Desired total duration of the output audio in seconds.
+                                 The gong plays first, followed by enough organic silence
+                                 to reach this total.
+        output_key: R2 key for the output extended gong. If None, auto-generated
+                    from gong_key by inserting '--extended' before the extension.
+        target_sr: Target sample rate (default: 44100)
+
+    Returns:
+        The output R2 key on success, None on failure.
+    """
+    print("\n📥 Downloading gong audio from R2...")
+
+    gong_path = download_from_r2(r2, bucket_name, gong_key)
+    if gong_path is None:
+        print(f"  ❌ Cannot proceed: gong file not found ({gong_key})")
+        return None
+
+    # ── Load gong audio ──────────────────────────────────────────────────
+    print("\n🔊 Loading gong audio...")
+    gong = AudioSegment.from_file(gong_path).set_frame_rate(target_sr).set_channels(2)
+    gong_duration_s = len(gong) / 1000.0
+    print(f"  Gong duration: {gong_duration_s:.2f} s")
+
+    # ── Calculate how much organic silence is needed ────────────────────
+    silence_needed_s = target_duration_seconds - gong_duration_s
+    if silence_needed_s < 0:
+        print(f"  ❌ Target duration ({target_duration_seconds:.1f}s) is shorter than "
+              f"the gong itself ({gong_duration_s:.1f}s). Cannot shorten the gong. Aborting.")
+        return None
+
+    print(f"  Target total duration: {target_duration_seconds:.1f} s")
+    print(f"  Organic silence needed: {silence_needed_s:.1f} s")
+
+    # ── Generate organic silence ────────────────────────────────────────
+    print(f"\n🌱 Generating {silence_needed_s:.1f}s of organic comfort noise...")
+    organic_silence = generate_organic_silence(silence_needed_s, target_sr)
+
+    # ── Concatenate ──────────────────────────────────────────────────────
+    print("\n🔄 Concatenating gong + organic silence...")
+    extended_audio = gong + organic_silence
+    extended_duration_s = len(extended_audio) / 1000.0
+    print(f"  Extended audio duration: {extended_duration_s:.2f} s")
+
+    # ── Generate output key if not provided ──────────────────────────────
+    if output_key is None:
+        # Insert '--extended' before the file extension
+        base, ext = gong_key.rsplit('.', 1) if '.' in gong_key else (gong_key, 'opus')
+        output_key = f"{base}--extended.{ext}"
+        print(f"  Output key: {output_key}")
+
+    # ── Export to memory and upload ──────────────────────────────────────
+    print("\n💾 Exporting extended audio to memory...")
+    buf = io.BytesIO()
+    extended_audio.export(buf, format="opus")
+    opus_bytes = buf.getvalue()
+    buf.close()
+
+    print("\n☁️  Uploading extended gong to Cloudflare R2...")
+    upload_bytes_to_r2(r2, bucket_name, opus_bytes, output_key)
+
+    print(f"\n✅ Successfully created extended gong: "
+          f"{gong_duration_s:.1f}s gong + {silence_needed_s:.1f}s organic silence = {extended_duration_s:.1f}s total.")
+    print(f"   Output: {output_key}")
+    return output_key
 
 
 def generate_background_nature(r2, bucket_name, nature_key, gong_key,
@@ -372,7 +566,9 @@ def generate_background_binaural(r2, bucket_name, solfeggio_key, gong_key,
 def main():
     parser = argparse.ArgumentParser(
         description='Batch-generate background audio tracks (nature or binaural) for all '
-                    'meditation durations that are missing from backgrounds_log.json.'
+                    'meditation durations that are missing from backgrounds_log.json. '
+                    'Alternatively, extend the gong audio with organic comfort noise '
+                    'or generate a standalone organic silence track.'
     )
     parser.add_argument(
         '--mode', type=str, choices=['nature', 'binaural'], default='nature',
@@ -406,8 +602,124 @@ def main():
         '--fade-duration', type=float, default=4.0,
         help='Fade in/out duration for the background in seconds (default: 4.0)'
     )
+    parser.add_argument(
+        '--extend-gong', type=float, metavar='SECONDS',
+        help='Instead of batch background generation, extend the gong audio to the specified '
+             'total target duration (in seconds). The original gong plays first, followed by '
+             'enough organic comfort noise to reach the target. '
+             'Example: --extend-gong 60  (gong + silence = 60s total)'
+    )
+    parser.add_argument(
+        '--extend-output', type=str,
+        help='R2 key for the output of --extend-gong. If not provided, auto-generated '
+             'from --gong-key by appending "--extended" before the file extension.'
+    )
+    parser.add_argument(
+        '--organic-silence', type=float, metavar='SECONDS',
+        help='Instead of batch background generation, generate a standalone track of pure '
+             'organic comfort noise for the specified duration in seconds. The output is '
+             'uploaded to the R2 bucket under "sounds/organic_silence_{SECONDS}s.opus" by '
+             'default. Use --organic-silence-output to specify a different R2 key or a local '
+             'file path. Example: --organic-silence 30'
+    )
+    parser.add_argument(
+        '--organic-silence-output', type=str, metavar='R2_KEY_OR_PATH',
+        help='Output destination for --organic-silence. If the value starts with "/" or "./", '
+             'it is treated as a local file path. Otherwise, it is treated as an R2 key. '
+             'If not provided, defaults to "sounds/organic_silence_{SECONDS}s.opus" in the R2 '
+             'bucket. Example: --organic-silence 60 --organic-silence-output sounds/my_silence.opus'
+    )
     args = parser.parse_args()
 
+    # ── Validate credentials ────────────────────────────────────────────
+    required_env_vars = ['R2_ACCOUNT_ID', 'R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY', 'R2_BUCKET_NAME']
+    missing = [v for v in required_env_vars if not os.getenv(v)]
+    if missing:
+        raise RuntimeError(
+            f"Missing required environment variables: {', '.join(missing)}\n"
+            f"Please ensure they are defined in your .env file."
+        )
+
+    bucket_name = os.getenv('R2_BUCKET_NAME')
+
+    # ── Connect to R2 ──────────────────────────────────────────────────
+    print("\n🔗 Connecting to Cloudflare R2...")
+    r2 = connect_to_r2()
+    # Verify connection
+    r2.head_bucket(Bucket=bucket_name)
+    print("✅ Connection successful")
+
+    # ── Organic silence mode (if --organic-silence is provided) ────────
+    if args.organic_silence is not None:
+        if args.organic_silence <= 0:
+            print("❌ --organic-silence must be a positive number of seconds.")
+            return
+
+        # Determine output destination
+        output_key = args.organic_silence_output
+        use_r2 = True
+        if output_key is not None:
+            # If the path starts with "/" or "./", treat as local file path
+            if output_key.startswith('/') or output_key.startswith('./'):
+                use_r2 = False
+
+        print("\n" + "=" * 60)
+        print("🌱 Organic Silence Generation Mode")
+        print("=" * 60)
+        print(f"\n📋 Configuration:")
+        print(f"  Duration:            {args.organic_silence:.1f} s")
+        print(f"  Sample rate:         44100 Hz")
+        print(f"  Output format:       .opus")
+        if use_r2:
+            print(f"  Output R2 key:       {output_key or f'sounds/organic_silence_{args.organic_silence}s.opus'}")
+        else:
+            print(f"  Output file:         {output_key or f'organic_silence_{args.organic_silence}s.opus'}")
+
+        result = generate_organic_silence_track(
+            duration_seconds=args.organic_silence,
+            sample_rate=44100,
+            r2=r2 if use_r2 else None,
+            bucket_name=bucket_name if use_r2 else None,
+            output_key=output_key
+        )
+        if result:
+            print(f"\n{'='*60}")
+            print("✅ Organic silence track generation complete!")
+            print("=" * 60)
+        else:
+            print(f"\n❌ Organic silence track generation failed.")
+        return
+
+    # ── Extend gong mode (if --extend-gong is provided) ─────────────────
+    if args.extend_gong is not None:
+        if args.extend_gong <= 0:
+            print("❌ --extend-gong must be a positive number of seconds.")
+            return
+
+        print("\n" + "=" * 60)
+        print("🔔 Gong Extension Mode")
+        print("=" * 60)
+        print(f"\n📋 Configuration:")
+        print(f"  Gong key:            {args.gong_key}")
+        print(f"  Target total:        {args.extend_gong:.1f} s")
+        print(f"  Output key:          {args.extend_output or '<auto-generated>'}")
+        print(f"  Note: R2 connection is required for gong extension mode.")
+
+        result = extend_gong_with_organic_silence(
+            r2, bucket_name,
+            gong_key=args.gong_key,
+            target_duration_seconds=args.extend_gong,
+            output_key=args.extend_output
+        )
+        if result:
+            print(f"\n{'='*60}")
+            print("✅ Gong extension complete!")
+            print("=" * 60)
+        else:
+            print(f"\n❌ Gong extension failed.")
+        return
+
+    # ── Batch background generation mode (original behavior) ────────────
     mode = args.mode
 
     # Set background volume default based on mode
@@ -435,24 +747,6 @@ def main():
     print(f"  Gong key:            {args.gong_key}")
     print(f"  Background volume:   {background_volume:.0%}")
     print(f"  Fade duration:       {args.fade_duration} s")
-
-    # ── Validate credentials ────────────────────────────────────────────
-    required_env_vars = ['R2_ACCOUNT_ID', 'R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY', 'R2_BUCKET_NAME']
-    missing = [v for v in required_env_vars if not os.getenv(v)]
-    if missing:
-        raise RuntimeError(
-            f"Missing required environment variables: {', '.join(missing)}\n"
-            f"Please ensure they are defined in your .env file."
-        )
-
-    bucket_name = os.getenv('R2_BUCKET_NAME')
-
-    # ── Connect to R2 ──────────────────────────────────────────────────
-    print("\n🔗 Connecting to Cloudflare R2...")
-    r2 = connect_to_r2()
-    # Verify connection
-    r2.head_bucket(Bucket=bucket_name)
-    print("✅ Connection successful")
 
     # ── Read the backgrounds log ────────────────────────────────────────
     print("\n📋 Reading backgrounds log from R2...")

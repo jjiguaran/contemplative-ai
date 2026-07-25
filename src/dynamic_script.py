@@ -16,7 +16,7 @@ client = OpenAI(
   timeout=300.0,
 )
 
-MODEL_NAME = "poolside/laguna-m.1:free"
+MODEL_NAME = "nvidia/nemotron-3-ultra-550b-a55b:free"
 
 LOG_R2_KEY = "scripts/dynamic_scripts/dynamic_scripts_repo_log.json"
 LOG_LOCAL_PATH = os.path.join(os.path.dirname(__file__), 'dynamic_scripts', 'dynamic_scripts_repo_log.json')
@@ -26,53 +26,58 @@ R2_FILENAME = "scripts/dynamic_scripts/anapanasati_1.json"
 
 DYNAMIC_PROMPT = """Crea una meditación guiada basada en la progresión del Anapanasati y el Satipatthana (cuerpo, sensaciones, mente y dhammas, usando la respiración como ancla constante) que tenga una duración total exacta de 60 minutos (3600 segundos).
 
-Para lograr esta duración exacta debes seguir de forma estricta la siguiente estructura de 90 bloques (cada bloque dura 40 segundos en total: instrucción hablada + silencio):
+Para lograr esta duración exacta debes seguir de forma estricta la siguiente estructura de 120 bloques (cada bloque dura 30 segundos en total: instrucción hablada + silencio):
 
-1. El primer bloque pertenece a la sección (inicio): una instrucción de llegada o asentamiento que ya establece la respiración como punto de apoyo (por ejemplo: Encuentra una postura cómoda, cierra los ojos y siente el aire entrar y salir).
-2. Los siguientes 88 bloques se distribuyen en 4 secciones de desarrollo, en este orden y con esta cantidad aproximada de bloques cada una:
-   - (cuerpo): 22 bloques
-   - (sensaciones): 22 bloques
-   - (mente): 22 bloques
-   - (dhammas): 22 bloques
-3. El último bloque pertenece a la sección (cierre): una instrucción para regresar al entorno (por ejemplo: Abre los ojos lentamente, mueve tu cuerpo despacio y lleva esta calma contigo).
+El primer bloque pertenece a la sección (inicio): una instrucción de llegada o asentamiento que ya establece la respiración como punto de apoyo (por ejemplo: Encuentra una postura cómoda, cierra los ojos y permite que la respiración encuentre su propio ritmo).
+Los siguientes 118 bloques se distribuyen en 4 secciones de desarrollo, en este orden y con esta cantidad de bloques cada una:
+(cuerpo): 30 bloques
+(sensaciones): 29 bloques
+(mente): 30 bloques
+(dhammas): 29 bloques
+El último bloque pertenece a la sección (cierre): una instrucción para regresar al entorno (por ejemplo: Abre los ojos lentamente, mueve tu cuerpo despacio y lleva esta calma contigo).
 
-Principio central — la respiración como ancla:
-- La respiración NO es una sección aparte; es el hilo conductor de toda la práctica, siguiendo las cuatro tétradas del Anapanasati.
-- En (cuerpo): la atención va desde notar el aire entrando y saliendo, hacia sentir cómo ese movimiento afecta el cuerpo entero, hasta aquietar el cuerpo a través de la respiración.
-- En (sensaciones): la atención usa la respiración para notar el tono agradable o neutro que surge con cada inhalación y exhalación, y cómo la respiración puede suavizar esas sensaciones.
-- En (mente): la atención usa la respiración para observar los estados de la mente (dispersa, quieta, clara) y usarla para aquietar y reunir la mente.
-- En (dhammas): la atención usa la respiración para notar el surgir y cesar de lo que aparece, el cambio constante, y el soltar que ocurre en cada exhalación.
-- Casi todas las instrucciones deben mencionar o apoyarse en la respiración (inhalar, exhalar, aire, aliento) como el medio a través del cual se observa cada aspecto (cuerpo, sensaciones, mente, dhammas), en vez de tratar la respiración como un tema separado.
+Principio central — la respiración como ancla de referencia, no como causa de cada evento:
+
+La respiración NO es una sección aparte, pero tampoco es el motor que produce cada sensación, pensamiento o estado. Sigue el estilo de las meditaciones guiadas de Bhikkhu Anālayo o Thanissaro Bhikkhu: la respiración es un punto de referencia al que la atención vuelve una y otra vez, mientras se permite que lo que surge en la experiencia (en el cuerpo, en el tono de las sensaciones, en la mente, en los fenómenos) se despliegue con naturalidad, sin forzar una relación causal del tipo "con cada inhalación sucede X".
+Evita construcciones como "con cada inhalación..." o "al exhalar, siente..." como fórmula repetida en cada instrucción. En su lugar, alterna entre: (a) instrucciones que invitan a notar directamente un aspecto de la experiencia (cuerpo, sensación, mente o fenómeno), dejando que la respiración esté presente de fondo, sostenida, sin protagonismo forzado; y (b) instrucciones que explícitamente devuelven la atención a la respiración como lugar de descanso o referencia, después de haber explorado algo.
+En (cuerpo): la atención puede posarse en la respiración como sensación física en sí misma, y también extenderse a la experiencia del cuerpo entero mientras respira, sin necesidad de narrar el vínculo en cada frase.
+En (sensaciones): se nota el tono agradable, desagradable o neutro que aparece, con la respiración como lugar tranquilo al que volver entre una observación y otra.
+En (mente): se observan los estados de la mente (dispersa, quieta, clara, agitada) tal como se presentan, usando la respiración como ancla ocasional para reunir la atención, no como generadora de cada estado.
+En (dhammas): se nota el surgir y cesar de lo que aparece, la impermanencia, el soltar, dejando que estos fenómenos se revelen por sí mismos, con la respiración como trasfondo estable.
+La respiración debe aparecer con frecuencia en el conjunto de la sección, pero no en cada una de las instrucciones ni como disparador mecánico de lo observado.
+
+Requisito crítico — instrucciones autocontenidas (para generación dinámica):
+
+Cada una de las 120 instrucciones debe funcionar de manera completamente independiente y autónoma. No pueden usarse en la generación de meditaciones dinámicas si dependen del sentido de la instrucción anterior.
+Está prohibido que una instrucción continúe, complete o dé seguimiento literal a la instrucción previa (nada de "también", "de la misma manera", "ahora nota además", "sigue sintiendo", ni construcciones que presupongan lo que se dijo antes).
+Cada instrucción debe tener sentido completo leída de forma aislada, como si fuera la única instrucción de toda la meditación, sin perder claridad ni coherencia.
+Dentro de cada sección, varía el vocabulario, el ángulo de observación y el énfasis para evitar repetición, pero sin construir una progresión narrativa dependiente del orden; cada bloque debe poder reordenarse o seleccionarse aleatoriamente sin que se note una ruptura de continuidad.
 
 Etiquetas de sección:
-- Antes de la primera instrucción de cada sección, coloca la etiqueta correspondiente entre paréntesis en su propia línea: (inicio), (cuerpo), (sensaciones), (mente), (dhammas), (cierre).
-- Estas etiquetas son marcadores de edición, no se leen en voz alta y no consumen tiempo: no les asignes silencio ni las cuentes como bloque.
-- Aparecen una sola vez, justo al iniciar cada sección (6 etiquetas en total).
+
+Antes de la primera instrucción de cada sección, coloca la etiqueta correspondiente entre paréntesis en su propia línea: (inicio), (cuerpo), (sensaciones), (mente), (dhammas), (cierre).
+Estas etiquetas son marcadores de edición, no se leen en voz alta y no consumen tiempo: no les asignes silencio ni las cuentes como bloque.
+Aparecen una sola vez, justo al iniciar cada sección (6 etiquetas en total).
 
 Reglas estrictas de tiempo y formato por bloque:
-- Cada una de las 90 instrucciones verbales debe ser breve y diseñada para ser leída de forma pausada en un tiempo aproximado de 10 segundos (alrededor de 15 palabras por instrucción).
-- Después de cada instrucción, debes colocar obligatoriamente la etiqueta [silencio].
-- Todos los silencios son fijos y duran exactamente 30 segundos cada uno. Escribe únicamente [silencio], sin añadir el tiempo dentro de los corchetes.
+
+Cada una de las 120 instrucciones verbales debe ser breve y diseñada para ser leída de forma pausada en un tiempo aproximado de 10 segundos (alrededor de 15 palabras por instrucción).
+Después de cada instrucción, debes colocar obligatoriamente la etiqueta [silencio].
+Todos los silencios son fijos y duran exactamente 20 segundos cada uno. Escribe únicamente [silencio], sin añadir el tiempo dentro de los corchetes.
 
 Reglas de estilo y contenido:
-- Mantén un lenguaje contemplativo y profundo. Elige palabras y recordatorios que apunten sutilmente a la presencia mental.
-- Dentro de cada sección, evita repetir la misma instrucción o metáfora; progresa gradualmente en profundidad y matiz, siempre volviendo a la respiración como punto de referencia.
-- No expliques ni traduzcas el contexto, ni menciones el budismo directamente. Guía solo desde la experiencia inmediata. Evita términos conceptuales abstractos.
-- Usa frases cortas e íntimas en segunda persona (tú), seguidas por [silencio].
-- No uses viñetas, números, títulos adicionales, formato markdown ni símbolos (aparte de las etiquetas de sección entre paréntesis y [silencio]).
 
-Ejemplo de formato:
-(inicio)
-Encuentra una postura cómoda, cierra los ojos y siente el aire entrar y salir.
-[silencio]
-(cuerpo)
-Con cada inhalación, nota cómo tu pecho y vientre se expanden suavemente.
-[silencio]
+Mantén un lenguaje contemplativo y profundo, en la línea de las guías de Anālayo y Thanissaro Bhikkhu: preciso, sereno, que confía en la experiencia directa antes que en la narración de causas y efectos.
+Dentro de cada sección, evita repetir la misma instrucción, metáfora o estructura sintáctica.
+No expliques ni traduzcas el contexto, ni menciones el budismo directamente. Guía solo desde la experiencia inmediata. Evita términos conceptuales abstractos.
+Usa frases cortas e íntimas en segunda persona (tú), seguidas por [silencio].
+No uses viñetas, números, títulos adicionales, formato markdown ni símbolos (aparte de las etiquetas de sección entre paréntesis y [silencio]).
 
-No incluyas cálculos, verificaciones, conteos de palabras, explicaciones ni secciones de control en la salida final. La salida debe contener única y exclusivamente las etiquetas de sección, las 90 líneas de texto de la meditación y las 90 etiquetas de [silencio].
+Ejemplo de formato: (inicio) Encuentra una postura cómoda, cierra los ojos y permite que la respiración encuentre su propio ritmo. [silencio] (cuerpo) Nota el peso del cuerpo apoyado en la superficie que lo sostiene. [silencio] Deja que la respiración esté presente, de fondo, mientras el cuerpo permanece quieto. [silencio]
+
+No incluyas cálculos, verificaciones, conteos de palabras, explicaciones ni secciones de control en la salida final. La salida debe contener única y exclusivamente las etiquetas de sección, las 120 líneas de texto de la meditación y las 120 etiquetas de [silencio].
 
 Asegúrate de que el texto esté escrito con corrección gramatical y ortográfica impecable en español."""
-
 
 def get_s3_client():
     """Create and return an S3 client for Cloudflare R2"""
