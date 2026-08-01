@@ -1,0 +1,214 @@
+{
+  "sentences": [
+    {
+      "id": "grd_196",
+      "script": "Notas cómo surge y desaparece cada fenómeno sin aferrarte a nada",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_197",
+      "script": "La respiración sostiene el espacio donde todo aparece y se desvanece",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_198",
+      "script": "Observas la naturaleza fugaz de los pensamientos sin seguirlos",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_199",
+      "script": "Cada sensación nace, cumple su ciclo y cesa por sí sola",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_200",
+      "script": "Permites que los estados mentales se muestren y se vayan",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_201",
+      "script": "El aire entra y sale mientras los dhammas revelan su impermanencia",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_202",
+      "script": "No hay nada que retener, todo fluye en constante cambio",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_203",
+      "script": "Ves con claridad cómo el apego surge y cómo se disuelve",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_204",
+      "script": "La mente descansa en la respiración, testigo del surgir y cesar",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_205",
+      "script": "Los fenómenos se conocen a sí mismos en su aparecer y extinguirse",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_206",
+      "script": "Soltas la necesidad de nombrar, solo queda la experiencia directa",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_207",
+      "script": "La estabilidad del aliento acompaña el baile efímero de la mente",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_208",
+      "script": "Notas la ausencia de un yo fijo tras los procesos cambiantes",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_209",
+      "script": "Cada instante trae algo nuevo; nada permanece igual dos veces",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_210",
+      "script": "La calma no es ausencia de movimiento, sino no resistencia al flujo",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_211",
+      "script": "Observas los factores de despertar madurar y enfriarse naturalmente",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_212",
+      "script": "La respiración es el hilo constante que teje lo transitorio",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_213",
+      "script": "Dejas de empujar o rechazar; solo queda el conocer despierto",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_214",
+      "script": "Los obstáculos pierden fuerza al ser vistos como eventos pasajeros",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_215",
+      "script": "La mente se inclina hacia la liberación al ver la verdad del cambio",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_216",
+      "script": "Respiras con la certeza íntima de que nada es poseíble",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_217",
+      "script": "El conocimiento surge solo: las cosas son inestables, insatisfactorias, no-yo",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_218",
+      "script": "Descansas en la respiración mientras el mundo interno se reorganiza",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_219",
+      "script": "Notas el silencio entre pensamientos, testigo de la cesación momentánea",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_220",
+      "script": "No buscas estados especiales, solo la verdad desnuda de ahora",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_221",
+      "script": "La atención desnuda ilumina el surgir y el morir de cada cosa",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_222",
+      "script": "El aliento te ancla mientras la comprensión penetra lo observado",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_223",
+      "script": "Suelas la identificación; los fenómenos son solo fenómenos pasando",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_224",
+      "script": "La paz surge al alinear la vista con la naturaleza cambiante",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_225",
+      "script": "Respiras, sabiendo que este momento también está destinado a irse",
+      "section": "dhammas",
+      "date": "2026-07-31",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    }
+  ]
+}

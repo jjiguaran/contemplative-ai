@@ -2,19 +2,29 @@ import os
 import json
 import re
 import boto3
-from datetime import datetime
 from dotenv import load_dotenv
 
 load_dotenv()
 
 # R2 paths
 DYNAMIC_SCRIPTS_R2_DIR = "scripts/dynamic_scripts"
-LOCAL_DYNAMIC_SCRIPTS_DIR = os.path.join(os.path.dirname(__file__), 'dynamic_scripts')
+ANAPANASATI_R2_DIR = f"{DYNAMIC_SCRIPTS_R2_DIR}/anapanasati"
+INSTRUCTIONS_R2_DIR = f"{ANAPANASATI_R2_DIR}/instructions"
 
-R2_SENTENCES_FILENAME = "scripts/dynamic_scripts/sentences_repo.json"
-LOCAL_SENTENCES_PATH = os.path.join(LOCAL_DYNAMIC_SCRIPTS_DIR, 'sentences_repo.json')
+# Sections of the anapanasati meditation. Each section has its own input file
+# (anapanasati/{section}_1.json) and its own output file
+# (anapanasati/instructions/{section}.json).
+SECTIONS = ['cuerpo', 'sensaciones', 'mente', 'dhammas']
 
-DYNAMIC_MEDITATION_FILENAME = "anapanasati_1.json"
+# Maximum number of sentences allowed per section. If the input for a section
+# contains more sentences than its limit, the excess sentences are removed,
+# keeping the first (limit - 1) sentences plus the last sentence.
+SECTION_SENTENCE_LIMITS = {
+    'cuerpo': 118,
+    'sensaciones': 36,
+    'mente': 36,
+    'dhammas': 30,
+}
 
 
 def get_s3_client():
@@ -52,33 +62,20 @@ def upload_to_r2(r2_key, data):
     )
 
 
-def load_sentences_repo():
-    """Load the existing sentences_repo.json from R2 (with local fallback)."""
-    # First try from R2
+def load_section_repo(section):
+    """Load the existing instructions/{section}.json from R2 into memory."""
+    r2_key = f"{INSTRUCTIONS_R2_DIR}/{section}.json"
     try:
-        return download_from_r2(R2_SENTENCES_FILENAME)
+        return download_from_r2(r2_key)
     except Exception:
-        pass
-    # Fallback: load from local file
-    try:
-        with open(LOCAL_SENTENCES_PATH, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except FileNotFoundError:
         return {"sentences": []}
 
 
-def save_sentences_repo(data):
-    """Save sentences_repo.json locally and upload to R2."""
-    # Save locally
-    os.makedirs(LOCAL_DYNAMIC_SCRIPTS_DIR, exist_ok=True)
-    with open(LOCAL_SENTENCES_PATH, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    # Upload to R2
-    try:
-        upload_to_r2(R2_SENTENCES_FILENAME, data)
-        print(f"  Uploaded to R2: {R2_SENTENCES_FILENAME}")
-    except Exception as e:
-        print(f"  Warning: could not upload to R2: {e}")
+def save_section_repo(section, data):
+    """Upload instructions/{section}.json to R2."""
+    r2_key = f"{INSTRUCTIONS_R2_DIR}/{section}.json"
+    upload_to_r2(r2_key, data)
+    print(f"  Uploaded to R2: {r2_key}")
 
 
 def parse_meditation_content(content):
@@ -140,23 +137,12 @@ def parse_meditation_content(content):
     return sentences
 
 
-def get_last_sentence_id(sentences):
-    """Get the highest existing sentence ID number to generate the next one."""
-    max_num = 0
-    for s in sentences:
-        sid = s.get('id', '')
-        match = re.match(r'grd_(\d+)', sid)
-        if match:
-            num = int(match.group(1))
-            if num > max_num:
-                max_num = num
-    return max_num
-
-
-def generate_sentence_id(index, existing_max=0):
-    """Generate a sentence ID in the format grd_XXX."""
-    num = existing_max + index + 1
-    return f"grd_{num:03d}"
+def get_variation_from_filename(filename):
+    """Extract the variation number from an input filename like 'cuerpo_1.json'."""
+    match = re.match(r'\w+_(\d+)\.json$', filename)
+    if match:
+        return int(match.group(1))
+    return 1
 
 
 def build_existing_signatures(sentences):
@@ -168,104 +154,110 @@ def build_existing_signatures(sentences):
 
 
 def main():
-    print("=== Tagging Script: Parse anapanasati_1.json into sentences ===")
+    print("=== Tagging Script: Parse anapanasati section files into per-section instruction repos ===")
     print()
 
-    # 1. Load the meditation file from R2
-    r2_key = f"{DYNAMIC_SCRIPTS_R2_DIR}/{DYNAMIC_MEDITATION_FILENAME}"
-    print(f"Downloading {r2_key} from R2...", end=" ", flush=True)
-    try:
-        meditation_data = download_from_r2(r2_key)
+    for section in SECTIONS:
+        print(f"\n{'='*60}")
+        print(f"Section: {section.upper()}")
+        print(f"{'='*60}")
+
+        # 1. Load the meditation file for this section from R2
+        input_filename = f"{section}_1.json"
+        r2_key = f"{ANAPANASATI_R2_DIR}/{input_filename}"
+        print(f"\nDownloading {r2_key} from R2...", end=" ", flush=True)
+        try:
+            meditation_data = download_from_r2(r2_key)
+            print("✓ Done")
+        except Exception as e:
+            print(f"✗ Error: {e}")
+            continue
+
+        meditation_content = meditation_data.get("meditation_content", "")
+        if not meditation_content:
+            print("✗ Error: 'meditation_content' field is empty or missing.")
+            continue
+
+        variation = get_variation_from_filename(input_filename)
+        print(f"  Variation: {variation}")
+        print()
+
+        # 2. Parse the content into sentences
+        print("Parsing meditation content...", end=" ", flush=True)
+        parsed_sentences = parse_meditation_content(meditation_content)
+        print(f"✓ Found {len(parsed_sentences)} sentences")
+
+        if not parsed_sentences:
+            print("✗ Error: No sentences were parsed from the content.")
+            continue
+
+        # 2.5. Enforce the sentence limit for this section.
+        # If the input contains more sentences than the limit, keep the first
+        # (limit - 1) sentences plus the last sentence.
+        limit = SECTION_SENTENCE_LIMITS.get(section)
+        if limit is not None and len(parsed_sentences) > limit:
+            removed_count = len(parsed_sentences) - limit
+            print(f"\n  Section '{section}' has {len(parsed_sentences)} sentences, "
+                  f"exceeding the limit of {limit}.")
+            print(f"  Removing {removed_count} sentence(s), keeping the first "
+                  f"{limit - 1} sentence(s) plus the last one...")
+            parsed_sentences = parsed_sentences[:limit - 1] + parsed_sentences[-1:]
+            print(f"  Now {len(parsed_sentences)} sentences.")
+
+        # Print a preview
+        print()
+        print("  Preview (first 3 sentences):")
+        for s in parsed_sentences[:3]:
+            print(f"    [{s['section']}] {s['script'][:60]}...")
+
+        # 3. Load the section repo from R2 into memory
+        repo_data = load_section_repo(section)
+        existing_sentences = repo_data.get("sentences", [])
+        print(f"\n  Existing sentences in instructions/{section}.json: {len(existing_sentences)}")
+
+        # 4. Build set of existing signatures to detect duplicates
+        existing_signatures = build_existing_signatures(existing_sentences)
+
+        # 5. Filter out duplicates
+        new_sentences_to_add = []
+        for s in parsed_sentences:
+            sig = (s['section'], s['script'])
+            if sig not in existing_signatures:
+                new_sentences_to_add.append(s)
+
+        print(f"  {len(new_sentences_to_add)} new sentences to add "
+              f"({len(parsed_sentences) - len(new_sentences_to_add)} duplicates skipped)")
+
+        if not new_sentences_to_add:
+            print("  No new sentences to add.")
+            continue
+
+        # 6. Build new entries with the variation from the input filename
+        new_entries = []
+        for s in new_sentences_to_add:
+            entry = {
+                "variation": variation,
+                "script": s['script'],
+                "section": s['section'],
+            }
+            new_entries.append(entry)
+
+        # 7. Append to the section repo
+        repo_data["sentences"].extend(new_entries)
+
+        # 8. Upload to R2
+        print()
+        print(f"Saving instructions/{section}.json...", end=" ", flush=True)
+        save_section_repo(section, repo_data)
         print("✓ Done")
-    except Exception as e:
-        print(f"✗ Error: {e}")
-        return
 
-    meditation_content = meditation_data.get("meditation_content", "")
-    if not meditation_content:
-        print("✗ Error: 'meditation_content' field is empty or missing.")
-        return
+        # Summary
+        print()
+        print(f"  Total sentences in {section}.json: {len(repo_data['sentences'])}")
+        print(f"  New sentences added:               {len(new_entries)}")
+        print(f"  Variation:                         {variation}")
 
-    model = meditation_data.get("model", "unknown")
-    date_generated = meditation_data.get("timestamp", datetime.now().strftime("%Y-%m-%d"))
-
-    # Convert timestamp to date format YYYY-MM-DD if needed
-    if 'T' in date_generated:
-        date_generated = date_generated.split('T')[0]
-
-    print(f"  Model: {model}")
-    print(f"  Date: {date_generated}")
-    print()
-
-    # 2. Parse the content into sentences
-    print("Parsing meditation content...", end=" ", flush=True)
-    parsed_sentences = parse_meditation_content(meditation_content)
-    print(f"✓ Found {len(parsed_sentences)} sentences")
-
-    if not parsed_sentences:
-        print("✗ Error: No sentences were parsed from the content.")
-        return
-
-    # Print a preview
-    print()
-    print("  Preview (first 3 sentences):")
-    for s in parsed_sentences[:3]:
-        print(f"    [{s['section']}] {s['script'][:60]}...")
-
-    # 3. Load existing sentences repo
-    print()
-    print("Loading existing sentences_repo.json...", end=" ", flush=True)
-    repo_data = load_sentences_repo()
-    existing_sentences = repo_data.get("sentences", [])
-    print(f"✓ {len(existing_sentences)} existing sentences")
-
-    # 4. Build set of existing signatures to detect duplicates
-    existing_signatures = build_existing_signatures(existing_sentences)
-
-    # 5. Filter out duplicates
-    new_sentences_to_add = []
-    for s in parsed_sentences:
-        sig = (s['section'], s['script'])
-        if sig not in existing_signatures:
-            new_sentences_to_add.append(s)
-
-    print(f"  {len(new_sentences_to_add)} new sentences to add "
-          f"({len(parsed_sentences) - len(new_sentences_to_add)} duplicates skipped)")
-
-    if not new_sentences_to_add:
-        print("  No new sentences to add.")
-        return
-
-    # 6. Assign IDs
-    existing_max = get_last_sentence_id(existing_sentences)
-
-    new_entries = []
-    for i, s in enumerate(new_sentences_to_add):
-        entry = {
-            "id": generate_sentence_id(i, existing_max),
-            "script": s['script'],
-            "section": s['section'],
-            "date": date_generated,
-            "model": model
-        }
-        new_entries.append(entry)
-
-    # 7. Append to the repo
-    repo_data["sentences"].extend(new_entries)
-
-    # 8. Save
-    print()
-    print("Saving sentences_repo.json...", end=" ", flush=True)
-    save_sentences_repo(repo_data)
-    print("✓ Done")
-
-    # Summary
-    print()
-    print("=== Summary ===")
-    print(f"Total sentences in repo: {len(repo_data['sentences'])}")
-    print(f"New sentences added:     {len(new_entries)}")
-    print(f"First ID:                {new_entries[0]['id']}")
-    print(f"Last ID:                 {new_entries[-1]['id']}")
+    print("\n=== All sections processed ===")
 
 
 if __name__ == "__main__":

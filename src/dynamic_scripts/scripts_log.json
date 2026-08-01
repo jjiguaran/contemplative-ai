@@ -1,0 +1,32 @@
+{
+  "scripts": [
+    {
+      "section": "cuerpo",
+      "variation": 1,
+      "filepath": "scripts/dynamic_scripts/anapanasati/cuerpo_1.json",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "date_generated": "2026-07-31"
+    },
+    {
+      "section": "sensaciones",
+      "variation": 1,
+      "filepath": "scripts/dynamic_scripts/anapanasati/sensaciones_1.json",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "date_generated": "2026-07-31"
+    },
+    {
+      "section": "mente",
+      "variation": 1,
+      "filepath": "scripts/dynamic_scripts/anapanasati/mente_1.json",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "date_generated": "2026-07-31"
+    },
+    {
+      "section": "dhammas",
+      "variation": 1,
+      "filepath": "scripts/dynamic_scripts/anapanasati/dhammas_1.json",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "date_generated": "2026-07-31"
+    }
+  ]
+}

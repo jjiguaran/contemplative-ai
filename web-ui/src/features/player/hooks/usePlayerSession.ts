@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { SentenceEntry, MeditationsConfig } from '../../../shared/types/types';
 import { buildSentenceUrls, buildBackgroundUrl, getComputedSentencesByDuration } from '../../../shared/utils/utils';
+import { R2_BUCKET_URL } from '../../../shared/constants/constants';
 import { createSegmentedPlayer, SegmentedPlayerHandle } from '../api/segmentedPlayer';
 import { buildDownloadableWav } from '../api/wavExport';
 import { captureEvent } from '../../../posthog';
@@ -99,7 +100,24 @@ export function usePlayerSession(
     const durationMinutes = parseInt(selectedDuration, 10) || 0;
     const sentencesByDuration = meditationsConfig ? getComputedSentencesByDuration(meditationsConfig) : {};
     const maxSegments = sentencesByDuration[selectedDuration] ?? 0;
-    const urls = buildSentenceUrls(sentences, maxSegments);
+    const sentenceUrls = buildSentenceUrls(sentences, maxSegments);
+
+    // Interleave silence after every sentence
+    const silencePath = meditationsConfig?.silenceURL;
+    const silenceUrl = silencePath ? `${R2_BUCKET_URL}/${silencePath}` : null;
+    const urlsWithSilence: string[] = [];
+    for (const url of sentenceUrls) {
+      urlsWithSilence.push(url);
+      if (silenceUrl) urlsWithSilence.push(silenceUrl);
+    }
+
+    // Wrap the sentence sequence with the gong sound
+    const gongPath = meditationsConfig?.gongsURL;
+    const gongUrl = gongPath ? `${R2_BUCKET_URL}/${gongPath}` : null;
+    const urls = gongUrl
+      ? [gongUrl, ...urlsWithSilence, gongUrl]
+      : urlsWithSilence;
+
     const bgUrl = musica !== 'silence' ? buildBackgroundUrl(durationMinutes, musica) : null;
 
     if (playerRef.current) {

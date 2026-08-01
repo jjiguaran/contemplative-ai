@@ -44,6 +44,8 @@ export interface MeditationConfig {
 
 export interface MeditationsConfig {
   version: string;
+  gongsURL?: string;
+  silenceURL?: string;
   meditations: Record<string, MeditationConfig>;
 }
 

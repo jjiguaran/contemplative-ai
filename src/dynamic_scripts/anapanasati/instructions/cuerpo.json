@@ -1,0 +1,844 @@
+{
+  "sentences": [
+    {
+      "id": "grd_001",
+      "script": "Encuentra una postura cómoda, cierra los ojos y permite que la respiración encuentre su ritmo natural",
+      "section": "inicio",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_002",
+      "script": "Siente la frescura del aire al entrar por la nariz suavemente",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_003",
+      "script": "Observa la ligera expansión del abdomen con cada inhalación natural",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_004",
+      "script": "Nota el suave contacto del aire en la garganta al exhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_005",
+      "script": "Permite que la respiración fluya sin intentar controlarla simplemente",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_006",
+      "script": "Siente el peso del cuerpo sobre el asiento o el suelo",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_007",
+      "script": "Detecta cualquier tensión en los hombros y déjala disolver con calma",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_008",
+      "script": "Observa la temperatura de la piel en las manos suave",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_009",
+      "script": "Nota el latido sutil del corazón en el pecho tranquilo",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_010",
+      "script": "Permite que la atención recorra la columna vertebral con suavidad",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_011",
+      "script": "Siente la conexión de los pies con la tierra firme",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_012",
+      "script": "Nota la ligera vibración en la punta de los dedos",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_013",
+      "script": "Observa cómo el aire llena los pulmones sin esfuerzo",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_014",
+      "script": "Siente la expansión lateral de las costillas al inhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_015",
+      "script": "Permite que la exhalación sea larga y pausada naturalmente",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_016",
+      "script": "Detecta cualquier sensación de calor en el rostro suave",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_017",
+      "script": "Nota la presión del aire en la parte posterior de la garganta",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_018",
+      "script": "Observa el ritmo natural de la respiración sin juzgar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_019",
+      "script": "Siente la ligereza en los brazos mientras respiras con calma",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_020",
+      "script": "Permite que la mente descanse en la sensación del aire",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_021",
+      "script": "Nota el contacto de la ropa con la piel del torso",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_022",
+      "script": "Observa la suave ondulación del abdomen al exhalar tranquila",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_023",
+      "script": "Siente la frescura en la punta de la nariz al inhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_024",
+      "script": "Permite que la atención se asiente en el centro del pecho",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_025",
+      "script": "Nota cualquier movimiento sutil en la pelvis al respirar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_026",
+      "script": "Observa la sensación de plenitud en el abdomen tras la inhalación",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_027",
+      "script": "Siente la relajación progresiva de la mandíbula al exhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_028",
+      "script": "Permite que la respiración sea un refugio silencioso constante",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_029",
+      "script": "Nota la ligera presión en los ojos al cerrarlos suavemente",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_030",
+      "script": "Observa el flujo de aire entre los labios al exhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_031",
+      "script": "Siente la estabilidad del cuerpo mientras la respiración continúa",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_032",
+      "script": "Permite que la atención recorra la nuca y la base del cráneo",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_033",
+      "script": "Nota cualquier hormigueo en las piernas al mantener la postura",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_034",
+      "script": "Observa la sensación de peso en los muslos contra el asiento",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_035",
+      "script": "Siente la frescura del aire al pasar por la tráquea",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_036",
+      "script": "Permite que la exhalación libere cualquier tensión residual con suavidad",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_037",
+      "script": "Nota el suave movimiento del diafragma bajo las costillas",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_038",
+      "script": "Observa la calma que surge al seguir la respiración",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_039",
+      "script": "Siente la conexión entre la respiración y el latido del corazón",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_040",
+      "script": "Permite que la atención se expanda al espacio alrededor del cuerpo",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_041",
+      "script": "Nota la ligera humedad en la mucosa nasal al inhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_042",
+      "script": "Observa la sensación de vacío en el pecho tras la exhalación completa",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_043",
+      "script": "Siente la suavidad de la piel en los antebrazos",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_044",
+      "script": "Permite que la mente observe sin aferrarse a ninguna sensación",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_045",
+      "script": "Nota el leve movimiento de los párpados al respirar profundamente",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_046",
+      "script": "Observa la temperatura del aire al salir por la boca",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_047",
+      "script": "Siente la ligereza en la zona lumbar al exhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_048",
+      "script": "Permite que la respiración sea un hilo que une cuerpo y mente",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_049",
+      "script": "Nota cualquier sensación de frío en las puntas de los dedos",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_050",
+      "script": "Observa la expansión sutil de la caja torácica al inhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_051",
+      "script": "Siente la relajación de los músculos faciales al exhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_052",
+      "script": "Permite que la atención descanse en el punto entre las cejas",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_053",
+      "script": "Nota el suave susurro del aire en la garganta",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_054",
+      "script": "Observa la sensación de plenitud en el bajo vientre",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_055",
+      "script": "Siente la quietud que surge cuando la respiración se aquieta",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_056",
+      "script": "Permite que la atención recorra la planta de los pies",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_057",
+      "script": "Nota cualquier presión en los tobillos al mantener la postura",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_058",
+      "script": "Observa la ligera elevación del pecho con cada inhalación",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_059",
+      "script": "Siente la suavidad del aire al rozar el interior de las fosas nasales",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_060",
+      "script": "Permite que la exhalación sea un suspiro liberador profundo",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_061",
+      "script": "Nota la sensación de ligereza en los párpados cerrados",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_062",
+      "script": "Observa el ritmo pausado de la respiración sin forzar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_063",
+      "script": "Siente la conexión entre la respiración y la sensación de gravedad",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_064",
+      "script": "Permite que la atención se asiente en el centro del abdomen",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_065",
+      "script": "Nota cualquier vibración sutil en el pecho al respirar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_066",
+      "script": "Observa la frescura que queda en la nariz tras la exhalación",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_067",
+      "script": "Siente la relajación progresiva de los hombros al exhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_068",
+      "script": "Permite que la mente note la pausa entre inhalación y exhalación",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_069",
+      "script": "Nota la sensación de calor en la palma de las manos",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_070",
+      "script": "Observa la ligera contracción del abdomen al exhalar completamente",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_071",
+      "script": "Siente la estabilidad de la columna al mantener la postura erguida",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_072",
+      "script": "Permite que la respiración sea un ancla silenciosa en el presente",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_073",
+      "script": "Nota el suave roce del aire en el interior de la mejilla",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_074",
+      "script": "Observa la sensación de expansión en la zona intercostal",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_075",
+      "script": "Siente la quietud del cuerpo mientras la respiración fluye",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_076",
+      "script": "Permite que la atención recorra la parte posterior del cuello",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_077",
+      "script": "Nota cualquier ligera tensión en la mandíbula y suéltala",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_078",
+      "script": "Observa la temperatura del aire al entrar por la boca",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_079",
+      "script": "Siente la ligereza en los dedos de los pies al respirar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_080",
+      "script": "Permite que la exhalación disuelva cualquier ruido mental suavemente",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_081",
+      "script": "Nota la sensación de frescura en la punta de la lengua",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_082",
+      "script": "Observa la suave onda que recorre el torso al inhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_083",
+      "script": "Siente la relajación de los músculos del cuello al exhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_084",
+      "script": "Permite que la atención se posara en el espacio entre los hombros",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_085",
+      "script": "Nota cualquier sensación de hormigueo en el cuero cabelludo",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_086",
+      "script": "Observa la ligera presión del aire en el paladar blando",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_087",
+      "script": "Siente la calma que emana del centro del pecho",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_088",
+      "script": "Permite que la respiración guíe la atención sin esfuerzo",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_089",
+      "script": "Nota la sensación de vacío en la garganta tras la exhalación",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_090",
+      "script": "Observa la suavidad del aire al rozar el borde de las fosas nasales",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_091",
+      "script": "Siente la ligereza en los brazos colgando a los lados",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_092",
+      "script": "Permite que la atención note el peso del cuerpo sobre la silla",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_093",
+      "script": "Nota cualquier sensación de frescura en la frente al respirar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_094",
+      "script": "Observa la expansión suave del diafragma hacia abajo con calma",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_095",
+      "script": "Siente la conexión entre la respiración y la sensación de espacio interior",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_096",
+      "script": "Permite que la mente descanse en la pausa natural entre ciclos",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_097",
+      "script": "Nota la ligera vibración en el pecho al final de la exhalación",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_098",
+      "script": "Observa la sensación de soltar al dejar ir el aire",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_099",
+      "script": "Siente la quietud que permanece cuando la respiración se detiene un instante",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_100",
+      "script": "Permite que la atención recorra la zona lumbar con suavidad",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_101",
+      "script": "Nota cualquier calor en la planta de los pies al respirar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_102",
+      "script": "Observa la suavidad del aire al entrar por la nariz y salir por la boca",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_103",
+      "script": "Siente la relajación profunda de todo el cuerpo al seguir la respiración",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_104",
+      "script": "Permite que la atención se ancle en la sensación del aire en la nariz",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_105",
+      "script": "Nota la ligera presión en el centro del pecho al inhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_106",
+      "script": "Observa la sensación de expansión en la parte superior de la espalda",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_107",
+      "script": "Siente la calma que surge al notar el ritmo natural de la respiración",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_108",
+      "script": "Permite que la exhalación sea un susurro que calma la mente",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_109",
+      "script": "Nota cualquier sensación de ligereza en la zona del estómago",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_110",
+      "script": "Observa la temperatura del aire al rozar la piel del rostro",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_111",
+      "script": "Siente la estabilidad del suelo bajo los pies mientras respiras",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_112",
+      "script": "Permite que la atención note el sutil movimiento de las costillas",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_113",
+      "script": "Nota la sensación de frescura que queda en la garganta tras la inhalación",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_114",
+      "script": "Observa la quietud del cuerpo cuando la respiración se hace lenta",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_115",
+      "script": "Siente la conexión entre la respiración y la sensación de presencia",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_116",
+      "script": "Permite que la mente observe el fluir del aire sin interferir",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_117",
+      "script": "Nota cualquier sensación de peso en los hombros al exhalar",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_118",
+      "script": "Observa la suavidad del aire al salir por la nariz en cada ciclo",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_119",
+      "script": "Siente la paz que permanece mientras la respiración continúa su curso",
+      "section": "cuerpo",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    },
+    {
+      "id": "grd_120",
+      "script": "Abre los ojos lentamente, mueve el cuerpo con suavidad y lleva esta calma contigo",
+      "section": "cierre",
+      "date": "2026-07-28",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+    }
+  ]
+}

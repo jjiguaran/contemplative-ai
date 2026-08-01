@@ -1,5 +1,7 @@
 {
   "version": "2026-07-17-04",
+  "gongsURL":"sounds/freesound_community-gong-79191--extended.mp3",
+  "silenceURL":"sounds/organic_silence_20.0s.opus",
   "meditations": {
     "anapanasati": {
       "label": "Anapanasati",
@@ -8,13 +10,13 @@
         "cierre": 1
       },
       "durationTiers": {
-        "5min":  { "totalSlots": 7 },
-        "10min": { "totalSlots": 15 },
-        "15min": { "totalSlots": 22 },
-        "20min": { "totalSlots": 30 },
-        "30min": { "totalSlots": 45},
-        "45min": { "totalSlots": 67 },
-        "60min": { "totalSlots": 90}
+        "5min":  { "totalSlots": 8 },
+        "10min": { "totalSlots": 18 },
+        "15min": { "totalSlots": 28 },
+        "20min": { "totalSlots": 38 },
+        "30min": { "totalSlots": 58},
+        "45min": { "totalSlots": 88 },
+        "60min": { "totalSlots": 118}
       },
       "level": {
         "principiante": {
