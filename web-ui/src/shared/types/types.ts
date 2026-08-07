@@ -14,6 +14,15 @@ export interface SentencesRepo {
   sentences: SentenceEntry[];
 }
 
+export interface InstructionEntry {
+  script: string;
+  audioUrl: string;
+}
+
+export interface InstructionSection {
+  sentences: Record<string, InstructionEntry>[];
+}
+
 export interface BackgroundLogEntry {
   duration: string;
   date_generated: string;
@@ -37,6 +46,12 @@ export interface LevelConfig {
 
 export interface MeditationConfig {
   label: string;
+  inicioPath?: string;
+  cierrePath?: string;
+  cuerpoPath?: string;
+  sensacionesPath?: string;
+  mentePath?: string;
+  dhammasPath?: string;
   fixedSlots: Record<string, number>;
   durationTiers: Record<string, DurationTier>;
   level: Record<string, LevelConfig>;

@@ -19,11 +19,8 @@ client = OpenAI(
 
 MODEL_NAME = "nvidia/nemotron-3-ultra-550b-a55b:free"
 
-LOG_R2_KEY = "scripts/dynamic_scripts/dynamic_scripts_repo_log.json"
-LOG_LOCAL_PATH = os.path.join(os.path.dirname(__file__), 'dynamic_scripts', 'dynamic_scripts_repo_log.json')
-
-SCRIPTS_LOG_R2_KEY = "scripts/dynamic_scripts/scripts_log.json"
-SCRIPTS_LOG_LOCAL_PATH = os.path.join(os.path.dirname(__file__), 'dynamic_scripts', 'scripts_log.json')
+GENERATION_LOG_R2_KEY = "scripts/dynamic_scripts/anapanasati/generation_log.json"
+GENERATION_LOG_LOCAL_PATH = os.path.join(os.path.dirname(__file__), 'dynamic_scripts', 'anapanasati', 'generation_log.json')
 
 R2_SCRIPTS_DIR = "scripts/dynamic_scripts/anapanasati"
 MEDITATION_NAME = "anapanasati"
@@ -35,6 +32,9 @@ SECCION_BLOQUES = {
     "mente": 36,
     "dhammas": 30,
 }
+
+# Number of variations to generate per section
+MAX_VARIATIONS = 3
 
 
 DYNAMIC_PROMPT_BASE = """Genera instrucciones habladas para una meditación guiada, dentro de una progresión basada en el Anapanasati y el Satipatthana (cuerpo, sensaciones, mente y dhammas, con la respiración como ancla constante).
@@ -208,130 +208,62 @@ def get_s3_client():
     )
 
 
-def download_log_from_r2():
-    """Download dynamic meditations log from R2 bucket"""
+def download_generation_log_from_r2():
+    """Download generation_log.json from R2 bucket"""
     s3 = get_s3_client()
     bucket = os.getenv('R2_BUCKET_NAME')
     try:
-        obj = s3.get_object(Bucket=bucket, Key=LOG_R2_KEY)
+        obj = s3.get_object(Bucket=bucket, Key=GENERATION_LOG_R2_KEY)
         content = obj['Body'].read().decode('utf-8')
         log_data = json.loads(content)
-        if 'meditations' not in log_data:
-            log_data['meditations'] = []
+        if 'sections' not in log_data:
+            log_data['sections'] = {}
         return log_data
     except s3.exceptions.NoSuchKey:
-        print("  Log file not found in R2, starting with empty log.")
-        return {"meditations": []}
+        print("  Generation log not found in R2, starting with empty log.")
+        return {"sections": {}}
     except Exception as e:
-        raise Exception(f"Failed to download log from R2: {e}")
+        raise Exception(f"Failed to download generation log from R2: {e}")
 
 
-def upload_log_to_r2(log_data):
-    """Upload dynamic meditations log to R2 bucket"""
+def upload_generation_log_to_r2(log_data):
+    """Upload generation_log.json to R2 bucket"""
     s3 = get_s3_client()
     bucket = os.getenv('R2_BUCKET_NAME')
     s3.put_object(
         Bucket=bucket,
-        Key=LOG_R2_KEY,
+        Key=GENERATION_LOG_R2_KEY,
         Body=json.dumps(log_data, ensure_ascii=False, indent=2),
         ContentType='application/json'
     )
 
 
-def load_log():
-    """Load the existing dynamic meditations log from R2 (with local fallback)"""
+def load_generation_log():
+    """Load the existing generation_log.json from R2 (with local fallback)"""
     # First try to load from R2
     try:
-        return download_log_from_r2()
+        return download_generation_log_from_r2()
     except Exception:
         pass
     # Fallback: load from local file
     try:
-        with open(LOG_LOCAL_PATH, 'r', encoding='utf-8') as f:
+        with open(GENERATION_LOG_LOCAL_PATH, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        return {"meditations": []}
+        return {"sections": {}}
 
 
-def save_log(log_data):
-    """Save the dynamic meditations log locally and upload to R2"""
+def save_generation_log(log_data):
+    """Save generation_log.json locally and upload to R2"""
     # Save locally
-    with open(LOG_LOCAL_PATH, 'w', encoding='utf-8') as f:
+    os.makedirs(os.path.dirname(GENERATION_LOG_LOCAL_PATH), exist_ok=True)
+    with open(GENERATION_LOG_LOCAL_PATH, 'w', encoding='utf-8') as f:
         json.dump(log_data, f, ensure_ascii=False, indent=2)
     # Upload to R2
     try:
-        upload_log_to_r2(log_data)
+        upload_generation_log_to_r2(log_data)
     except Exception as e:
-        print(f"  Warning: could not upload log to R2: {e}")
-
-
-def download_scripts_log_from_r2():
-    """Download scripts_log.json from R2 bucket"""
-    s3 = get_s3_client()
-    bucket = os.getenv('R2_BUCKET_NAME')
-    try:
-        obj = s3.get_object(Bucket=bucket, Key=SCRIPTS_LOG_R2_KEY)
-        content = obj['Body'].read().decode('utf-8')
-        return json.loads(content)
-    except s3.exceptions.NoSuchKey:
-        print("  Scripts log not found in R2, starting with empty log.")
-        return {"scripts": []}
-    except Exception as e:
-        raise Exception(f"Failed to download scripts log from R2: {e}")
-
-
-def upload_scripts_log_to_r2(log_data):
-    """Upload scripts_log.json to R2 bucket"""
-    s3 = get_s3_client()
-    bucket = os.getenv('R2_BUCKET_NAME')
-    s3.put_object(
-        Bucket=bucket,
-        Key=SCRIPTS_LOG_R2_KEY,
-        Body=json.dumps(log_data, ensure_ascii=False, indent=2),
-        ContentType='application/json'
-    )
-
-
-def load_scripts_log():
-    """Load the existing scripts_log.json from R2 (with local fallback)"""
-    # First try to load from R2
-    try:
-        return download_scripts_log_from_r2()
-    except Exception:
-        pass
-    # Fallback: load from local file
-    try:
-        with open(SCRIPTS_LOG_LOCAL_PATH, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {"scripts": []}
-
-
-def save_scripts_log(log_data):
-    """Save scripts_log.json locally and upload to R2"""
-    # Save locally
-    os.makedirs(os.path.dirname(SCRIPTS_LOG_LOCAL_PATH), exist_ok=True)
-    with open(SCRIPTS_LOG_LOCAL_PATH, 'w', encoding='utf-8') as f:
-        json.dump(log_data, f, ensure_ascii=False, indent=2)
-    # Upload to R2
-    try:
-        upload_scripts_log_to_r2(log_data)
-    except Exception as e:
-        print(f"  Warning: could not upload scripts log to R2: {e}")
-
-
-def get_next_variation(scripts_log, seccion):
-    """Get the next variation number for a given section.
-    
-    Looks at existing entries for the same section and returns the next number.
-    """
-    existing_numbers = []
-    for entry in scripts_log.get('scripts', []):
-        if entry.get('section') == seccion:
-            existing_numbers.append(entry.get('variation', 0))
-    if existing_numbers:
-        return max(existing_numbers) + 1
-    return 1
+        print(f"  Warning: could not upload generation log to R2: {e}")
 
 
 def generate_dynamic_meditation(incluir_inicio, cantidad_bloques, incluir_cierre, seccion, incluir_etiqueta, max_retries=3):
@@ -383,21 +315,6 @@ def generate_dynamic_meditation(incluir_inicio, cantidad_bloques, incluir_cierre
     raise last_error
 
 
-def build_r2_filename(seccion, cantidad_bloques, incluir_inicio, incluir_cierre):
-    """Build a descriptive R2 filename from generation parameters.
-
-    Format: {seccion}_{cantidad_bloques}[_inicio][_cierre].json
-    Example: cuerpo_8_inicio_cierre.json
-    """
-    parts = [seccion, str(cantidad_bloques)]
-    if incluir_inicio == 'sí':
-        parts.append('inicio')
-    if incluir_cierre == 'sí':
-        parts.append('cierre')
-    filename = '_'.join(parts) + '.json'
-    return f"{R2_SCRIPTS_DIR}/{filename}"
-
-
 def upload_to_r2(output_data, r2_filename):
     """Upload meditation JSON to Cloudflare R2"""
     s3_client = boto3.client(
@@ -441,21 +358,12 @@ def parse_args():
     return parser.parse_args()
 
 
-def get_existing_sections(scripts_log):
-    """Return the set of sections that already have at least one generated script."""
-    existing = set()
-    for entry in scripts_log.get('scripts', []):
-        seccion = entry.get('section')
-        if seccion:
-            existing.add(seccion)
-    return existing
-
-
-def generate_section(seccion, incluir_etiqueta):
+def generate_section(seccion, variation, incluir_etiqueta):
     """Generate meditation instructions for a single section and save to R2.
 
     Args:
         seccion: Section name (cuerpo, sensaciones, mente, dhammas).
+        variation: Variation number to generate (1-3).
         incluir_etiqueta: "sí" or "no" — whether to include section label markers.
     """
     cantidad_bloques = SECCION_BLOQUES[seccion]
@@ -463,7 +371,7 @@ def generate_section(seccion, incluir_etiqueta):
     incluir_cierre = get_incluir_cierre(seccion)
 
     print(f"\n{'='*60}")
-    print(f"Section: {seccion.upper()}")
+    print(f"Section: {seccion.upper()} | Variation: {variation}")
     print(f"  Bloques: {cantidad_bloques} | Inicio: {incluir_inicio} | Cierre: {incluir_cierre}")
     print(f"{'='*60}")
 
@@ -480,13 +388,8 @@ def generate_section(seccion, incluir_etiqueta):
     current_date = datetime.now().strftime("%Y-%m-%d")
     print(f"✓ Done (id: {meditation_id})")
 
-    # Load scripts log to determine variation for this section
-    scripts_log = load_scripts_log()
-    variation = get_next_variation(scripts_log, seccion)
-
-    # Build filename: {seccion}_{variation}.json
-    just_filename = f"{seccion}_{variation}.json"
-    r2_filename = f"{R2_SCRIPTS_DIR}/{just_filename}"
+    # Build filename: variation_{variation}/{seccion}.json
+    r2_filename = f"{R2_SCRIPTS_DIR}/variation_{variation}/{seccion}.json"
 
     output_data = {
         "meditation_content": response.content,
@@ -503,26 +406,16 @@ def generate_section(seccion, incluir_etiqueta):
         print(f"✗ Error: {e}")
         return False
 
-    # Update the dynamic meditations log
-    log_data = load_log()
-    new_entry = {
-        "id": meditation_id,
-        "model": MODEL_NAME,
-        "date_generated": current_date
+    # Load the generation log and update it with the generated file info
+    generation_log = load_generation_log()
+    section_entry = generation_log['sections'].setdefault(seccion, {"variations": {}})
+    if "variations" not in section_entry:
+        section_entry["variations"] = {}
+    section_entry["variations"][str(variation)] = {
+        "date": current_date,
+        "model": MODEL_NAME
     }
-    log_data['meditations'].append(new_entry)
-    save_log(log_data)
-
-    # Update the scripts log with the generated file info
-    script_entry = {
-        "section": seccion,
-        "variation": variation,
-        "filepath": r2_filename,
-        "model": MODEL_NAME,
-        "date_generated": current_date
-    }
-    scripts_log['scripts'].append(script_entry)
-    save_scripts_log(scripts_log)
+    save_generation_log(generation_log)
 
     print(f"  ✓ Section '{seccion}' completed (variation {variation})")
     return True
@@ -536,36 +429,41 @@ def main():
     print(f"  INCLUIR_ETIQUETA = {args.incluir_etiqueta}")
     print()
 
-    # Load the scripts log from R2 (SCRIPTS_LOG_R2_KEY = "scripts/dynamic_scripts/scripts_log.json")
-    # and only generate sections that don't already have an entry there.
-    scripts_log = load_scripts_log()
-    existing_sections = get_existing_sections(scripts_log)
+    # Load the generation log from R2 (GENERATION_LOG_R2_KEY = "scripts/dynamic_scripts/anapanasati/generation_log.json")
+    # and only generate variations that don't already have an entry there.
+    generation_log = load_generation_log()
 
-    sections = [s for s in SECCION_BLOQUES.keys() if s not in existing_sections]
-    total = len(sections)
+    # Collect all (section, variation) pairs that are missing from the log
+    pending = []
+    for seccion in SECCION_BLOQUES:
+        section_entry = generation_log.get('sections', {}).get(seccion, {})
+        variations = section_entry.get('variations', {})
+        for variation in range(1, MAX_VARIATIONS + 1):
+            if str(variation) not in variations:
+                pending.append((seccion, variation))
+
+    total = len(pending)
     success_count = 0
 
-    if not sections:
-        print("All sections already present in scripts/dynamic_scripts/scripts_log.json (R2). Nothing to generate.")
+    if not pending:
+        print("All sections/variations already present in scripts/dynamic_scripts/anapanasati/generation_log.json (R2). Nothing to generate.")
         print("=" * 60)
         return
 
-    existing_display = ', '.join(sorted(existing_sections)) if existing_sections else 'none'
-    print(f"Sections already in scripts/dynamic_scripts/scripts_log.json (R2) — skipped: {existing_display}")
-    print(f"Sections to generate: {', '.join(sections)}")
+    print(f"Generations to run: {total} (out of {len(SECCION_BLOQUES) * MAX_VARIATIONS} possible)")
     print()
 
-    for i, seccion in enumerate(sections, 1):
-        print(f"\n[{i}/{total}] Processing section '{seccion}'...")
-        ok = generate_section(seccion, args.incluir_etiqueta)
+    for i, (seccion, variation) in enumerate(pending, 1):
+        print(f"\n[{i}/{total}] Processing section '{seccion}' (variation {variation})...")
+        ok = generate_section(seccion, variation, args.incluir_etiqueta)
         if ok:
             success_count += 1
 
     print()
     print("=" * 60)
     print("=== FINAL SUMMARY ===")
-    print(f"  Sections completed: {success_count}/{total}")
-    print(f"  Sections: {', '.join(sections)}")
+    print(f"  Generations completed: {success_count}/{total}")
+    print(f"  Pending: {', '.join(f'{s}/v{v}' for s, v in pending)}")
     print("=" * 60)
 
 

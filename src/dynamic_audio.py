@@ -54,7 +54,10 @@ from botocore.exceptions import NoCredentialsError, ClientError
 import numpy as np
 
 # ── Configuration ───────────────────────────────────────────────────────────
-SENTENCES_REPO_R2_KEY = "scripts/dynamic_scripts/sentences_repo.json"
+INSTRUCTIONS_R2_DIR = "scripts/dynamic_scripts/anapanasati/instructions"
+INSTRUCTION_FILES = ["inicio", "cuerpo", "sensaciones", "mente", "dhammas", "cierre"]
+
+GENERATION_LOG_R2_KEY = "meditations/dynamic_audio/anapanasati/generation_log.json"
 
 VOICE_FILENAME = "tmpteeduw43.mp3"
 REF_TEXT = "Siéntate con comodidad, cierra los ojos suavemente. Siente cómo tu cuerpo respira solo."
@@ -62,7 +65,7 @@ REF_TEXT = "Siéntate con comodidad, cierra los ojos suavemente. Siente cómo tu
 HUM_LEVEL = 0.00005  # organic background hum level
 TARGET_SR = 24000
 
-TARGET_DURATION = 40  # target total duration in seconds for each sentence
+TARGET_DURATION = 10  # target total duration in seconds for each sentence
 
 
 def get_r2_credentials():
@@ -213,59 +216,79 @@ try:
     r2.head_bucket(Bucket=credentials['bucket_name'])
     print("✅ R2 connection successful")
 
-    # 2. Load the sentences repo from R2
-    print(f"\n📖 Reading sentences repo from R2: {SENTENCES_REPO_R2_KEY}")
-    sentences_data = read_json_from_r2(r2, credentials['bucket_name'], SENTENCES_REPO_R2_KEY)
-    if sentences_data is None:
-        print("❌ Sentences repo not found in R2.")
+    # 2. Find and download the voice file for cloning
+    print(f"\n🎙️ Finding voice file '{VOICE_FILENAME}' in R2...")
+    voice_key = None
+    try:
+        resp = r2.list_objects_v2(Bucket=credentials['bucket_name'], Prefix='voices/')
+        for obj in resp.get('Contents', []):
+            key = obj['Key']
+            if key.endswith(f"/{VOICE_FILENAME}") or key == f"voices/{VOICE_FILENAME}":
+                voice_key = key
+                break
+    except Exception as e:
+        print(f"   ⚠️ Error listing voices: {e}")
+
+    if voice_key is None:
+        print(f"❌ Voice file '{VOICE_FILENAME}' not found in R2 voices/ directory.")
     else:
-        sentences = sentences_data.get('sentences', [])
-        if not sentences:
-            print("❌ Sentences repo has no sentences.")
+        reference_audio_path = download_from_r2(r2, credentials['bucket_name'], voice_key)
+        if not reference_audio_path:
+            print("❌ Failed to download voice file.")
         else:
-            print(f"   📝 Found {len(sentences)} sentences in the repo")
+            temp_files_to_clean = [reference_audio_path]
+            total_updated = 0
 
-            # 3. Find and download the voice file for cloning
-            print(f"\n🎙️ Finding voice file '{VOICE_FILENAME}' in R2...")
-            voice_key = None
-            try:
-                resp = r2.list_objects_v2(Bucket=credentials['bucket_name'], Prefix='voices/')
-                for obj in resp.get('Contents', []):
-                    key = obj['Key']
-                    if key.endswith(f"/{VOICE_FILENAME}") or key == f"voices/{VOICE_FILENAME}":
-                        voice_key = key
-                        break
-            except Exception as e:
-                print(f"   ⚠️ Error listing voices: {e}")
+            # 3. Process each instruction file
+            for file_name in INSTRUCTION_FILES:
+                file_key = f"{INSTRUCTIONS_R2_DIR}/{file_name}.json"
+                print(f"\n{'='*60}")
+                print(f"📖 Processing instruction file: {file_name}")
+                print(f"   R2 key: {file_key}")
+                print(f"{'='*60}")
 
-            if voice_key is None:
-                print(f"❌ Voice file '{VOICE_FILENAME}' not found in R2 voices/ directory.")
-            else:
-                reference_audio_path = download_from_r2(r2, credentials['bucket_name'], voice_key)
-                if not reference_audio_path:
-                    print("❌ Failed to download voice file.")
-                else:
-                    # 4. Generate audio for each sentence that doesn't already have it
-                    temp_files_to_clean = [reference_audio_path]
+                # Load the instruction file from R2
+                file_data = read_json_from_r2(r2, credentials['bucket_name'], file_key)
+                if file_data is None:
+                    print(f"   ❌ Could not read {file_key} from R2. Skipping.")
+                    continue
 
-                    print(f"\n🎵 Generating audio for sentences...")
-                    batch_id = str(uuid.uuid4())
-                    updated_count = 0
+                sentences = file_data.get('sentences', [])
+                if not sentences:
+                    print(f"   ⚠️ No sentences found in {file_name}. Skipping.")
+                    continue
 
-                    for idx, sentence in enumerate(sentences):
-                        sentence_id = sentence.get('id', f'unknown_{idx}')
-                        script_text = sentence.get('script', '')
-                        
+                print(f"   📝 Found {len(sentences)} sentences in {file_name}")
+
+                batch_id = str(uuid.uuid4())
+                updated_count = 0
+                processed_variations = set()
+
+                for idx, sentence in enumerate(sentences):
+                    # Each sentence is a dict like {"1": {"script": "..."}, "2": {"script": "..."}}
+                    if not isinstance(sentence, dict) or len(sentence) == 0:
+                        print(f"   [{idx+1}/{len(sentences)}] ⚠️ Unexpected sentence structure, skipping: {sentence}")
+                        continue
+
+                    position_num = idx + 1
+
+                    for sentence_id, sentence_data in sentence.items():
+                        if not isinstance(sentence_data, dict):
+                            print(f"   [{idx+1}/{len(sentences)}] ⚠️ Unexpected sentence data for variation {sentence_id}, skipping: {sentence_data}")
+                            continue
+
+                        script_text = sentence_data.get('script', '')
+
                         # Skip if already has audio
-                        if sentence.get('audioUrl'):
-                            print(f"   [{idx+1}/{len(sentences)}] ⏭️  Skipping {sentence_id}: already has audio")
-                            continue
-                        
-                        if not script_text:
-                            print(f"   [{idx+1}/{len(sentences)}] ⏭️  Skipping {sentence_id}: no script text")
+                        if sentence_data.get('audioUrl'):
+                            print(f"   [{idx+1}/{len(sentences)}] ⏭️  Skipping {file_name}/variation_{sentence_id}/instruction_{position_num}: already has audio")
                             continue
 
-                        print(f"\n   [{idx+1}/{len(sentences)}] Generating audio for {sentence_id}...")
+                        if not script_text:
+                            print(f"   [{idx+1}/{len(sentences)}] ⏭️  Skipping {file_name}/variation_{sentence_id}/instruction_{position_num}: no script text")
+                            continue
+
+                        print(f"\n   [{idx+1}/{len(sentences)}] Generating audio for {file_name}/variation_{sentence_id}/instruction_{position_num}...")
                         print(f"       Script: {script_text[:60]}{'...' if len(script_text) > 60 else ''}")
 
                         # Generate speech for the sentence text
@@ -283,52 +306,80 @@ try:
                             segment_audio = speech_audio
 
                         # Export to Opus
-                        segment_id = f"{batch_id}_{sentence_id}"
+                        segment_id = f"{batch_id}_{file_name}_{sentence_id}_{position_num}"
                         local_opus = f"/tmp/dynamic_segment_{segment_id}.opus"
                         temp_files_to_clean.append(local_opus)
 
                         export_audio_to_opus(segment_audio, TARGET_SR, local_opus)
 
-                        # Upload to R2
-                        segment_r2_key = f"meditations/dynamic_audio/anapanasati/{segment_id}.opus"
+                        # Upload to R2: meditations/dynamic_audio/anapanasati/{section}/variation_{variation}/instruction_{position}.opus
+                        variation_num = sentence_id
+                        segment_r2_key = f"meditations/dynamic_audio/anapanasati/{file_name}/variation_{variation_num}/instruction_{position_num}.opus"
                         result = upload_file_to_r2(r2, credentials['bucket_name'], local_opus, segment_r2_key)
                         if result:
-                            # Update the sentence with audioUrl and TTS_model
-                            sentence['audioUrl'] = segment_r2_key
-                            sentence['TTS_model'] = MODEL_ID
+                            # Update the sentence with audioUrl only (no TTS_model field)
+                            sentence_data['audioUrl'] = segment_r2_key
                             duration = len(segment_audio) / TARGET_SR
                             print(f"       ✅ Uploaded ({duration:.1f}s): {segment_r2_key}")
                             updated_count += 1
+                            processed_variations.add(sentence_id)
+
+                            # Update the input file in R2 immediately after each generation
+                            upload_json_to_r2(r2, credentials['bucket_name'], file_key, file_data)
+
+                            # Also update the local copy if it exists
+                            local_file_path = Path.cwd() / 'src' / 'dynamic_scripts' / 'anapanasati' / 'instructions' / f'{file_name}.json'
+                            if local_file_path.exists():
+                                with open(local_file_path, 'w', encoding='utf-8') as f:
+                                    json.dump(file_data, f, ensure_ascii=False, indent=2)
                         else:
-                            print(f"       ❌ Failed to upload segment for {sentence_id}")
+                            print(f"       ❌ Failed to upload segment for {file_name}/variation_{sentence_id}/instruction_{position_num}")
 
-                    if updated_count > 0:
-                        # 5. Save the updated sentences repo back to R2
-                        print(f"\n📋 Saving updated sentences repo to R2...")
-                        upload_json_to_r2(r2, credentials['bucket_name'], SENTENCES_REPO_R2_KEY, sentences_data)
+                if updated_count > 0:
+                    # Update the generation log in R2
+                    print(f"\n📋 Updating generation log...")
+                    gen_log = read_json_from_r2(r2, credentials['bucket_name'], GENERATION_LOG_R2_KEY)
+                    if gen_log is None:
+                        gen_log = {"sections": {}}
+                    if "sections" not in gen_log:
+                        gen_log["sections"] = {}
 
-                        # Also update the local copy if it exists
-                        local_sentences_path = Path.cwd() / 'src' / 'dynamic_scripts' / 'sentences_repo.json'
-                        if local_sentences_path.exists():
-                            with open(local_sentences_path, 'w', encoding='utf-8') as f:
-                                json.dump(sentences_data, f, ensure_ascii=False, indent=2)
-                            print(f"   ✅ Updated local copy: {local_sentences_path}")
-                    else:
-                        print(f"\n   No new sentences to process — all already have audio.")
+                    section_entry = gen_log["sections"].setdefault(file_name, {"variations": {}})
+                    if "variations" not in section_entry:
+                        section_entry["variations"] = {}
 
-                    # Clean up temp files
-                    for tmp in temp_files_to_clean:
-                        try:
-                            Path(tmp).unlink(missing_ok=True)
-                        except Exception:
-                            pass
+                    today = datetime.now().strftime("%Y-%m-%d")
+                    for variation in processed_variations:
+                        section_entry["variations"][str(variation)] = {
+                            "date": today,
+                            "model": MODEL_ID
+                        }
 
-                    print()
-                    print("=== Summary ===")
-                    print(f"✅ Sentence audio generation complete.")
-                    print(f"   Sentences processed : {updated_count}")
-                    print(f"   Total in repo       : {len(sentences)}")
-                    print(f"   Model               : {MODEL_ID}")
+                    upload_json_to_r2(r2, credentials['bucket_name'], GENERATION_LOG_R2_KEY, gen_log)
+
+                    # Also update the local generation log if it exists
+                    local_gen_log_path = Path.cwd() / 'src' / 'dynamic_scripts' / 'anapanasati' / 'generation_log.json'
+                    if local_gen_log_path.exists():
+                        with open(local_gen_log_path, 'w', encoding='utf-8') as f:
+                            json.dump(gen_log, f, ensure_ascii=False, indent=2)
+                else:
+                    print(f"\n   No new sentences to process in {file_name} — all already have audio.")
+
+                total_updated += updated_count
+
+            # Clean up temp files
+            for tmp in temp_files_to_clean:
+                try:
+                    Path(tmp).unlink(missing_ok=True)
+                except Exception:
+                    pass
+
+            print()
+            print("=== Summary ===")
+            print(f"✅ Dynamic audio generation complete.")
+            print(f"   Sentences processed : {total_updated}")
+            print(f"   Files processed     : {len(INSTRUCTION_FILES)}")
+            print(f"   Model               : {MODEL_ID}")
 
 except NoCredentialsError:
     print("❌ Invalid R2 credentials")

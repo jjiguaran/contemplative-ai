@@ -5,6 +5,12 @@
   "meditations": {
     "anapanasati": {
       "label": "Anapanasati",
+      "inicioPath": "public/instructions/anapanasati/inicio.json",
+      "cierrePath": "public/instructions/anapanasati/cierre.json",
+      "cuerpoPath": "public/instructions/anapanasati/cuerpo.json",
+      "sensacionesPath": "public/instructions/anapanasati/sensaciones.json",
+      "mentePath": "public/instructions/anapanasati/mente.json",
+      "dhammasPath": "public/instructions/anapanasati/dhammas.json",
       "fixedSlots": {
         "inicio": 1,
         "cierre": 1

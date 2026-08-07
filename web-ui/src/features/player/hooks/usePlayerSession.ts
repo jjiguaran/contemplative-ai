@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { SentenceEntry, MeditationsConfig } from '../../../shared/types/types';
-import { buildSentenceUrls, buildBackgroundUrl, getComputedSentencesByDuration } from '../../../shared/utils/utils';
+import { buildBackgroundUrl, getComputedSentencesByDuration } from '../../../shared/utils/utils';
 import { R2_BUCKET_URL } from '../../../shared/constants/constants';
 import { createSegmentedPlayer, SegmentedPlayerHandle } from '../api/segmentedPlayer';
 import { buildDownloadableWav } from '../api/wavExport';
@@ -100,20 +100,27 @@ export function usePlayerSession(
     const durationMinutes = parseInt(selectedDuration, 10) || 0;
     const sentencesByDuration = meditationsConfig ? getComputedSentencesByDuration(meditationsConfig) : {};
     const maxSegments = sentencesByDuration[selectedDuration] ?? 0;
-    const sentenceUrls = buildSentenceUrls(sentences, maxSegments);
 
-    // Interleave silence after every sentence
+    // Interleave silence after every sentence, with an extra pause before the cierre (closing) sentence
     const silencePath = meditationsConfig?.silenceURL;
     const silenceUrl = silencePath ? `${R2_BUCKET_URL}/${silencePath}` : null;
+    const gongPath = meditationsConfig?.gongsURL;
+    const gongUrl = gongPath ? `${R2_BUCKET_URL}/${gongPath}` : null;
+
     const urlsWithSilence: string[] = [];
-    for (const url of sentenceUrls) {
-      urlsWithSilence.push(url);
+    const slicedSentences = sentences.slice(0, maxSegments);
+    for (const sentence of slicedSentences) {
+      // Skip sentences without an audio file (safety net)
+      if (!sentence.audioUrl) continue;
+      // Extra silence before the closing (cierre) section sentence
+      if (sentence.section === 'cierre' && silenceUrl && gongUrl) {
+        urlsWithSilence.push(silenceUrl);
+      }
+      urlsWithSilence.push(`${R2_BUCKET_URL}/${sentence.audioUrl}`);
       if (silenceUrl) urlsWithSilence.push(silenceUrl);
     }
 
     // Wrap the sentence sequence with the gong sound
-    const gongPath = meditationsConfig?.gongsURL;
-    const gongUrl = gongPath ? `${R2_BUCKET_URL}/${gongPath}` : null;
     const urls = gongUrl
       ? [gongUrl, ...urlsWithSilence, gongUrl]
       : urlsWithSilence;

@@ -1,0 +1,68 @@
+{
+  "sections": {
+    "cuerpo": {
+      "variations": {
+        "1": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        },
+        "2": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        },
+        "3": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        }
+      }
+    },
+    "sensaciones": {
+      "variations": {
+        "1": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        },
+        "2": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        },
+        "3": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        }
+      }
+    },
+    "mente": {
+      "variations": {
+        "1": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        },
+        "2": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        },
+        "3": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        }
+      }
+    },
+    "dhammas": {
+      "variations": {
+        "1": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        },
+        "2": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        },
+        "3": {
+          "date": "2026-08-05",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        }
+      }
+    }
+  }
+}
