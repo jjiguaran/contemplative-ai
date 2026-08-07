@@ -76,7 +76,7 @@ export function usePlayerSession(
       bg.pause();
       bg.currentTime = 0;
     }
-  }, [backgroundAudioUrl]);
+  }, [backgroundAudioUrl, backgroundVolume]);
 
   const resetPlayback = useCallback(() => {
     if (playerRef.current) {

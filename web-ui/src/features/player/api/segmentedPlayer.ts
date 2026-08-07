@@ -82,6 +82,15 @@ export function createSegmentedPlayer(urls: string[], ctx: AudioContext): Segmen
     clockRunning = false;
   }
 
+  function handleSourceEnded() {
+    if (destroyed) return;
+    if (playing && !endedFired) {
+      playing = false;
+      endedFired = true;
+      endedCbs.forEach(cb => cb());
+    }
+  }
+
   function maybeScheduleAhead() {
     if (!playing || destroyed) return;
 
@@ -123,14 +132,7 @@ export function createSegmentedPlayer(urls: string[], ctx: AudioContext): Segmen
 
       const isLast = nextIndex === urls.length - 1;
       if (isLast) {
-        src.onended = () => {
-          if (destroyed) return;
-          if (playing && !endedFired) {
-            playing = false;
-            endedFired = true;
-            endedCbs.forEach(cb => cb());
-          }
-        };
+        src.onended = handleSourceEnded;
       }
 
       lastScheduledEndCtxTime = nextStartCtxTime + playDuration;

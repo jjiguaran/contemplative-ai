@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SentencesRepo, SentenceEntry, BackgroundLog, MeditationsConfig } from '../../../shared/types/types';
-import { parseDurationMinutes, isBackgroundAvailable, getComputedSentencesByDuration, getSectionCounts } from '../../../shared/utils/utils';
+import { isBackgroundAvailable, getComputedSentencesByDuration, getSectionCounts } from '../../../shared/utils/utils';
 
 export function useSelectionState(sentencesRepo: SentencesRepo | null, backgroundsLog: BackgroundLog | null, meditationsConfig: MeditationsConfig | null) {
   const [duracion, setDuracion] = useState<string>('');
