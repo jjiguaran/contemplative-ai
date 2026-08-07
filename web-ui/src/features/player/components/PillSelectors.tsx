@@ -1,6 +1,6 @@
 import React from 'react';
-import { SentenceEntry, SentencesRepo, BackgroundLog, MeditationsConfig } from '../../../shared/types/types';
-import { parseDurationMinutes, formatDuration, capitalize, musicDisplayName, getComputedSentencesByDuration } from '../../../shared/utils/utils';
+import { SentencesRepo, BackgroundLog, MeditationsConfig } from '../../../shared/types/types';
+import { formatDuration, capitalize, musicDisplayName, getComputedSentencesByDuration } from '../../../shared/utils/utils';
 
 interface PillSelectorsProps {
   sentencesRepo: SentencesRepo | null;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { SentenceEntry } from '../../../shared/types/types';
-import { musicDisplayName } from '../../../shared/utils/utils';
 import { IconPlay, IconPause, IconDownload, IconVolume, IconLeaf } from '../../../shared/utils/icons';
 
 interface PlayerControlsProps {
