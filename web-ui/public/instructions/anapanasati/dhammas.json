@@ -1,0 +1,424 @@
+{
+  "sentences": [
+    {
+      "1": {
+        "script": "Observa el surgir y cesar de un pensamiento, la respiración ancla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_1.opus"
+      },
+      "2": {
+        "script": "Observa cómo surge y se desvanece cada sensación",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_1.opus"
+      },
+      "3": {
+        "script": "Observa cómo surge y desaparece una sensación",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_1.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota cómo una sensación aparece y se desvanece, vuelve a la respiración",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_2.opus"
+      },
+      "2": {
+        "script": "Nota la impermanencia en el latido del cuerpo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_2.opus"
+      },
+      "3": {
+        "script": "Nota el carácter impermanente de un pensamiento",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_2.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce la impermanencia de este sonido, la respiración es tu referencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_3.opus"
+      },
+      "2": {
+        "script": "Reconoce que nada permanece igual dos instantes",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_3.opus"
+      },
+      "3": {
+        "script": "Reconoce la fugacidad de un sonido lejano",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_3.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que un recuerdo surja y se disuelva, descansa en el respirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_4.opus"
+      },
+      "2": {
+        "script": "Deja que los pensamientos aparezcan y se vayan",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_4.opus"
+      },
+      "3": {
+        "script": "Permite que la respiración sea el fondo estable",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_4.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Mira el impulso formarse y soltarse, la respiración punto de referencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_5.opus"
+      },
+      "2": {
+        "script": "Vuelve a la respiración como punto de referencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_5.opus"
+      },
+      "3": {
+        "script": "Ve cómo aparece y se desvanece una emoción",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_5.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota una imagen mental brillar y apagarse, la respiración estable",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_6.opus"
+      },
+      "2": {
+        "script": "Observa el surgir y cesar de los sonidos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_6.opus"
+      },
+      "3": {
+        "script": "Suelta la necesidad de aferrarte a lo agradable",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_6.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Deja que una tensión se afloje y desaparezca, regresa a la respiración",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_7.opus"
+      },
+      "2": {
+        "script": "Nota cómo la inquietud surge y luego cede",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_7.opus"
+      },
+      "3": {
+        "script": "Observa la disolución de una tensión corporal",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_7.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el ir y venir de una distracción, la respiración ancla firme",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_8.opus"
+      },
+      "2": {
+        "script": "Permite que la experiencia fluya sin retenerla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_8.opus"
+      },
+      "3": {
+        "script": "Nota el surgir espontáneo de una imagen mental",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_8.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el calor surgir y enfriarse, la respiración continúa presente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_9.opus"
+      },
+      "2": {
+        "script": "Reconoce la naturaleza efímera de esta molestia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_9.opus"
+      },
+      "3": {
+        "script": "Reconoce que nada permanece igual por mucho tiempo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_9.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce el nacer y morir de una percepción, respira con calma",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_10.opus"
+      },
+      "2": {
+        "script": "Descansa en la respiración, ancla estable ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_10.opus"
+      },
+      "3": {
+        "script": "Vuelve a la respiración como punto de referencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_10.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Ve la inquietud tornarse quietud, la respiración constante testigo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_11.opus"
+      },
+      "2": {
+        "script": "Observa cómo la intención surge y se cumple",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_11.opus"
+      },
+      "3": {
+        "script": "Deja que los fenómenos vengan y se vayan solos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_11.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota un plan formarse y caerse, vuelve al ancla respiratoria",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_12.opus"
+      },
+      "2": {
+        "script": "Nota el aparecer y desaparecer de las imágenes mentales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_12.opus"
+      },
+      "3": {
+        "script": "Observa la naturaleza cambiante de la percepción",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_12.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa cómo un estado de ánimo cambia y pasa, respira",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_13.opus"
+      },
+      "2": {
+        "script": "Suelta la necesidad de que esto dure",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_13.opus"
+      },
+      "3": {
+        "script": "Nota cómo un recuerdo surge y pierde fuerza",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_13.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente una sensación expandirse y contraerse, la respiración natural",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_14.opus"
+      },
+      "2": {
+        "script": "Vuelve al aire entrando y saliendo, referencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_14.opus"
+      },
+      "3": {
+        "script": "Permite que la atención descanse en el fluir",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_14.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce lo fugaz de este pensamiento, descansa en la respiración",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_15.opus"
+      },
+      "2": {
+        "script": "Observa la duda surgir y disolverse sola",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_15.opus"
+      },
+      "3": {
+        "script": "Ve la aparición y el cese de una intención",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_15.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Deja que una emoción suba y baje, ancla en el respirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_16.opus"
+      },
+      "2": {
+        "script": "Nota cómo la calma aparece y se marchita",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_16.opus"
+      },
+      "3": {
+        "script": "Reconoce la impermanencia en cada experiencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_16.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Mira un concepto aparecer y desvanecerse, la respiración referencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_17.opus"
+      },
+      "2": {
+        "script": "Reconoce que no hay dueño de esta experiencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_17.opus"
+      },
+      "3": {
+        "script": "Suelta la identificación con un estado mental",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_17.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el espacio entre pensamientos ensanchándose, la respiración fácil y ancla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_18.opus"
+      },
+      "2": {
+        "script": "Permite que los recuerdos pasen sin engancharte",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_18.opus"
+      },
+      "3": {
+        "script": "Observa cómo la mente se conoce a sí misma",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_18.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa una resistencia derretirse, regresa al descanso de la respiración",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_19.opus"
+      },
+      "2": {
+        "script": "Observa el contacto: surge, se conoce, cesa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_19.opus"
+      },
+      "3": {
+        "script": "Nota el espacio vacío entre dos pensamientos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_19.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente una vibración iniciar y cesar, la respiración sigue continua",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_20.opus"
+      },
+      "2": {
+        "script": "Descansa en la respiración, fondo tranquilo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_20.opus"
+      },
+      "3": {
+        "script": "Vuelve al ancla de la respiración ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_20.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota cómo la certeza se vuelve duda, el ancla respiratoria firme",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_21.opus"
+      },
+      "2": {
+        "script": "Nota la aversión surgir y perder fuerza",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_21.opus"
+      },
+      "3": {
+        "script": "Deja que la calma surja sin forzarla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_21.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Ve un recuerdo fundirse en silencio, la respiración aquí presente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_22.opus"
+      },
+      "2": {
+        "script": "Observa cómo el deseo aparece y se aquieta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_22.opus"
+      },
+      "3": {
+        "script": "Observa el nacimiento y la muerte de un impulso",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_22.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Percibe el surgir de la calma y su paso, la respiración queda",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_23.opus"
+      },
+      "2": {
+        "script": "Reconoce la falta de solidez en cada cosa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_23.opus"
+      },
+      "3": {
+        "script": "Reconoce la vacuidad de una historia interna",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_23.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa un juicio formarse y liberarse, vuelve a respirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_24.opus"
+      },
+      "2": {
+        "script": "Vuelve a la respiración, tu punto de apoyo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_24.opus"
+      },
+      "3": {
+        "script": "Permite que todo fluya sin resistencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_24.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce lo pasajero de esta incomodidad, ancla en la respiración",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_25.opus"
+      },
+      "2": {
+        "script": "Observa la mente conocedora: surge, conoce, cesa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_25.opus"
+      },
+      "3": {
+        "script": "Nota la naturaleza condicionada de lo que aparece",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_25.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que un sonido llegue y se vaya, la respiración inalterada",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_26.opus"
+      },
+      "2": {
+        "script": "Nota cómo la fatiga surge y se disipa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_26.opus"
+      },
+      "3": {
+        "script": "Observa cómo cesa la agitación por sí sola",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_26.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Mira la mente clarear y nublarse, la respiración constante testigo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_27.opus"
+      },
+      "2": {
+        "script": "Permite que lo desagradable se vaya solo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_27.opus"
+      },
+      "3": {
+        "script": "Descansa en la conciencia del cambio constante",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_27.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente una ligereza llegar e irse, descansa en la respiración",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_28.opus"
+      },
+      "2": {
+        "script": "Observa la alegría surgir y desvanecerse",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_28.opus"
+      },
+      "3": {
+        "script": "Ve la impermanencia en la propia respiración",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_28.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce el flujo de cambio en sí, la respiración base estable",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_29.opus"
+      },
+      "2": {
+        "script": "Nota la impermanencia en la propia atención",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_29.opus"
+      },
+      "3": {
+        "script": "Suelta la distinción entre observador y observado",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_29.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota lo que surge y cesa ahora, la respiración te sostiene",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_1/instruction_30.opus"
+      },
+      "2": {
+        "script": "Descansa en la respiración, testigo silencioso",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_2/instruction_30.opus"
+      },
+      "3": {
+        "script": "Permite que la mente se aquiete en el fluir",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/dhammas/variation_3/instruction_30.opus"
+      }
+    }
+  ]
+}

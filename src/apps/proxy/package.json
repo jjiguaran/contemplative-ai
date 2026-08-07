@@ -1,0 +1,7 @@
+{
+  "name": "static-asset-delivery",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PostHog ingestion proxy worker",
+  "main": "index.js"
+}

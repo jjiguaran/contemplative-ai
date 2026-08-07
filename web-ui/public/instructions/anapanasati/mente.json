@@ -1,0 +1,508 @@
+{
+  "sentences": [
+    {
+      "1": {
+        "script": "Observa la mente: contraída o expansiva, tensa o abierta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_1.opus"
+      },
+      "2": {
+        "script": "Observa la mente: contraída o expandida, sin preferir nada",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_1.opus"
+      },
+      "3": {
+        "script": "Observa la mente dispersa o concentrada en este momento con atención plena ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_1.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la mente embotada o lúcida, pesada o clara",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_2.opus"
+      },
+      "2": {
+        "script": "Vuelve la atención a la respiración, tu ancla estable",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_2.opus"
+      },
+      "3": {
+        "script": "Nota la mente agitada o calmada mientras respiras suavemente sin forzar nada ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_2.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Mira la mente: inquieta o serena, agitada o quieta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_3.opus"
+      },
+      "2": {
+        "script": "Nota la intención sutil que impulsa la atención ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_3.opus"
+      },
+      "3": {
+        "script": "Reconoce la mente atraída o rechazando los contenidos que aparecen naturalmente ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_3.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce la mente atraída o rechazando, aferrada o suelta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_4.opus"
+      },
+      "2": {
+        "script": "Nota si la mente está dispersa o reunida en sí",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_4.opus"
+      },
+      "3": {
+        "script": "Mira la mente aferrada o suelta a los pensamientos sin juzgar su valor",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_4.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Ve la mente juzgando u observando, crítica o neutra",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_5.opus"
+      },
+      "2": {
+        "script": "Descansa en la sensación de respirar, punto de referencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_5.opus"
+      },
+      "3": {
+        "script": "Observa la mente juzgando o observando simplemente lo que surge en la conciencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_5.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la mente dudosa o confiada, insegura o firme",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_6.opus"
+      },
+      "2": {
+        "script": "Mira la mente, aferrada o suelta, tal como se muestra",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_6.opus"
+      },
+      "3": {
+        "script": "Nota la mente dudosa o confiada ante la incertidumbre del presente ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_6.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la mente: rígida o flexible, fija o fluida",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_7.opus"
+      },
+      "2": {
+        "script": "Reconoce el tono emocional presente en la mente ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_7.opus"
+      },
+      "3": {
+        "script": "Reconoce la mente rígida o flexible frente a las sensaciones que cambian",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_7.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la mente nublada o despejada, opaca o brillante",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_8.opus"
+      },
+      "2": {
+        "script": "Reconoce la mente — rígida, flexible — sin forzar ningún cambio",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_8.opus"
+      },
+      "3": {
+        "script": "Mira la mente lúcida o nublada mientras la respiración sirve de ancla estable",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_8.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la mente sea apresurada o pausada, urgente o calma",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_9.opus"
+      },
+      "2": {
+        "script": "Permite que la respiración reúna la atención dispersa suavemente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_9.opus"
+      },
+      "3": {
+        "script": "Observa la mente apresurada o pausada en el ritmo natural de la atención",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_9.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Deja que la mente se muestre aferrada o soltando, tensa o suelta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_10.opus"
+      },
+      "2": {
+        "script": "Ve cómo la mente se muestra lúcida o nublada hoy",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_10.opus"
+      },
+      "3": {
+        "script": "Nota la mente pesada o ligera al sentir el contacto del cuerpo con el asiento",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_10.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa si la mente está dispersa o reunida, fragmentada o entera",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_11.opus"
+      },
+      "2": {
+        "script": "Observa el estado general de la mente en este momento",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_11.opus"
+      },
+      "3": {
+        "script": "Reconoce la mente cansada o fresca según la calidad de la energía presente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_11.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la mente resistiendo o aceptando, cerrada o permeable",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_12.opus"
+      },
+      "2": {
+        "script": "Permite que la mente esté interesada o indiferente, simplemente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_12.opus"
+      },
+      "3": {
+        "script": "Mira la mente confusa o clara mientras los pensamientos fluyen sin apego",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_12.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Mira la mente: pesada o ligera, cargada o libre ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_13.opus"
+      },
+      "2": {
+        "script": "Lleva la atención al respiro, ancla confiable y constante",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_13.opus"
+      },
+      "3": {
+        "script": "Observa la mente reactiva o receptiva ante los estímulos que aparecen ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_13.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce la mente distraída o atenta, perdida o presente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_14.opus"
+      },
+      "2": {
+        "script": "Siente la mente apresurada o pausada, sin añadir narrativa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_14.opus"
+      },
+      "3": {
+        "script": "Nota la mente ansiosa o serena mientras la respiración ofrece un punto de referencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_14.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Ve la mente reactiva o ecuánime, impulsiva o serena",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_15.opus"
+      },
+      "2": {
+        "script": "Nota la cualidad de saber que hay en la mente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_15.opus"
+      },
+      "3": {
+        "script": "Reconoce la mente distraída o atenta al notar la calidad de la atención misma",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_15.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Capta la mente entusiasmada o apática, activa o quieta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_16.opus"
+      },
+      "2": {
+        "script": "Observa: la mente atraída o rechazando, simplemente eso, nada más",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_16.opus"
+      },
+      "3": {
+        "script": "Observa la intención de la mente que impulsa la atención hacia el presente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_16.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la mente busque o repose, inquieta o asentada",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_17.opus"
+      },
+      "2": {
+        "script": "Regresa al contacto con la respiración, descanso natural y seguro",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_17.opus"
+      },
+      "3": {
+        "script": "Nota la calidad emocional presente en la mente sin nombrarla ni rechazarla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_17.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite ver la mente enredada o simple, compleja o llana",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_18.opus"
+      },
+      "2": {
+        "script": "Nota la calidad de la mente: tensa o relajada, sin juzgar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_18.opus"
+      },
+      "3": {
+        "script": "Reconoce el estado general de la mente ahora mismo sin intentar modificarlo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_18.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Deja que la mente se revele dura o blanda, áspera o suave",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_19.opus"
+      },
+      "2": {
+        "script": "Reconoce en la mente claridad o turbidez, presente ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_19.opus"
+      },
+      "3": {
+        "script": "Permite que la mente descanse en la respiración como ancla suave y estable",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_19.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Advierte la mente: estrecha o vasta, centrada en sí o abierta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_20.opus"
+      },
+      "2": {
+        "script": "Advierte si la mente está dudosa o confiada en sí",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_20.opus"
+      },
+      "3": {
+        "script": "Vuelve a la respiración como punto de referencia para reunir la mente dispersa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_20.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Explora la mente esforzada o natural, tensa o relajada",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_21.opus"
+      },
+      "2": {
+        "script": "Usa la respiración como punto de referencia constante y claro",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_21.opus"
+      },
+      "3": {
+        "script": "Deja que la mente se asiente en la respiración como descanso natural ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_21.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Registra la mente controlando o fluyendo, forzando o dejando",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_22.opus"
+      },
+      "2": {
+        "script": "Deja que la mente se revele juzgando o aceptando, sin filtro",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_22.opus"
+      },
+      "3": {
+        "script": "Observa la mente notando su propio flujo sin juicio ni comentario interno",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_22.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Descubre la mente comparando o percibiendo, midiendo o viendo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_23.opus"
+      },
+      "2": {
+        "script": "Observa cómo la mente conoce su propia actividad interna",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_23.opus"
+      },
+      "3": {
+        "script": "Nota la mente percibiendo pensamientos que aparecen y desaparecen sin aferrarse a ellos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_23.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Comprueba la mente narrando o sintiendo, contando o viviendo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_24.opus"
+      },
+      "2": {
+        "script": "Observa la mente: puede estar pesada o ligera, solo eso",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_24.opus"
+      },
+      "3": {
+        "script": "Reconoce la mente observando sensaciones corporales sin etiquetarlas como buenas o malas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_24.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Mira la mente: proyectando o presente, futura o ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_25.opus"
+      },
+      "2": {
+        "script": "Ancla la atención en el ritmo natural de respirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_25.opus"
+      },
+      "3": {
+        "script": "Permite que la mente note la presencia de sonidos sin reaccionar automáticamente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_25.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce la mente cerrada o receptiva, hermética o porosa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_26.opus"
+      },
+      "2": {
+        "script": "¿Está la mente quieta o agitada? Solo mira sin reaccionar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_26.opus"
+      },
+      "3": {
+        "script": "Observa la mente reconociendo la propia atención que se sostiene con gentileza",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_26.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Ve la mente turbulenta o apacible, revuelta o en calma",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_27.opus"
+      },
+      "2": {
+        "script": "Nota la dirección que toma la atención en este instante",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_27.opus"
+      },
+      "3": {
+        "script": "Nota la mente experimentando quietud entre pensamientos sin buscarla ni forzarla ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_27.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la mente identificada o desidentificada, apegada o testigo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_28.opus"
+      },
+      "2": {
+        "script": "Reconoce en la mente lo cerrado y lo abierto, juntos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_28.opus"
+      },
+      "3": {
+        "script": "Reconoce la mente dejando ir la tendencia a controlar cada experiencia que surge",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_28.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la intención que impulsa la atención ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_29.opus"
+      },
+      "2": {
+        "script": "Permite que el respiro sostenga la atención con suavidad",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_29.opus"
+      },
+      "3": {
+        "script": "Permite que la mente descanse en la simple conciencia de respirar sin más",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_29.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la calidad emocional presente en la mente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_30.opus"
+      },
+      "2": {
+        "script": "Observa la mente: enfocada o divagando, sin crítica alguna",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_30.opus"
+      },
+      "3": {
+        "script": "Vuelve a la respiración como ancla cuando la mente divaga sin rumbo claro",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_30.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce el estado general de la mente en este momento",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_31.opus"
+      },
+      "2": {
+        "script": "Siente la presencia viva de la mente conocedora ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_31.opus"
+      },
+      "3": {
+        "script": "Observa la mente notando la cualidad de claridad presente en este instante",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_31.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a la respiración como ancla de la atención",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_32.opus"
+      },
+      "2": {
+        "script": "Vuelve al cuerpo que respira, ancla presente y real",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_32.opus"
+      },
+      "3": {
+        "script": "Nota la mente sintiendo la intención de volver al presente con suavidad",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_32.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Descansa en la respiración, punto de referencia estable",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_33.opus"
+      },
+      "2": {
+        "script": "Entre clara y confusa, observa la mente ahora mismo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_33.opus"
+      },
+      "3": {
+        "script": "Reconoce la mente aceptando lo que surge sin resistencia ni apego alguno",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_33.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la respiración reúna la atención dispersa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_34.opus"
+      },
+      "2": {
+        "script": "Reconoce la urgencia o la calma en la mente ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_34.opus"
+      },
+      "3": {
+        "script": "Permite que la mente observe el surgir y cesar de impresiones sin interferir",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_34.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la mente sabiéndose a sí misma, sin más",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_35.opus"
+      },
+      "2": {
+        "script": "Descansa en la simple conciencia de estar respirando",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_35.opus"
+      },
+      "3": {
+        "script": "Observa la mente manteniendo la atención en la respiración como ancla constante ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_35.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Deja que la mente descanse en simple consciencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_1/instruction_36.opus"
+      },
+      "2": {
+        "script": "Nota la mente sensible o embotada, tal cual surge",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_2/instruction_36.opus"
+      },
+      "3": {
+        "script": "Nota la mente finalizando este ciclo con calma y disposición para continuar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/mente/variation_3/instruction_36.opus"
+      }
+    }
+  ]
+}

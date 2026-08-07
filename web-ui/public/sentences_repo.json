@@ -1,0 +1,1084 @@
+{
+  "sentences": [
+    {
+      "id": "grd_001",
+      "script": "Encuentra una postura cómoda, cierra los ojos y permite que la respiración encuentre su propio ritmo.",
+      "section": "inicio",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_001.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_002",
+      "script": "Nota el peso del cuerpo apoyado sobre la superficie que lo sostiene.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_002.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_003",
+      "script": "Observa la sensación de contacto entre la piel y el apoyo.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_003.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_004",
+      "script": "Permite que la respiración se sienta como una ola suave en el abdomen.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_004.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_005",
+      "script": "Siente la expansión y contracción natural del torso sin intervenir.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_005.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_006",
+      "script": "Nota cualquier área de tensión y déjala suavizar con cada exhalación.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_006.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_007",
+      "script": "Percibe la ligereza de los brazos reposando a los lados.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_007.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_008",
+      "script": "Observa la cadera y las piernas, notando su apoyo firme.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_008.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_009",
+      "script": "Deja que la cabeza encuentre su alineación natural sobre la columna.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_009.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_010",
+      "script": "Siente la frescura del aire al entrar por las fosas nasales.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_010.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_011",
+      "script": "Nota el calor suave que surge al exhalar por la boca.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_011.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_012",
+      "script": "Permite que el cuerpo entero respire como un solo organismo.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_012.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_013",
+      "script": "Observa la sensación de solidez en la planta de los pies.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_013.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_014",
+      "script": "Nota cualquier vibración sutil que recorra la espalda.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_014.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_015",
+      "script": "Deja que los hombros caigan sin esfuerzo hacia la tierra.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_015.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_016",
+      "script": "Siente la expansión lateral de las costillas al inhalar.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_016.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_017",
+      "script": "Observa la quietud que surge cuando el cuerpo deja de buscar.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_017.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_018",
+      "script": "Permite que la respiración sea el único movimiento perceptible.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_018.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_019",
+      "script": "Nota la presión ligera del aire sobre la piel del rostro.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_019.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_020",
+      "script": "Siente el ritmo natural del corazón sin buscar controlarlo.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_020.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_021",
+      "script": "Observa la sensación de plenitud en el abdomen bajo.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_021.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_022",
+      "script": "Deja que la mente descanse mientras el cuerpo permanece presente.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_022.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_023",
+      "script": "Nota cualquier impulso de moverse y vuelve a la quietud.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_023.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_024",
+      "script": "Percibe la conexión entre la respiración y la sensación de alivio.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_024.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_025",
+      "script": "Siente la suavidad de la piel al contacto con la ropa.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_025.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_026",
+      "script": "Observa la ligereza que surge al soltar la tensión mandibular.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_026.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_027",
+      "script": "Permite que la respiración fluya sin intención de modificarla.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_027.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_028",
+      "script": "Nota la sensación de raíces que te anclan al suelo.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_028.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_029",
+      "script": "Siente el calor que emana del centro del pecho.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_029.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_030",
+      "script": "Observa la quietud que se expande desde el interior.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_030.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_031",
+      "script": "Deja que el cuerpo sea testigo silencioso de cada respiración.",
+      "section": "cuerpo",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_031.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_032",
+      "script": "Nota el tono agradable que surge al sentir el aire fresco.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_032.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_033",
+      "script": "Observa cualquier sensación desagradable sin juzgarla ni rechazarla.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_033.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_034",
+      "script": "Permite que lo neutro simplemente sea, sin etiquetar.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_034.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_035",
+      "script": "Siente la calidez que se extiende en el pecho al inhalar.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_035.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_036",
+      "script": "Nota la frescura que recorre la piel al exhalar.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_036.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_037",
+      "script": "Observa el surgir de una ligera presión en el abdomen.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_037.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_038",
+      "script": "Deja que la sensación de hormigueo pase sin aferrarte.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_038.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_039",
+      "script": "Percibe el tono placentero que acompaña la relajación profunda.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_039.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_040",
+      "script": "Nota cualquier incomodidad y permite que se disuelva sola.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_040.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_041",
+      "script": "Observa la neutralidad de la respiración cuando no hay preferencia.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_041.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_042",
+      "script": "Siente la dulzura sutil al final de cada exhalación.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_042.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_043",
+      "script": "Permite que el desagrado aparezca y se vaya sin resistencia.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_043.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_044",
+      "script": "Nota la ausencia de sabor en la boca, solo presencia.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_044.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_045",
+      "script": "Observa la ligereza que surge al soltar la tensión facial.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_045.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_046",
+      "script": "Deja que el calor interno se expanda sin buscarlo.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_046.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_047",
+      "script": "Percibe la frescura mental que acompaña la quietud.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_047.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_048",
+      "script": "Nota cualquier impulso de etiquetar y vuelve a la sensación pura.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_048.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_049",
+      "script": "Observa el vaivén de agradable y desagradable sin aferrarte.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_049.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_050",
+      "script": "Permite que la neutralidad sea el fondo constante.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_050.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_051",
+      "script": "Siente la suavidad que envuelve cada inhalación.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_051.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_052",
+      "script": "Nota la presión ligera en los ojos al cerrarlos.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_052.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_053",
+      "script": "Observa el cosquilleo sutil en las puntas de los dedos.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_053.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_054",
+      "script": "Deja que la sensación de peso se disuelva en el espacio.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_054.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_055",
+      "script": "Percibe la frescura que nace al soltar la mandíbula.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_055.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_056",
+      "script": "Nota el calor que sube por la columna vertebral.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_056.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_057",
+      "script": "Observa la quietud que sigue a cada exhalación completa.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_057.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_058",
+      "script": "Permite que la sensación de expansión llene el pecho.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_058.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_059",
+      "script": "Siente la ligereza que surge al soltar los hombros.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_059.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_060",
+      "script": "Nota la calma que permanece cuando dejas de buscar sensaciones.",
+      "section": "sensaciones",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_060.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_061",
+      "script": "Observa la mente dispersa y devuelve la atención a la respiración.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_061.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_062",
+      "script": "Nota la claridad que surge cuando los pensamientos se aquietan.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_062.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_063",
+      "script": "Permite que la agitación pase sin engancharte en su contenido.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_063.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_064",
+      "script": "Siente la quietud profunda que subyace bajo el ruido mental.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_064.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_065",
+      "script": "Observa cualquier estado de somnolencia y vuelve a la presencia.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_065.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_066",
+      "script": "Nota la ligereza que aparece cuando la mente se suelta.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_066.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_067",
+      "script": "Permite que los pensamientos fluyan como nubes en el cielo.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_067.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_068",
+      "script": "Observa la intención de controlar y déjala disolver.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_068.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_069",
+      "script": "Siente la estabilidad que brinda el ancla de la respiración.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_069.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_070",
+      "script": "Nota la mente inquieta y regresa suavemente al aliento.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_070.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_071",
+      "script": "Permite que la curiosidad surja sin convertirse en distracción.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_071.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_072",
+      "script": "Observa la sensación de espacio entre pensamientos sucesivos.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_072.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_073",
+      "script": "Nota cualquier juicio que aparezca y déjalo pasar.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_073.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_074",
+      "script": "Siente la paz que surge al no perseguir nada.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_074.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_075",
+      "script": "Permite que la mente descanse en la simple conciencia.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_075.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_076",
+      "script": "Observa la tendencia a narrar y vuelve al silencio interior.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_076.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_077",
+      "script": "Nota la claridad que permanece cuando dejas de etiquetar.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_077.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_078",
+      "script": "Permite que la atención se asiente como una hoja en agua.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_078.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_079",
+      "script": "Observa la mente lúcida que conoce sin esfuerzo.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_079.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_080",
+      "script": "Nota la resistencia a estar presente y suéltala.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_080.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_081",
+      "script": "Siente la calma que se profundiza al observar sin reaccionar.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_081.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_082",
+      "script": "Permite que los recuerdos aparezcan y se desvanezcan solos.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_082.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_083",
+      "script": "Observa la intención de analizar y vuelve al aliento.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_083.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_084",
+      "script": "Nota la sensación de apertura cuando la mente no se aferra.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_084.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_085",
+      "script": "Permite que la atención se expanda sin límites aparentes.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_085.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_086",
+      "script": "Observa la quietud que persiste entre pensamientos.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_086.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_087",
+      "script": "Siente la ligereza de no identificarte con ninguna historia.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_087.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_088",
+      "script": "Permite que la mente sea un espejo que refleja sin retener.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_088.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_089",
+      "script": "Nota la claridad que surge al soltar la necesidad de saber.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_089.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_090",
+      "script": "Observa la presencia continua que sostiene toda experiencia.",
+      "section": "mente",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_090.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_091",
+      "script": "Nota el surgir de cada fenómeno y su disolución natural.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_091.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_092",
+      "script": "Observa la impermanencia en la sensación de calor que pasa.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_092.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_093",
+      "script": "Permite que el deseo de aferrarte se disuelva al observarlo.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_093.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_094",
+      "script": "Siente la cesación de la tensión al soltar la resistencia.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_094.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_095",
+      "script": "Observa cómo los pensamientos aparecen y desaparecen sin dejar rastro.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_095.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_096",
+      "script": "Nota la naturaleza efímera de cada sonido que percibes.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_096.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_097",
+      "script": "Permite que la aversión surja y se vaya por sí sola.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_097.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_098",
+      "script": "Observa el flujo constante de sensaciones que cambian a cada instante.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_098.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_099",
+      "script": "Siente la libertad que nace al no identificar con lo pasajero.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_099.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_100",
+      "script": "Nota la aparición de la calma y su desaparición natural.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_100.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_101",
+      "script": "Permite que la duda se presente y se disuelva en la conciencia.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_101.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_102",
+      "script": "Observa la interdependencia de cuerpo, sensación y mente en cada momento.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_102.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_103",
+      "script": "Nota cómo el apego se debilita al ser visto claramente.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_103.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_104",
+      "script": "Siente la ligereza de soltar la necesidad de control.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_104.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_105",
+      "script": "Permite que la compasión surja espontáneamente hacia lo que aparece.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_105.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_106",
+      "script": "Observa la cesación del ruido mental cuando la atención se aquieta.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_106.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_107",
+      "script": "Nota la impermanencia de la propia intención de meditar.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_107.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_108",
+      "script": "Permite que la gratitud aparezca sin forzarla.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_108.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_109",
+      "script": "Observa cómo cada fenómeno nace, persiste y cesa por sí mismo.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_109.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_110",
+      "script": "Siente la paz que queda al no aferrarte a nada.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_110.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_111",
+      "script": "Nota la transparencia de la experiencia cuando la mente está abierta.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_111.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_112",
+      "script": "Permite que la curiosidad explore la naturaleza de lo que surge.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_112.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_113",
+      "script": "Observa la disolución de la separación entre observador y observado.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_113.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_114",
+      "script": "Nota la quietud que persiste más allá de cualquier contenido.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_114.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_115",
+      "script": "Permite que la sabiduría natural se revele al no interferir.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_115.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_116",
+      "script": "Observa el nacimiento y la muerte de cada sensación en tiempo real.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_116.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_117",
+      "script": "Siente la libertad de no necesitar que nada sea de otra forma.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_117.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_118",
+      "script": "Nota la simplicidad de estar presente sin agregar nada.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_118.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_119",
+      "script": "Permite que la meditación termine dejando una estela de calma.",
+      "section": "dhammas",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_119.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "grd_120",
+      "script": "Abre los ojos lentamente, mueve tu cuerpo despacio y lleva esta calma contigo.",
+      "section": "cierre",
+      "date": "2026-07-24",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "audioUrl": "meditations/dynamic_audio/anapanasati/81f1e520-9d64-4b72-806e-0f68134bb143_grd_120.opus",
+      "TTS_model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    }
+  ]
+}
