@@ -1,0 +1,18 @@
+{
+  "sentences": [
+    {
+      "1": {
+        "script": "Encuentra una postura estable, cierra los ojos y permite que la respiración sea tu ancla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/inicio/variation_1/instruction_1.opus"
+      },
+      "2": {
+        "script": "Encuentra una postura estable y cómoda, cierra los ojos y permite que la respiración sea tu ancla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/inicio/variation_2/instruction_1.opus"
+      },
+      "3": {
+        "script": "Encuentra una postura estable y cómoda, cierra los ojos y permite que la respiración sea tu ancla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/inicio/variation_3/instruction_1.opus"
+      }
+    }
+  ]
+}

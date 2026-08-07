@@ -1,0 +1,1656 @@
+{
+  "sentences": [
+    {
+      "1": {
+        "script": "Nota la sensación del aire en la entrada de las fosas nasales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_1.opus"
+      },
+      "2": {
+        "script": "Nota la respiración en la entrada de la nariz, sin cambiarla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_1.opus"
+      },
+      "3": {
+        "script": "Observa la sensación del aire en la entrada de las fosas nasales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_1.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el pecho elevarse y descender con cada ciclo respiratorio",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_2.opus"
+      },
+      "2": {
+        "script": "Siente el aire rozar las fosas nasales, fresco al entrar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_2.opus"
+      },
+      "3": {
+        "script": "Siente el pecho expandirse y contraerse con cada ciclo respiratorio",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_2.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el abdomen expandirse y contraerse de forma natural",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_3.opus"
+      },
+      "2": {
+        "script": "Observa la sensación táctil del aire cálido al salir",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_3.opus"
+      },
+      "3": {
+        "script": "Nota el movimiento natural del abdomen al subir y bajar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_3.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la atención descanse en el ritmo de la respiración",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_4.opus"
+      },
+      "2": {
+        "script": "Descansa la atención en el vaivén natural del aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_4.opus"
+      },
+      "3": {
+        "script": "Permite que la respiración encuentre su ritmo sin interferir",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_4.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a la respiración como punto de referencia constante",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_5.opus"
+      },
+      "2": {
+        "script": "Vuelve al contacto sutil del aire en la punta de la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_5.opus"
+      },
+      "3": {
+        "script": "Reconoce el peso del cuerpo sostenido por el asiento",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_5.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el peso del cuerpo apoyado sobre el asiento o el suelo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_6.opus"
+      },
+      "2": {
+        "script": "Permite que la respiración siga su ritmo propio, sin forzar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_6.opus"
+      },
+      "3": {
+        "script": "Siente ambos pies en contacto con el suelo, firmes y pesados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_6.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el contacto de las manos reposando sobre los muslos o las rodillas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_7.opus"
+      },
+      "2": {
+        "script": "Nota el pecho expandirse suavemente por sí solo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_7.opus"
+      },
+      "3": {
+        "script": "Observa las manos reposando sobre los muslos, tibias y quietas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_7.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la sensación de la ropa sobre la piel de los brazos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_8.opus"
+      },
+      "2": {
+        "script": "Siente el vientre elevarse y descender con cada ciclo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_8.opus"
+      },
+      "3": {
+        "script": "Deja que los hombros caigan lejos de las orejas, sueltos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_8.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente ambas plantas de los pies en contacto con el suelo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_9.opus"
+      },
+      "2": {
+        "script": "Observa el movimiento del diafragma bajo las costillas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_9.opus"
+      },
+      "3": {
+        "script": "Nota la mandíbula desencajada, los labios ligeramente entreabiertos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_9.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce la temperatura del aire al rozar la piel de la cara",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_10.opus"
+      },
+      "2": {
+        "script": "Reconoce la respiración como ancla constante en el cuerpo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_10.opus"
+      },
+      "3": {
+        "script": "Siente la frente lisa, sin arrugas, la mirada suave detrás de los párpados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_10.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Deja que la respiración ancle la atención en el cuerpo entero",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_11.opus"
+      },
+      "2": {
+        "script": "Deja que la atención se asiente en la sensación de respirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_11.opus"
+      },
+      "3": {
+        "script": "Vuelve la atención a la respiración como punto de referencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_11.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota cualquier tensión presente en la mandíbula o la frente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_12.opus"
+      },
+      "2": {
+        "script": "Siente todo el cuerpo respirando como una unidad viva",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_12.opus"
+      },
+      "3": {
+        "script": "Explora la sensación de la ropa sobre la piel de los brazos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_12.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que los hombros caigan lejos de las orejas suavemente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_13.opus"
+      },
+      "2": {
+        "script": "Observa la onda sutil que recorre el tronco al respirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_13.opus"
+      },
+      "3": {
+        "script": "Detecta el contacto de la tela en la espalda y los costados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_13.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la columna vertebral erguida pero relajada, sostenida",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_14.opus"
+      },
+      "2": {
+        "script": "Permite que el cuerpo entero participe del ritmo respiratorio",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_14.opus"
+      },
+      "3": {
+        "script": "Nota la temperatura del aire en la punta de la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_14.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el sutil balanceo natural del torso al respirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_15.opus"
+      },
+      "2": {
+        "script": "Nota la expansión y contracción global, sin intervenir",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_15.opus"
+      },
+      "3": {
+        "script": "Siente el frescor al entrar y el calor al salir el aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_15.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a sentir el aire entrando y saliendo por la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_16.opus"
+      },
+      "2": {
+        "script": "Siente la respiración en la espalda, ancha y profunda",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_16.opus"
+      },
+      "3": {
+        "script": "Observa la pausa breve entre la exhalación y la siguiente inhalación",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_16.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la frescura en la inhalación y el calor en la exhalación",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_17.opus"
+      },
+      "2": {
+        "script": "Observa cómo los flancos se abren y cierran naturalmente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_17.opus"
+      },
+      "3": {
+        "script": "Permite que el cuerpo entero respire como un solo organismo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_17.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la vida palpitando en las yemas de los dedos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_18.opus"
+      },
+      "2": {
+        "script": "Deja que el cuerpo respire a ti, tú solo observas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_18.opus"
+      },
+      "3": {
+        "script": "Siente ambas pantorrillas, izquierda y luego derecha, pesadas y relajadas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_18.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la presión del cuerpo contra la superficie donde descansas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_19.opus"
+      },
+      "2": {
+        "script": "Reconoce la respiración como punto de referencia corporal",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_19.opus"
+      },
+      "3": {
+        "script": "Nota la presión de los muslos sobre el cojín o la silla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_19.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la atención recorra la espalda, de arriba abajo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_20.opus"
+      },
+      "2": {
+        "script": "Vuelve al ancla del aire en las fosas nasales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_20.opus"
+      },
+      "3": {
+        "script": "Reconoce la sensación de los tobillos cruzados o apoyados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_20.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente ambas pantorrillas, izquierda y derecha, en contacto",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_21.opus"
+      },
+      "2": {
+        "script": "Siente el peso del cuerpo hundiéndose en el asiento",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_21.opus"
+      },
+      "3": {
+        "script": "Deja que la zona lumbar se hunda hacia el apoyo posterior",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_21.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la sensación de las rodillas tocándose o separadas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_22.opus"
+      },
+      "2": {
+        "script": "Nota el contacto firme de los muslos con la superficie",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_22.opus"
+      },
+      "3": {
+        "script": "Siente la columna alargada, digna, sin rigidez",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_22.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el espacio interno de la boca, lengua y paladar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_23.opus"
+      },
+      "2": {
+        "script": "Observa la presión de los pies apoyados en el suelo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_23.opus"
+      },
+      "3": {
+        "script": "Observa el latido del corazón en el pecho, sutil y rítmico",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_23.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Deja que la respiración sea el hilo conductor de la atención",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_24.opus"
+      },
+      "2": {
+        "script": "Permite que la gravedad sostenga el cuerpo por completo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_24.opus"
+      },
+      "3": {
+        "script": "Nota el pulso en las muñecas o el cuello, si aparece",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_24.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la plenitud del vientre al llenarse de aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_25.opus"
+      },
+      "2": {
+        "script": "Siente la estabilidad de la pelvis sobre el cojín",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_25.opus"
+      },
+      "3": {
+        "script": "Vuelve a descansar la atención en el movimiento del vientre",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_25.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el vaciamiento suave del abdomen al soltar el aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_26.opus"
+      },
+      "2": {
+        "script": "Reconoce la sensación neutra del peso en los párpados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_26.opus"
+      },
+      "3": {
+        "script": "Siente la lengua suelta en el suelo de la boca",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_26.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la pausa natural entre una exhalación y la siguiente inhalación",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_27.opus"
+      },
+      "2": {
+        "script": "Nota el contacto de la ropa sobre la piel del pecho",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_27.opus"
+      },
+      "3": {
+        "script": "Observa la humedad en los ojos, la frescura del parpadeo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_27.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que el cuerpo respire sin intervención voluntaria",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_28.opus"
+      },
+      "2": {
+        "script": "Observa la temperatura neutra del aire en las manos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_28.opus"
+      },
+      "3": {
+        "script": "Permite que los omóplatos se separen suavemente hacia los lados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_28.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve al ancla de la respiración en el pecho",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_29.opus"
+      },
+      "2": {
+        "script": "Siente ambas pantorrillas, izquierda y luego derecha, en reposo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_29.opus"
+      },
+      "3": {
+        "script": "Nota el peso de la cabeza equilibrado sobre el cuello",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_29.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la expansión lateral de las costillas al inspirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_30.opus"
+      },
+      "2": {
+        "script": "Permite que los hombros caigan lejos de las orejas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_30.opus"
+      },
+      "3": {
+        "script": "Siente la piel de la cara expuesta al aire de la habitación",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_30.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el hundimiento suave de las costillas al espirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_31.opus"
+      },
+      "2": {
+        "script": "Nota la ligereza neutral en las yemas de los dedos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_31.opus"
+      },
+      "3": {
+        "script": "Detecta vibraciones finas en las yemas de los dedos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_31.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la sensación de las pestañas tocándose al parpadear",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_32.opus"
+      },
+      "2": {
+        "script": "Observa el espacio entre los dientes, mandíbula suelta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_32.opus"
+      },
+      "3": {
+        "script": "Observa la sensación de plenitud o vacío en el estómago",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_32.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el peso de los párpados cerrados, pesados y quietos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_33.opus"
+      },
+      "2": {
+        "script": "Siente la lengua descansando en el paladar superior",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_33.opus"
+      },
+      "3": {
+        "script": "Nota el contacto de los codos con el cuerpo o el aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_33.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota cualquier tic o micro movimiento en los músculos faciales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_34.opus"
+      },
+      "2": {
+        "script": "Reconoce la postura erguida pero sin rigidez innecesaria",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_34.opus"
+      },
+      "3": {
+        "script": "Deja que la respiración sea un ancla estable en el presente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_34.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la lengua se suelte del paladar superior",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_35.opus"
+      },
+      "2": {
+        "script": "Vuelve a la respiración como ancla en el abdomen",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_35.opus"
+      },
+      "3": {
+        "script": "Siente ambos brazos, izquierda y luego derecha, pesados y tibios",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_35.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la humedad interna de la boca y la garganta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_36.opus"
+      },
+      "2": {
+        "script": "Nota una posible tensión sutil en la nuca, solo obsérvala",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_36.opus"
+      },
+      "3": {
+        "script": "Observa la curva natural del cuello, sin forzar ni caer",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_36.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la vibración sutil de la voz interna en silencio",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_37.opus"
+      },
+      "2": {
+        "script": "Siente el calor neutro irradiando desde la palma de las manos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_37.opus"
+      },
+      "3": {
+        "script": "Nota la sensación de solidez en la pelvis, base del tronco",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_37.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a centrarte en el flujo de aire en las fosas nasales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_38.opus"
+      },
+      "2": {
+        "script": "Observa el pulso leve en las muñecas o el cuello",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_38.opus"
+      },
+      "3": {
+        "script": "Permite que la zona entre cejas se alise, sin fruncir",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_38.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la temperatura neutra del aire en la punta de la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_39.opus"
+      },
+      "2": {
+        "script": "Permite que la mirada interna permanezca suave y baja",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_39.opus"
+      },
+      "3": {
+        "script": "Siente el aire rozar la garganta al pasar, seco o húmedo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_39.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el ritmo cardíaco percibido en el pecho o el cuello",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_40.opus"
+      },
+      "2": {
+        "script": "Nota la humedad neutra en el interior de la boca",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_40.opus"
+      },
+      "3": {
+        "script": "Observa el cuerpo como un campo de sensaciones en cambio",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_40.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la sensación de los codos apoyados o colgando libres",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_41.opus"
+      },
+      "2": {
+        "script": "Siente la piel de la cara expuesta al aire del entorno",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_41.opus"
+      },
+      "3": {
+        "script": "Nota el calor que emana de las palmas hacia los muslos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_41.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente ambas muñecas, izquierdas y derechas, relajadas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_42.opus"
+      },
+      "2": {
+        "script": "Observa la vibración sutil de la vida en los brazos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_42.opus"
+      },
+      "3": {
+        "script": "Reconoce la quietud de las rodillas, dobladas y apoyadas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_42.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que los dedos se curven de forma natural, sin fuerza",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_43.opus"
+      },
+      "2": {
+        "script": "Deja que la atención recorra la planta de ambos pies",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_43.opus"
+      },
+      "3": {
+        "script": "Vuelve la mente al vaivén suave del abdomen",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_43.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el contacto entre los dedos si se tocan entre sí",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_44.opus"
+      },
+      "2": {
+        "script": "Nota la textura de la tela bajo los dedos de los pies",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_44.opus"
+      },
+      "3": {
+        "script": "Siente la planta de los pies, el arco, los dedos, el talón",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_44.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la piel de las manos, su textura y temperatura",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_45.opus"
+      },
+      "2": {
+        "script": "Siente la frescura neutra en la piel de los antebrazos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_45.opus"
+      },
+      "3": {
+        "script": "Observa la textura de la ropa sobre el pecho y la espalda",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_45.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a la respiración como descanso para la mente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_46.opus"
+      },
+      "2": {
+        "script": "Observa el movimiento casi imperceptible del esternón",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_46.opus"
+      },
+      "3": {
+        "script": "Nota la humedad en el interior de la boca, la saliva",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_46.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el cuerpo entero como un campo de sensaciones vivas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_47.opus"
+      },
+      "2": {
+        "script": "Permite que la respiración sea el descanso de la mente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_47.opus"
+      },
+      "3": {
+        "script": "Permite que los ojos se hundan un poco más en sus órbitas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_47.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la solidez de los huesos sosteniendo la postura",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_48.opus"
+      },
+      "2": {
+        "script": "Vuelve al punto de referencia del aire en la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_48.opus"
+      },
+      "3": {
+        "script": "Siente la expansión lateral de las costillas al inhalar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_48.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la fluidez de la sangre circulando en las venas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_49.opus"
+      },
+      "2": {
+        "script": "Nota la solidez de los huesos sosteniendo la forma",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_49.opus"
+      },
+      "3": {
+        "script": "Observa la contracción natural del vientre al exhalar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_49.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la atención habite la región lumbar y sacra",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_50.opus"
+      },
+      "2": {
+        "script": "Siente la columna alineada, vértebra sobre vértebra",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_50.opus"
+      },
+      "3": {
+        "script": "Nota la sensación de ligereza en la parte superior del cuerpo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_50.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el peso de la pelvis hundiéndose en el asiento",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_51.opus"
+      },
+      "2": {
+        "script": "Observa la curva natural de la lumbar, sin juzgar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_51.opus"
+      },
+      "3": {
+        "script": "Deja que la gravedad haga su trabajo con cada hueso",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_51.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la conexión entre la base de la columna y la tierra",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_52.opus"
+      },
+      "2": {
+        "script": "Permite que el pecho permanezca abierto y receptivo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_52.opus"
+      },
+      "3": {
+        "script": "Siente ambos tobillos, izquierda y luego derecha, sueltos y abiertos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_52.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la sensación en los isquiones, puntos de apoyo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_53.opus"
+      },
+      "2": {
+        "script": "Nota la sensación de amplitud en la caja torácica",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_53.opus"
+      },
+      "3": {
+        "script": "Observa el espacio interno de la boca, amplio y quieto",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_53.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a sentir el vaivén sutil del abdomen al respirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_54.opus"
+      },
+      "2": {
+        "script": "Siente ambas rodillas, izquierda y derecha, estables y quietas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_54.opus"
+      },
+      "3": {
+        "script": "Nota el cosquilleo leve en la piel de la nuca o cara",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_54.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la onda respiratoria recorriendo la columna vertebral",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_55.opus"
+      },
+      "2": {
+        "script": "Observa el contacto de los tobillos si están cruzados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_55.opus"
+      },
+      "3": {
+        "script": "Permite que la respiración sea el único movimiento percibido",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_55.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la expansión en la zona baja de la espalda al inspirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_56.opus"
+      },
+      "2": {
+        "script": "Permite que el abdomen esté blando, suelto, quieto",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_56.opus"
+      },
+      "3": {
+        "script": "Siente el peso de los antebrazos descansando sobre las piernas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_56.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el retorno suave al exhalar, sin colapso",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_57.opus"
+      },
+      "2": {
+        "script": "Nota el latido del corazón en el centro del pecho",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_57.opus"
+      },
+      "3": {
+        "script": "Observa la sensación de los párpados cerrados, pesados y oscuros",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_57.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la respiración masajee los órganos internos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_58.opus"
+      },
+      "2": {
+        "script": "Siente la sangre circulando, calor neutro en las piernas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_58.opus"
+      },
+      "3": {
+        "script": "Nota la presión sutil del aire sobre las cejas y pómulos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_58.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el estómago, el hígado, los intestinos acomodándose",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_59.opus"
+      },
+      "2": {
+        "script": "Observa la quietud relativa entre una respiración y la siguiente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_59.opus"
+      },
+      "3": {
+        "script": "Vuelve a anclar la atención en la punta de la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_59.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota cualquier sensación de hambre, saciedad o neutralidad",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_60.opus"
+      },
+      "2": {
+        "script": "Deja que el cuerpo sea conocido solo por sensaciones",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_60.opus"
+      },
+      "3": {
+        "script": "Siente la columna vertebral como una pila de vértebras equilibradas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_60.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la garganta libre, permitiendo el paso del aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_61.opus"
+      },
+      "2": {
+        "script": "Vuelve al ancla constante de la respiración física",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_61.opus"
+      },
+      "3": {
+        "script": "Observa la pelvis ancha y estable, cimiento de la postura",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_61.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve al ancla estable de la respiración en el abdomen",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_62.opus"
+      },
+      "2": {
+        "script": "Nota la presión del mentón ligeramente hacia el pecho",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_62.opus"
+      },
+      "3": {
+        "script": "Nota la sensación de las caderas abriéndose hacia los lados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_62.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el aire moviéndose en la tráquea, tibio y vivo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_63.opus"
+      },
+      "2": {
+        "script": "Siente la relajación neutra en los músculos faciales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_63.opus"
+      },
+      "3": {
+        "script": "Permite que las rodillas se abran un poco más si hace falta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_63.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la humedad de la mucosa nasal por dentro",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_64.opus"
+      },
+      "2": {
+        "script": "Observa los omóplatos apoyados, izquierda y derecha, simétricos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_64.opus"
+      },
+      "3": {
+        "script": "Siente ambos muslos, izquierda y luego derecha, anchos y pesados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_64.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la simetría del flujo de aire en ambas fosas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_65.opus"
+      },
+      "2": {
+        "script": "Permite que los codos cuelguen con peso natural",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_65.opus"
+      },
+      "3": {
+        "script": "Observa el vaivén del diafragma sentido desde el abdomen bajo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_65.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la atención se ensanche al cuerpo completo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_66.opus"
+      },
+      "2": {
+        "script": "Nota la sensación de los pulmones llenándose y vaciándose",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_66.opus"
+      },
+      "3": {
+        "script": "Nota la frescura en la entrada nasal, el calor en la salida",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_66.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la piel como límite permeable con el entorno",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_67.opus"
+      },
+      "2": {
+        "script": "Siente la frescura en la garganta al entrar el aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_67.opus"
+      },
+      "3": {
+        "script": "Deja que la nuca se alargue, la barbilla bajando imperceptiblemente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_67.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el aire de la habitación tocando antebrazos y cuello",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_68.opus"
+      },
+      "2": {
+        "script": "Observa el calor neutro al salir la exhalación por la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_68.opus"
+      },
+      "3": {
+        "script": "Siente la piel del cuero cabelludo, la raíz del pelo, el aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_68.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la sensación de frío o calor en los hombros",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_69.opus"
+      },
+      "2": {
+        "script": "Permite que la atención se ensanche a todo el cuerpo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_69.opus"
+      },
+      "3": {
+        "script": "Observa la sensación de las orejas, el canal auditivo, el lóbulo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_69.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a notar el ritmo respiratorio en el pecho amplio",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_70.opus"
+      },
+      "2": {
+        "script": "Nota la presencia del cuerpo como campo de sensaciones",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_70.opus"
+      },
+      "3": {
+        "script": "Nota el sabor neutro en la lengua, el contacto con los dientes",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_70.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la apertura del esternón al recibir el aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_71.opus"
+      },
+      "2": {
+        "script": "Siente la piel como límite permeable con el aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_71.opus"
+      },
+      "3": {
+        "script": "Permite que la respiración fluya sin intención de controlarla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_71.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el cierre suave al devolver el aire al mundo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_72.opus"
+      },
+      "2": {
+        "script": "Observa el espacio interno, vasto y sensible a la vez",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_72.opus"
+      },
+      "3": {
+        "script": "Siente el cuerpo entero como un saco de piel lleno de vida",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_72.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el latido en las sienes o en las mejillas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_73.opus"
+      },
+      "2": {
+        "script": "Deja que la respiración una cuerpo y atención",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_73.opus"
+      },
+      "3": {
+        "script": "Observa la presión de los isquiones hundiéndose en el cojín",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_73.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que los ojos giren suavemente hacia abajo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_74.opus"
+      },
+      "2": {
+        "script": "Vuelve al descanso de la respiración en el vientre",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_74.opus"
+      },
+      "3": {
+        "script": "Nota la sensación de las costillas flotantes al expandirse",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_74.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la suavidad de los globos oculares en sus cuencas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_75.opus"
+      },
+      "2": {
+        "script": "Nota cualquier zona de tirantez, solo reconócela así",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_75.opus"
+      },
+      "3": {
+        "script": "Vuelve a sentir el aire en el umbral de las fosas nasales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_75.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la oscuridad detrás de los párpados cerrados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_76.opus"
+      },
+      "2": {
+        "script": "Siente la pesadez neutra en la zona de las caderas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_76.opus"
+      },
+      "3": {
+        "script": "Siente ambas manos, izquierda y luego derecha, abiertas y receptivas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_76.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa destellos o sombras sin seguirlos, solo ver",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_77.opus"
+      },
+      "2": {
+        "script": "Observa la temperatura de la piel en la nuca",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_77.opus"
+      },
+      "3": {
+        "script": "Observa el latido en las arterias femorales, profundo y lento",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_77.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a la sensación táctil de la respiración en la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_78.opus"
+      },
+      "2": {
+        "script": "Permite que las manos descansen, palmas arriba o abajo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_78.opus"
+      },
+      "3": {
+        "script": "Nota la temperatura de la piel en la cara interna de los brazos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_78.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el cosquilleo leve en el labio superior al exhalar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_79.opus"
+      },
+      "2": {
+        "script": "Nota el cosquilleo leve o ausencia de sensación en dedos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_79.opus"
+      },
+      "3": {
+        "script": "Permite que la espalda baja se relaje hacia el respaldo o el vacío",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_79.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la sequedad o humedad en los labios entreabiertos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_80.opus"
+      },
+      "2": {
+        "script": "Siente la firmeza del suelo bajo la base de la espalda",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_80.opus"
+      },
+      "3": {
+        "script": "Siente el peso de la caja torácica sobre el diafragma",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_80.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la posición de la mandíbula, dientes separados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_81.opus"
+      },
+      "2": {
+        "script": "Observa la respiración en los riñones, expansión lateral",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_81.opus"
+      },
+      "3": {
+        "script": "Observa la sensación de vacío en la garganta al exhalar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_81.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la nuca se alargue, coronilla hacia el cielo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_82.opus"
+      },
+      "2": {
+        "script": "Permite que la exhalación sea larga y silenciosa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_82.opus"
+      },
+      "3": {
+        "script": "Nota el contacto de los dientes superiores e inferiores, apenas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_82.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el peso de la cabeza equilibrado sobre el cuello",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_83.opus"
+      },
+      "2": {
+        "script": "Nota la pausa natural al final de la exhalación",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_83.opus"
+      },
+      "3": {
+        "script": "Deja que los ojos rueden ligeramente hacia abajo, relajados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_83.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota cualquier rigidez en los trapecios o cervicales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_84.opus"
+      },
+      "2": {
+        "script": "Siente el inicio espontáneo de la siguiente inhalación",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_84.opus"
+      },
+      "3": {
+        "script": "Siente la planta del pie izquierdo, luego la derecha, vivas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_84.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la respiración aflojando esa zona con cada salida",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_85.opus"
+      },
+      "2": {
+        "script": "Observa el ciclo completo sin etiquetar partes",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_85.opus"
+      },
+      "3": {
+        "script": "Observa la humedad del aliento en el labio superior",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_85.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve al punto de referencia: aire entrando, aire saliendo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_86.opus"
+      },
+      "2": {
+        "script": "Deja que el cuerpo respire con total autonomía",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_86.opus"
+      },
+      "3": {
+        "script": "Nota la sensación de los pómulos, altos y suaves",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_86.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el cuerpo respirando como un organismo único",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_87.opus"
+      },
+      "2": {
+        "script": "Vuelve al punto de referencia: aire en las fosas nasales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_87.opus"
+      },
+      "3": {
+        "script": "Permite que la respiración sea tu descanso, tu punto de vuelta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_87.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la coordinación perfecta entre diafragma y suelo pélvico",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_88.opus"
+      },
+      "2": {
+        "script": "Nota la sensación de los párpados cerrados, oscuros",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_88.opus"
+      },
+      "3": {
+        "script": "Siente el cuerpo respirando por todos los poros a la vez",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_88.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la presión suave hacia abajo al inhalar profundo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_89.opus"
+      },
+      "2": {
+        "script": "Siente la humedad neutra en la superficie de los ojos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_89.opus"
+      },
+      "3": {
+        "script": "Observa la quietud de los omóplatos sobre la caja torácica",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_89.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que el suelo pélvico se recoja sutil al exhalar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_90.opus"
+      },
+      "2": {
+        "script": "Observa la relajación de la frente, lisa y amplia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_90.opus"
+      },
+      "3": {
+        "script": "Nota la sensación de los codos pesados, anclados al torso",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_90.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la base del torso ancha, estable, soportando",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_91.opus"
+      },
+      "2": {
+        "script": "Permite que las cejas se separen ligeramente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_91.opus"
+      },
+      "3": {
+        "script": "Vuelve la atención al movimiento rítmico del bajo vientre",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_91.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la vitalidad en los muslos, huesos y músculos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_92.opus"
+      },
+      "2": {
+        "script": "Nota la mandíbula suelta, dientes sin tocarse",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_92.opus"
+      },
+      "3": {
+        "script": "Siente ambas rodillas, izquierda y luego derecha, blandas y anchas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_92.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la piel de las piernas, vello, temperatura, tacto",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_93.opus"
+      },
+      "2": {
+        "script": "Siente la lengua libre, sin presionar el paladar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_93.opus"
+      },
+      "3": {
+        "script": "Observa la piel de la frente, tensa o lisa, solo notando",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_93.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a anclar la atención en el flujo nasal constante",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_94.opus"
+      },
+      "2": {
+        "script": "Observa la garganta abierta, paso libre para el aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_94.opus"
+      },
+      "3": {
+        "script": "Nota la vibración sutil de la voz interna, si hay silencio",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_94.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la punta de los dedos fría o tibia, viva",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_95.opus"
+      },
+      "2": {
+        "script": "Permite que el cuello sea largo, coronilla hacia el cielo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_95.opus"
+      },
+      "3": {
+        "script": "Permite que el mentón caiga un milímetro más, suelto",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_95.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el pulso en las muñecas, rítmico, silencioso",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_96.opus"
+      },
+      "2": {
+        "script": "Nota el equilibrio de la cabeza sobre la columna",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_96.opus"
+      },
+      "3": {
+        "script": "Siente el aire mover vello fino en brazos o piernas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_96.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la palma de las manos, hueca, receptiva",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_97.opus"
+      },
+      "2": {
+        "script": "Siente ambos brazos, izquierda y derecha, pesados y quietos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_97.opus"
+      },
+      "3": {
+        "script": "Observa la sensación de los talones, raíz y apoyo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_97.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la energía de las manos descanse quieta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_98.opus"
+      },
+      "2": {
+        "script": "Observa la sensación de las uñas rozando la tela o piel",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_98.opus"
+      },
+      "3": {
+        "script": "Nota el espacio entre los dientes, la lengua flotando",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_98.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente los antebrazos pesados, hundidos en la gravedad",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_99.opus"
+      },
+      "2": {
+        "script": "Permite que la atención incluya sonidos lejanos, de fondo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_99.opus"
+      },
+      "3": {
+        "script": "Deja que la inhalación llegue por sí sola, natural",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_99.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el codo, bisagra libre, sin bloqueos articulares",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_100.opus"
+      },
+      "2": {
+        "script": "Nota cómo el cuerpo recibe el sonido como vibración",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_100.opus"
+      },
+      "3": {
+        "script": "Siente la exhalación dejar el cuerpo, vaciando sin esfuerzo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_100.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el bíceps y el tríceps, relajados, sueltos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_101.opus"
+      },
+      "2": {
+        "script": "Siente la respiración como ancla entre ruidos y silencio",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_101.opus"
+      },
+      "3": {
+        "script": "Observa el torso como un fuelle silencioso y paciente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_101.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a la respiración como refugio de la atención",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_102.opus"
+      },
+      "2": {
+        "script": "Vuelve al descanso de la atención en el abdomen bajo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_102.opus"
+      },
+      "3": {
+        "script": "Nota la sensación de los dedos de los pies, uno a uno",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_102.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el aire fresco en el tabique nasal interno",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_103.opus"
+      },
+      "2": {
+        "script": "Nota la expansión tridimensional del torso al inhalar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_103.opus"
+      },
+      "3": {
+        "script": "Permite que la atención descanse en la respiración ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_103.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el calor generado en la parte posterior de la garganta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_104.opus"
+      },
+      "2": {
+        "script": "Siente la contracción suave al exhalar, onda descendente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_104.opus"
+      },
+      "3": {
+        "script": "Siente el peso de la cabeza, la gravedad tirando suave",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_104.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el vaivén de la úvula con la respiración",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_105.opus"
+      },
+      "2": {
+        "script": "Observa la onda respiratoria llegando hasta la pelvis",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_105.opus"
+      },
+      "3": {
+        "script": "Observa la sensación de las sienes, latiendo o quietas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_105.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que el paladar blando se eleve, creando espacio",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_106.opus"
+      },
+      "2": {
+        "script": "Permite que la respiración masajee órganos internos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_106.opus"
+      },
+      "3": {
+        "script": "Nota el frescor en la mucosa nasal, profunda y callada",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_106.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la lengua ancha, base relajada, punta en dientes",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_107.opus"
+      },
+      "2": {
+        "script": "Nota la vitalidad sutil en la punta de los dedos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_107.opus"
+      },
+      "3": {
+        "script": "Vuelve al ancla: la sensación física de respirar aquí",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_107.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la saliva acumulándose, señal de relajación profunda",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_108.opus"
+      },
+      "2": {
+        "script": "Siente la temperatura neutra en la punta de la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_108.opus"
+      },
+      "3": {
+        "script": "Siente ambos hombros, izquierda y luego derecha, derritiéndose",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_108.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el acto de tragar si ocurre, automático, natural",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_109.opus"
+      },
+      "2": {
+        "script": "Observa la piel de la cabeza, cuero cabelludo relajado",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_109.opus"
+      },
+      "3": {
+        "script": "Observa la espalda media, ancha, apoyada, respirando",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_109.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a sentir el cuerpo entero inhalando y exhalando",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_110.opus"
+      },
+      "2": {
+        "script": "Permite que la expresión facial sea de serenidad neutra",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_110.opus"
+      },
+      "3": {
+        "script": "Nota la sensación de los antebrazos, piel y vello, aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_110.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente la onda expansiva desde el centro a la periferia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_111.opus"
+      },
+      "2": {
+        "script": "Nota la conexión entre respiración y suelo pélvico",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_111.opus"
+      },
+      "3": {
+        "script": "Permite que la pelvis se asiente más, base y centro",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_111.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota la onda contractil de la periferia al centro",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_112.opus"
+      },
+      "2": {
+        "script": "Siente la estabilidad triangular: coxis y rodillas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_112.opus"
+      },
+      "3": {
+        "script": "Siente el cuerpo entero presente, respirando, vivo, quieto",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_112.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la respiración como marea interna, rítmica",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_113.opus"
+      },
+      "2": {
+        "script": "Observa la simetría del cuerpo en la postura sentada",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_113.opus"
+      },
+      "3": {
+        "script": "Observa la pausa al final de la exhalación, paz momentánea",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_113.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la mente descanse en la sensación física",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_114.opus"
+      },
+      "2": {
+        "script": "Permite que la atención flote en la sensación global",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_114.opus"
+      },
+      "3": {
+        "script": "Nota la inhalación naciendo de esa pausa, espontánea",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_114.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente los pies, raíces que beben de la tierra",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_115.opus"
+      },
+      "2": {
+        "script": "Nota la respiración como hilo conductor constante",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_115.opus"
+      },
+      "3": {
+        "script": "Deja que la respiración te sostenga, ancla y refugio",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_115.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota los tobillos, puentes flexibles entre pierna y pie",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_116.opus"
+      },
+      "2": {
+        "script": "Vuelve al ancla precisa: contacto aire-nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_116.opus"
+      },
+      "3": {
+        "script": "Siente la piel del cuello, sensible al aire y la tela",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_116.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el arco plantar, su tensión o su rendición",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_117.opus"
+      },
+      "2": {
+        "script": "Nota la frescura en el interior de las fosas nasales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_117.opus"
+      },
+      "3": {
+        "script": "Observa la sensación de las cejas, separadas, relajadas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_117.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve al ancla constante, respiración, cuerpo, ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_1/instruction_118.opus"
+      },
+      "2": {
+        "script": "Observa la respiración fluyendo en el cuerpo despierto",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_2/instruction_118.opus"
+      },
+      "3": {
+        "script": "Observa la sensación final de presencia corporal completa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cuerpo/variation_3/instruction_118.opus"
+      }
+    }
+  ]
+}

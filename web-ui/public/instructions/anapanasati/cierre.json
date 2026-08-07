@@ -1,0 +1,18 @@
+{
+  "sentences": [
+    {
+      "1": {
+        "script": "Abre los ojos lentamente, mueve el cuerpo despacio y lleva esta calma contigo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cierre/variation_1/instruction_1.opus"
+      },
+      "2": {
+        "script": "Abre los ojos lentamente, mueve tu cuerpo despacio y lleva esta calma contigo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cierre/variation_2/instruction_1.opus"
+      },
+      "3": {
+        "script": "Abre los ojos con suavidad, mueve el cuerpo despacio y lleva esta presencia contigo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/cierre/variation_3/instruction_1.opus"
+      }
+    }
+  ]
+}

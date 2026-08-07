@@ -1,0 +1,508 @@
+{
+  "sentences": [
+    {
+      "1": {
+        "script": "Nota el tono neutro del contacto de la ropa en la piel",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_1.opus"
+      },
+      "2": {
+        "script": "Nota el tono neutro del contacto de las manos sobre los muslos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_1.opus"
+      },
+      "3": {
+        "script": "Observa el tono neutro del peso en los párpados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_1.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa la sensación neutra del peso del cuerpo sobre el asiento",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_2.opus"
+      },
+      "2": {
+        "script": "Observa la sensación neutra del peso del cuerpo sobre el asiento",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_2.opus"
+      },
+      "3": {
+        "script": "Nota la sensación neutra del contacto de la ropa en los hombros",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_2.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce el tono neutro de la temperatura en las manos, izquierda y derecha",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_3.opus"
+      },
+      "2": {
+        "script": "Reconoce el tono neutro de la ropa rozando la piel de los brazos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_3.opus"
+      },
+      "3": {
+        "script": "Reconoce el tono neutro de la temperatura en las palmas de las manos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_3.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el tono neutro del aire en la entrada de la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_4.opus"
+      },
+      "2": {
+        "script": "Siente el tono neutro de la frescura en la entrada de las fosas nasales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_4.opus"
+      },
+      "3": {
+        "script": "Siente la presión neutra del cuerpo sobre el asiento",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_4.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el tono agradable de la suavidad en los hombros al soltar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_5.opus"
+      },
+      "2": {
+        "script": "Nota el tono neutro del calor en las palmas de las manos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_5.opus"
+      },
+      "3": {
+        "script": "Permite que la atención descansé en la respiración como ancla",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_5.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el tono desagradable de la tensión en la mandíbula ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_6.opus"
+      },
+      "2": {
+        "script": "Observa la sensación neutra del sonido lejano que llega y se va",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_6.opus"
+      },
+      "3": {
+        "script": "Observa el tono neutro del hormigueo leve en las puntas de los dedos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_6.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a la respiración como ancla estable de la atención",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_7.opus"
+      },
+      "2": {
+        "script": "Reconoce el tono neutro de la presión en las plantas de los pies",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_7.opus"
+      },
+      "3": {
+        "script": "Nota la sensación neutra del aire en las fosas nasales",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_7.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el tono neutro del sonido lejano que llega y se va",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_8.opus"
+      },
+      "2": {
+        "script": "Siente el tono neutro del hormigueo sutil en las yemas de los dedos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_8.opus"
+      },
+      "3": {
+        "script": "Reconoce el tono agradable de la suavidad en la mandíbula relajada",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_8.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce el tono neutro de la vibración sutil en los pies",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_9.opus"
+      },
+      "2": {
+        "script": "Nota el tono neutro de la vibración leve presente en el pecho",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_9.opus"
+      },
+      "3": {
+        "script": "Siente la expansión neutra del vientre al respirar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_9.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el tono agradable de la apertura en el pecho ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_10.opus"
+      },
+      "2": {
+        "script": "Observa la sensación neutra del peso en los párpados cerrados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_10.opus"
+      },
+      "3": {
+        "script": "Vuelve a la respiración como punto de referencia estable",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_10.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el tono desagradable de la rigidez en la nuca presente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_11.opus"
+      },
+      "2": {
+        "script": "Reconoce el tono agradable de la suavidad en la mandíbula relajada",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_11.opus"
+      },
+      "3": {
+        "script": "Observa el tono neutro del calor en las plantas de los pies",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_11.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Descansa en la respiración como punto de referencia constante",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_12.opus"
+      },
+      "2": {
+        "script": "Nota el tono agradable de la apertura presente en el pecho",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_12.opus"
+      },
+      "3": {
+        "script": "Nota la sensación neutra del latido en la yema de los dedos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_12.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el tono neutro de la humedad en los labios entreabiertos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_13.opus"
+      },
+      "2": {
+        "script": "Observa la sensación agradable de la ligereza en ambos brazos, izquierda y derecha",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_13.opus"
+      },
+      "3": {
+        "script": "Reconoce el tono desagradable de la tensión en la nuca",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_13.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el tono neutro de la presión en la base del cuerpo contra el cojín",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_14.opus"
+      },
+      "2": {
+        "script": "Siente el tono agradable de la soltura en el vientre blando",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_14.opus"
+      },
+      "3": {
+        "script": "Permite que la mente descanse en el ritmo de la respiración",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_14.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el tono agradable de la ligereza en los párpados cerrados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_15.opus"
+      },
+      "2": {
+        "script": "Reconoce el tono agradable de la calma en la respiración natural",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_15.opus"
+      },
+      "3": {
+        "script": "Observa el tono neutro de la vibración sutil en los muslos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_15.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce el tono desagradable de un nudo en el estómago",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_16.opus"
+      },
+      "2": {
+        "script": "Nota el tono desagradable de la tensión en la mandíbula apretada",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_16.opus"
+      },
+      "3": {
+        "script": "Nota la sensación neutra del tejido rozando las rodillas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_16.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la respiración sea el descanso de la mente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_17.opus"
+      },
+      "2": {
+        "script": "Observa la sensación desagradable de la tirantez en la nuca y hombros",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_17.opus"
+      },
+      "3": {
+        "script": "Reconoce el tono agradable de la apertura en el pecho",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_17.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el tono neutro de la sensación en la punta de la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_18.opus"
+      },
+      "2": {
+        "script": "Reconoce el tono desagradable de un nudo en el estómago",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_18.opus"
+      },
+      "3": {
+        "script": "Siente la quietud neutra en ambas manos, izquierda y derecha",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_18.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el tono neutro del latido percibido en las muñecas, izquierda y derecha",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_19.opus"
+      },
+      "2": {
+        "script": "Siente el tono desagradable de la rigidez en la parte superior de la espalda",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_19.opus"
+      },
+      "3": {
+        "script": "Ancla la atención en la entrada y salida del aire",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_19.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el tono agradable de la relajación extendiéndose por la espalda baja",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_20.opus"
+      },
+      "2": {
+        "script": "Nota el tono desagradable de la urgencia inquieta en el pecho",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_20.opus"
+      },
+      "3": {
+        "script": "Observa el tono neutro de la frescura en la punta de la nariz",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_20.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el tono desagradable de la tirantez en la frente fruncida",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_21.opus"
+      },
+      "2": {
+        "script": "Vuelve la atención a la respiración como ancla estable",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_21.opus"
+      },
+      "3": {
+        "script": "Nota la sensación neutra del peso de los brazos sobre las piernas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_21.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Vuelve a la respiración como ancla frente a la dispersión",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_22.opus"
+      },
+      "2": {
+        "script": "Descansa en la sensación del aire entrando y saliendo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_22.opus"
+      },
+      "3": {
+        "script": "Reconoce el tono desagradable de la tirantez en la frente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_22.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el tono neutro del frescor en la piel de los brazos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_23.opus"
+      },
+      "2": {
+        "script": "Usa la respiración como punto de referencia para la atención",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_23.opus"
+      },
+      "3": {
+        "script": "Deja que la respiración sea el descanso de la atención",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_23.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce el tono neutro de la expansión natural del abdomen",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_24.opus"
+      },
+      "2": {
+        "script": "Permite que la respiración reúna la mente dispersa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_24.opus"
+      },
+      "3": {
+        "script": "Observa el tono neutro de la humedad en los labios",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_24.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el tono agradable de la calma que surge en el vientre",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_25.opus"
+      },
+      "2": {
+        "script": "Nota el tono neutro del silencio entre dos sonidos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_25.opus"
+      },
+      "3": {
+        "script": "Nota la sensación neutra del contacto entre los dedos entrelazados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_25.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el tono desagradable de la urgencia por mover las piernas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_26.opus"
+      },
+      "2": {
+        "script": "Observa la sensación neutra del aire tibio en la garganta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_26.opus"
+      },
+      "3": {
+        "script": "Reconoce el tono agradable de la ligereza en los párpados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_26.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Descansa en la respiración como referencia inmediata y viva",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_27.opus"
+      },
+      "2": {
+        "script": "Reconoce el tono neutro del latido sentido en las muñecas",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_27.opus"
+      },
+      "3": {
+        "script": "Siente la estabilidad neutra de la columna erguida",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_27.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el tono neutro del contacto entre los dedos de ambas manos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_28.opus"
+      },
+      "2": {
+        "script": "Siente el tono neutro de la expansión natural del abdomen",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_28.opus"
+      },
+      "3": {
+        "script": "Regresa a la respiración como ancla constante",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_28.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el tono neutro de la oscuridad detrás de los párpados cerrados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_29.opus"
+      },
+      "2": {
+        "script": "Nota el tono agradable de la relajación en la frente lisa",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_29.opus"
+      },
+      "3": {
+        "script": "Observa el tono neutro del cosquilleo leve en el cuero cabelludo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_29.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el tono agradable de la soltura en la zona lumbar ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_30.opus"
+      },
+      "2": {
+        "script": "Observa la sensación agradable de la calma en el ritmo cardíaco",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_30.opus"
+      },
+      "3": {
+        "script": "Nota la sensación neutra del aire rozando la piel de la cara",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_30.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce el tono desagradable de la contracción en el entrecejo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_31.opus"
+      },
+      "2": {
+        "script": "Reconoce el tono neutro del contacto de los tobillos cruzados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_31.opus"
+      },
+      "3": {
+        "script": "Reconoce el tono desagradable de la rigidez en los omóplatos",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_31.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Permite que la respiración reúna la atención dispersa suavemente",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_32.opus"
+      },
+      "2": {
+        "script": "Siente el tono neutro de la humedad en los labios",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_32.opus"
+      },
+      "3": {
+        "script": "Permite que el aliento sostenga la presencia aquí",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_32.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Siente el tono neutro del calor en las plantas de ambos pies",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_33.opus"
+      },
+      "2": {
+        "script": "Vuelve al ancla de la respiración en el abdomen",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_33.opus"
+      },
+      "3": {
+        "script": "Observa el tono neutro de la presión en los codos apoyados",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_33.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Observa el tono neutro de un pensamiento que pasa sin enganchar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_34.opus"
+      },
+      "2": {
+        "script": "Descansa en el movimiento natural de inhalar y exhalar",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_34.opus"
+      },
+      "3": {
+        "script": "Nota la sensación neutra del latido en el cuello",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_34.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Nota el tono agradable de la quietud que se instala en el cuerpo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_35.opus"
+      },
+      "2": {
+        "script": "Nota el tono desagradable de la dureza del asiento bajo el cuerpo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_35.opus"
+      },
+      "3": {
+        "script": "Reconoce el tono agradable de la soltura en la garganta",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_35.opus"
+      }
+    },
+    {
+      "1": {
+        "script": "Reconoce el tono neutro de la presencia simple, aquí y ahora",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_1/instruction_36.opus"
+      },
+      "2": {
+        "script": "Observa la sensación neutra de la quietud general del cuerpo",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_2/instruction_36.opus"
+      },
+      "3": {
+        "script": "Vuelve al flujo de la respiración como referencia",
+        "audioUrl": "meditations/dynamic_audio/anapanasati/sensaciones/variation_3/instruction_36.opus"
+      }
+    }
+  ]
+}
