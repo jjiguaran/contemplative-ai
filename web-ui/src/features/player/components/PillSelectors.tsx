@@ -2,6 +2,9 @@ import React from 'react';
 import { SentencesRepo, BackgroundLog, MeditationsConfig } from '../../../shared/types/types';
 import { formatDuration, capitalize, musicDisplayName, getComputedSentencesByDuration } from '../../../shared/utils/utils';
 
+/** Available silence-length options shown in the UI */
+const SILENCE_OPTIONS = ['cortos', 'largos'] as const;
+
 interface PillSelectorsProps {
   sentencesRepo: SentencesRepo | null;
   backgroundsLog: BackgroundLog | null;
@@ -10,6 +13,7 @@ interface PillSelectorsProps {
   nivel: string;
   musica: string;
   tipo: boolean | null;
+  silencios: string;
   allSelected: boolean;
   isAvailable: boolean;
   audioError: string | null;
@@ -18,6 +22,7 @@ interface PillSelectorsProps {
   onSetDuracion: (d: string) => void;
   onSetNivel: (l: string) => void;
   onSetMusica: (m: string) => void;
+  onSetSilencios: (s: string) => void;
   onSetBackgroundVolume: (v: number) => void;
   onResetPlayback: () => void;
   getLevelOptions: () => string[];
@@ -31,6 +36,7 @@ export default function PillSelectors({
   nivel,
   musica,
   tipo,
+  silencios,
   allSelected,
   isAvailable,
   audioError,
@@ -39,6 +45,7 @@ export default function PillSelectors({
   onSetDuracion,
   onSetNivel,
   onSetMusica,
+  onSetSilencios,
   onSetBackgroundVolume,
   onResetPlayback,
   getLevelOptions,
@@ -149,6 +156,21 @@ export default function PillSelectors({
               }}
             >
               {musicDisplayName(m)}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="pill-group">
+        <p className="pill-label">Silencios</p>
+        <div className="pills">
+          {SILENCE_OPTIONS.map(s => (
+            <div
+              key={s}
+              className={`pill${silencios === s ? ' active' : ''}`}
+              onClick={() => { onSetSilencios(s); onResetPlayback(); }}
+            >
+              {capitalize(s)}
             </div>
           ))}
         </div>

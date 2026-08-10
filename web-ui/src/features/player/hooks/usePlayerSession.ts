@@ -26,6 +26,7 @@ export function usePlayerSession(
   getMatchingSentences: () => SentenceEntry[],
   meditationsConfig: MeditationsConfig | null,
   selectedDuration: string,
+  silencios: string,
   onSessionEnded: () => void
 ) {
   const [playing, setPlaying] = useState(false);
@@ -101,8 +102,14 @@ export function usePlayerSession(
     const sentencesByDuration = meditationsConfig ? getComputedSentencesByDuration(meditationsConfig) : {};
     const maxSegments = sentencesByDuration[selectedDuration] ?? 0;
 
-    // Interleave silence after every sentence, with an extra pause before the cierre (closing) sentence
-    const silencePath = meditationsConfig?.silenceURL;
+    // Interleave silence after every sentence, with an extra pause before the cierre (closing) sentence.
+    // `silencios` selects which silence file to use: 'cortos' → 20s, 'largos' → 40s.
+    const silencePaths = meditationsConfig?.silenceURL;
+    const silencePath = silencePaths
+      ? silencios === 'largos'
+        ? (silencePaths.largos ?? silencePaths.cortos)
+        : (silencePaths.cortos ?? silencePaths.largos)
+      : null;
     const silenceUrl = silencePath ? `${R2_BUCKET_URL}/${silencePath}` : null;
     const gongPath = meditationsConfig?.gongsURL;
     const gongUrl = gongPath ? `${R2_BUCKET_URL}/${gongPath}` : null;
@@ -145,6 +152,7 @@ export function usePlayerSession(
     captureEvent('meditation_started', {
       duration: selectedDuration,
       music: musica,
+      silencios,
     });
 
     setPreparingAudio(true);
@@ -178,6 +186,7 @@ export function usePlayerSession(
         captureEvent('meditation_completed', {
           duration: selectedDuration,
           music: musica,
+          silencios,
         });
         onSessionEnded();
       });
@@ -197,7 +206,7 @@ export function usePlayerSession(
       setAudioError('No se pudo preparar el audio. Intenta de nuevo.');
       setPreparingAudio(false);
     }
-  }, [getMatchingSentences, musica, meditationsConfig, concatenatedUrl, selectedDuration, onSessionEnded]);
+  }, [getMatchingSentences, musica, meditationsConfig, concatenatedUrl, selectedDuration, silencios, onSessionEnded]);
 
   const togglePlayPause = useCallback(() => {
     const player = playerRef.current;

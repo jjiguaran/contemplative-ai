@@ -28,7 +28,7 @@ export default function App() {
     setScreen('feedback');
   }, [selection.duracion]);
 
-  const player = usePlayerSession(selection.musica, selection.getMatchingSentences, meditationsConfig, selection.duracion, handleSessionEnded);
+  const player = usePlayerSession(selection.musica, selection.getMatchingSentences, meditationsConfig, selection.duracion, selection.silencios, handleSessionEnded);
 
   /* init PostHog */
   useEffect(() => { initPostHog(); }, []);
@@ -78,6 +78,7 @@ export default function App() {
               nivel={selection.nivel}
               musica={selection.musica}
               tipo={selection.tipo}
+              silencios={selection.silencios}
               allSelected={selection.allSelected}
               isAvailable={selection.isAvailable()}
               audioError={player.audioError}
@@ -86,6 +87,7 @@ export default function App() {
               onSetDuracion={selection.setDuracion}
               onSetNivel={selection.setNivel}
               onSetMusica={selection.setMusica}
+              onSetSilencios={selection.setSilencios}
               onSetBackgroundVolume={player.setBackgroundVolume}
               onResetPlayback={player.resetPlayback}
               getLevelOptions={selection.getLevelOptions}

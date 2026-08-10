@@ -57,10 +57,17 @@ export interface MeditationConfig {
   level: Record<string, LevelConfig>;
 }
 
+export interface SilenceURLConfig {
+  /** Silence file for short pauses (cortos) — 20 seconds */
+  cortos?: string;
+  /** Silence file for long pauses (largos) — 40 seconds */
+  largos?: string;
+}
+
 export interface MeditationsConfig {
   version: string;
   gongsURL?: string;
-  silenceURL?: string;
+  silenceURL?: SilenceURLConfig;
   meditations: Record<string, MeditationConfig>;
 }
 

@@ -1,7 +1,10 @@
 {
   "version": "2026-07-17-04",
   "gongsURL":"sounds/freesound_community-gong-79191--extended.mp3",
-  "silenceURL":"sounds/organic_silence_20.0s.opus",
+  "silenceURL":{
+    "cortos": "sounds/organic_silence_20.0s.opus",
+    "largos": "sounds/organic_silence_40.0s.opus"
+  },
   "meditations": {
     "anapanasati": {
       "label": "Anapanasati",

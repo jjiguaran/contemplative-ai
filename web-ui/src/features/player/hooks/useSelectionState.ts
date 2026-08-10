@@ -7,6 +7,7 @@ export function useSelectionState(sentencesRepo: SentencesRepo | null, backgroun
   const [nivel, setNivel] = useState<string>('');
   const [musica, setMusica] = useState<string>('');
   const [tipo, setTipo] = useState<boolean | null>(null);
+  const [silencios, setSilencios] = useState<string>('');
 
   const allSentences = sentencesRepo?.sentences ?? [];
   const repoLevel = sentencesRepo?.level ?? '';
@@ -59,13 +60,13 @@ export function useSelectionState(sentencesRepo: SentencesRepo | null, backgroun
   const available = (): boolean => {
     if (tipo === null) return false;
     if (tipo === true) {
-      if (!duracion || !nivel || !musica) return false;
+      if (!duracion || !nivel || !musica || !silencios) return false;
       const sentencesByDuration = meditationsConfig ? getComputedSentencesByDuration(meditationsConfig) : {};
       const requiredSegments = sentencesByDuration[duracion] ?? 0;
       if (allSentences.length < requiredSegments) return false;
       if (musica !== 'silence' && !isBackgroundAvailable(backgroundsLog, durationLabel, musica)) return false;
     } else {
-      if (!duracion || !musica) return false;
+      if (!duracion || !musica || !silencios) return false;
     }
     return true;
   };
@@ -73,18 +74,20 @@ export function useSelectionState(sentencesRepo: SentencesRepo | null, backgroun
   const allSelected = tipo === null
     ? false
     : tipo === true
-      ? !!(duracion && nivel && musica)
-      : !!(duracion && musica);
+      ? !!(duracion && nivel && musica && silencios)
+      : !!(duracion && musica && silencios);
 
   return {
     duracion,
     nivel,
     musica,
     tipo,
+    silencios,
     setDuracion,
     setNivel,
     setMusica,
     setTipo,
+    setSilencios,
     allSentences,
     repoLevel,
     getLevelOptions,
