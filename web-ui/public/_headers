@@ -15,6 +15,13 @@
 /*.html
   Cache-Control: no-cache
 
+# Custom 404 page: don't cache so changes propagate immediately
+/404.html
+  Cache-Control: no-cache
+
 # Cache static assets at the edge for performance (already cached by SW)
+# Note: this rule also applies to 404 responses for missing /static/* paths,
+# which is fine — a correct index.html only ever references existing hashed
+# assets, so those URLs are never legitimately requested again.
 /static/*
   Cache-Control: public, max-age=31536000, immutable
