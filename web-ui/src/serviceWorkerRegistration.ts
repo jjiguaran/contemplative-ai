@@ -72,11 +72,17 @@ function registerValidSW(swUrl: string, config?: Config) {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
               // At this point, the updated precached content has been fetched,
-              // but the previous service worker will still serve the older
-              // content until all client tabs are closed.
+              // but the old service worker is still controlling the page and
+              // (by default) would keep serving the previous build until every
+              // tab is closed. Ask the new service worker to skip the waiting
+              // phase so deploys actually take effect on the next visit
+              // instead of lingering indefinitely.
+              const newWorker = registration.waiting || installingWorker;
+              if (newWorker) {
+                newWorker.postMessage({ type: 'SKIP_WAITING' });
+              }
               console.log(
-                'New content is available and will be used when all ' +
-                  'tabs for this page are closed. See https://cra.link/PWA.'
+                'New content is available and will be used from the next visit.'
               );
 
               // Execute callback
