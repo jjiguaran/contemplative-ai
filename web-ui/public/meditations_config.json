@@ -49,6 +49,18 @@
           }
         }
       }
+    },
+    "silence": {
+      "label": "Silencio",
+      "durationTiers": {
+        "5min":  { "totalSlots": 13 },
+        "10min": { "totalSlots": 28 },
+        "15min": { "totalSlots": 43 },
+        "20min": { "totalSlots": 58 },
+        "30min": { "totalSlots": 88},
+        "45min": { "totalSlots": 133 },
+        "60min": { "totalSlots": 178}
+      }
     }
   }
 }

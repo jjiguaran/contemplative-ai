@@ -30,7 +30,8 @@ export function useSelectionState(sentencesRepo: SentencesRepo | null, backgroun
       const meditation = Object.values(meditationsConfig.meditations)[0];
       if (!meditation?.level?.[nivel]) return [];
 
-      const levelConfig = meditation.level[nivel];
+      const levelConfig = meditation.level?.[nivel];
+      if (!levelConfig) return [];
       const sectionCounts = getSectionCounts(meditationsConfig, duracion, nivel);
 
       // Group sentences by section
@@ -66,6 +67,10 @@ export function useSelectionState(sentencesRepo: SentencesRepo | null, backgroun
       if (musica !== 'silence' && !isBackgroundAvailable(backgroundsLog, durationLabel, musica)) return false;
     } else {
       if (!duracion || !musica) return false;
+      // "En silencio": the session needs the silence (gong) assets plus a
+      // duration tier for the chosen duration in the silence meditation config.
+      const silenceTier = meditationsConfig?.meditations?.['silence']?.durationTiers?.[duracion];
+      if (!silenceTier || !meditationsConfig?.gongsURL || !meditationsConfig?.silenceURL) return false;
     }
     return true;
   };

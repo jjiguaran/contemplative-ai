@@ -14,6 +14,7 @@ interface PlayerControlsProps {
   selectedDuration: string;
   isGuided: boolean;
   hasActiveAudio: boolean;
+  hasBackgroundAudio: boolean;
   selectionComplete: boolean;
   preparingAudio: boolean;
   allSelected: boolean;
@@ -44,6 +45,7 @@ export default function PlayerControls({
   selectedDuration,
   isGuided,
   hasActiveAudio,
+  hasBackgroundAudio,
   selectionComplete,
   preparingAudio,
   allSelected,
@@ -92,7 +94,7 @@ export default function PlayerControls({
             />
           </div>
 
-          {isGuided && selectedSentences && (
+          {hasBackgroundAudio && (
             <div className="vol-wrap">
               <IconLeaf />
               <input
@@ -108,11 +110,11 @@ export default function PlayerControls({
         </div>
       </div>
 
-      <p className={`session-label${selectedSentences ? ' active' : ''}`}>
+      <p className={`session-label${hasActiveAudio ? ' active' : ''}`}>
         {preparingAudio
           ? ''
-          : selectedSentences
-            ? `${selectedDuration} min · guiada`
+          : hasActiveAudio
+            ? `${selectedDuration} min · ${isGuided ? 'guiada' : 'en silencio'}`
             : allSelected && !isAvailable
               ? ''
               : 'elige tu sesión y presiona para comenzar'}

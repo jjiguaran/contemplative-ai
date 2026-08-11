@@ -52,7 +52,7 @@ export function getTimeOfDay(): string {
 export function getComputedSentencesByDuration(config: MeditationsConfig): Record<string, number> {
   const meditation = Object.values(config.meditations)[0];
   if (!meditation) return {};
-  const fixedTotal = Object.values(meditation.fixedSlots).reduce((sum, v) => sum + v, 0);
+  const fixedTotal = Object.values(meditation.fixedSlots ?? {}).reduce((sum, v) => sum + v, 0);
   const result: Record<string, number> = {};
   for (const [key, tier] of Object.entries(meditation.durationTiers)) {
     result[key] = fixedTotal + tier.totalSlots;
@@ -85,8 +85,9 @@ export function getSectionCounts(
   const totalSlots = durationTier.totalSlots;
 
   // Identify fixed sections (inicio, cierre)
-  const fixedSections = Object.keys(meditation.fixedSlots);
-  const fixedTotal = fixedSections.reduce((sum, s) => sum + (meditation.fixedSlots[s] ?? 0), 0);
+  const fixedSlots = meditation.fixedSlots ?? {};
+  const fixedSections = Object.keys(fixedSlots);
+  const fixedTotal = fixedSections.reduce((sum, s) => sum + (fixedSlots[s] ?? 0), 0);
 
   // remaining slots to distribute among variable sections (those in phaseOrder that are not fixed)
   const variableSections = levelConfig.phaseOrder.filter(s => !fixedSections.includes(s));
@@ -96,7 +97,7 @@ export function getSectionCounts(
 
   // First assign fixed slots
   for (const section of fixedSections) {
-    result[section] = meditation.fixedSlots[section] ?? 0;
+    result[section] = fixedSlots[section] ?? 0;
   }
 
   // Then distribute remaining slots by ratios among variable sections
