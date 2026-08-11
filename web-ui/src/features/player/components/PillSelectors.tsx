@@ -46,17 +46,24 @@ export default function PillSelectors({
   const allSentences = sentencesRepo?.sentences ?? [];
 
   const getUniqueDurations = () => {
-    if (meditationsConfig) {
-      const sentencesByDuration = getComputedSentencesByDuration(meditationsConfig);
-      // Show config keys that have entries with enough sentences
-      return Object.keys(sentencesByDuration)
-        .filter(d => {
-          const requiredSegments = sentencesByDuration[d];
-          return allSentences.length >= requiredSegments;
-        })
-        .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+    if (!meditationsConfig) return [];
+
+    // "En silencio": durations come from the silence meditation tiers and
+    // don't depend on voice sentences being available in the repo.
+    if (tipo === false) {
+      const silenceTiers = meditationsConfig.meditations?.['silence']?.durationTiers;
+      if (!silenceTiers) return [];
+      return Object.keys(silenceTiers).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
     }
-    return [];
+
+    const sentencesByDuration = getComputedSentencesByDuration(meditationsConfig);
+    // Show config keys that have entries with enough sentences
+    return Object.keys(sentencesByDuration)
+      .filter(d => {
+        const requiredSegments = sentencesByDuration[d];
+        return allSentences.length >= requiredSegments;
+      })
+      .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
   };
 
   const getUniqueLevels = () =>
