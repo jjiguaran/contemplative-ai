@@ -28,7 +28,7 @@ export default function App() {
     setScreen('feedback');
   }, [selection.duracion]);
 
-  const player = usePlayerSession(selection.musica, selection.getMatchingSentences, meditationsConfig, selection.duracion, handleSessionEnded);
+  const player = usePlayerSession(selection.musica, selection.tipo, selection.getMatchingSentences, meditationsConfig, selection.duracion, handleSessionEnded);
 
   /* init PostHog */
   useEffect(() => { initPostHog(); }, []);
@@ -103,6 +103,7 @@ export default function App() {
               selectedDuration={selection.duracion}
               isGuided={isGuided}
               hasActiveAudio={hasActiveAudio}
+              hasBackgroundAudio={!!player.backgroundAudioUrl}
               selectionComplete={selection.allSelected && selection.isAvailable()}
               preparingAudio={player.preparingAudio}
               allSelected={selection.allSelected}
@@ -137,7 +138,7 @@ export default function App() {
       </div>
 
       {/* Hidden background audio element */}
-      {isGuided && player.backgroundAudioUrl && (
+      {player.backgroundAudioUrl && (
         <audio ref={player.backgroundAudioRef} src={player.backgroundAudioUrl} />
       )}
     </>

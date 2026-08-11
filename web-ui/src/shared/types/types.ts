@@ -52,9 +52,9 @@ export interface MeditationConfig {
   sensacionesPath?: string;
   mentePath?: string;
   dhammasPath?: string;
-  fixedSlots: Record<string, number>;
+  fixedSlots?: Record<string, number>;
   durationTiers: Record<string, DurationTier>;
-  level: Record<string, LevelConfig>;
+  level?: Record<string, LevelConfig>;
 }
 
 export interface MeditationsConfig {
