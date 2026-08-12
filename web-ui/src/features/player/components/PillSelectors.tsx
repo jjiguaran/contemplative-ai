@@ -1,9 +1,9 @@
 import React from 'react';
 import { SentencesRepo, BackgroundLog, MeditationsConfig } from '../../../shared/types/types';
-import { formatDuration, capitalize, musicDisplayName, getComputedSentencesByDuration } from '../../../shared/utils/utils';
+import { formatDuration, capitalize, musicDisplayName, getComputedSentencesByDuration, getDurationTierMap } from '../../../shared/utils/utils';
 
 /** Available silence-length options shown in the UI */
-const SILENCE_OPTIONS = ['cortos', 'largos'] as const;
+const SILENCE_OPTIONS = ['cortos', 'medios', 'largos'] as const;
 
 interface PillSelectorsProps {
   sentencesRepo: SentencesRepo | null;
@@ -53,17 +53,24 @@ export default function PillSelectors({
   const allSentences = sentencesRepo?.sentences ?? [];
 
   const getUniqueDurations = () => {
-    if (meditationsConfig) {
-      const sentencesByDuration = getComputedSentencesByDuration(meditationsConfig);
-      // Show config keys that have entries with enough sentences
-      return Object.keys(sentencesByDuration)
-        .filter(d => {
-          const requiredSegments = sentencesByDuration[d];
-          return allSentences.length >= requiredSegments;
-        })
-        .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+    if (!meditationsConfig) return [];
+
+    // "En silencio": durations come from the silence meditation tiers and
+    // don't depend on voice sentences being available in the repo.
+    if (tipo === false) {
+      const silenceTiers = meditationsConfig.meditations?.['silence']?.durationTiers;
+      if (!silenceTiers) return [];
+      return Object.keys(getDurationTierMap(silenceTiers, 'cortos')).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
     }
-    return [];
+
+    const sentencesByDuration = getComputedSentencesByDuration(meditationsConfig, silencios);
+    // Show config keys that have entries with enough sentences
+    return Object.keys(sentencesByDuration)
+      .filter(d => {
+        const requiredSegments = sentencesByDuration[d];
+        return allSentences.length >= requiredSegments;
+      })
+      .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
   };
 
   const getUniqueLevels = () =>
@@ -161,20 +168,23 @@ export default function PillSelectors({
         </div>
       </div>
 
-      <div className="pill-group">
-        <p className="pill-label">Silencios</p>
-        <div className="pills">
-          {SILENCE_OPTIONS.map(s => (
-            <div
-              key={s}
-              className={`pill${silencios === s ? ' active' : ''}`}
-              onClick={() => { onSetSilencios(s); onResetPlayback(); }}
-            >
-              {capitalize(s)}
-            </div>
-          ))}
+      {/* Silence length only applies to guided sessions; "En silencio" always uses "cortos". */}
+      {tipo === true && (
+        <div className="pill-group">
+          <p className="pill-label">Silencios</p>
+          <div className="pills">
+            {SILENCE_OPTIONS.map(s => (
+              <div
+                key={s}
+                className={`pill${silencios === s ? ' active' : ''}`}
+                onClick={() => { onSetSilencios(s); onResetPlayback(); }}
+              >
+                {capitalize(s)}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {allSelected && !isAvailable && (
         <p className="unavailable">esta combinación no está disponible aún</p>

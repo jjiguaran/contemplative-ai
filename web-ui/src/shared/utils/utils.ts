@@ -1,4 +1,4 @@
-import { SentenceEntry, BackgroundLog, MeditationsConfig, LevelConfig } from '../types/types';
+import { SentenceEntry, BackgroundLog, MeditationsConfig, LevelConfig, DurationTier, DurationTierMap, DurationTiers } from '../types/types';
 import { R2_BUCKET_URL } from '../constants/constants';
 
 export function parseDurationMinutes(duration: string): number {
@@ -45,16 +45,46 @@ export function getTimeOfDay(): string {
 }
 
 /**
- * Compute a flat `Record<durationKey, totalSlots>` from the new nested
- * MeditationsConfig structure. Sums fixedSlots + durationTier.totalSlots
+ * Resolve the per-duration tier map of a meditation, regardless of whether
+ * `durationTiers` is flat (`durationKey → tier`, as in the "silence"
+ * meditation) or nested by silence length (`silenceKey → durationKey → tier`,
+ * as in guided meditations). Unknown silence keys fall back to "cortos", so
+ * lists stay populated before a silence length is chosen.
+ */
+export function getDurationTierMap(
+  durationTiers: DurationTiers,
+  silenceKey: string
+): DurationTierMap {
+  const firstValue = Object.values(durationTiers)[0];
+  const isNested = firstValue !== undefined && !('totalSlots' in firstValue);
+  if (!isNested) return durationTiers as DurationTierMap;
+  const key = silenceKey === 'largos' ? 'largos' : silenceKey === 'medios' ? 'medios' : 'cortos';
+  return (durationTiers as Record<string, DurationTierMap>)[key] ?? {};
+}
+
+/** Look up a single duration tier, resolving both flat and nested shapes. */
+export function getDurationTier(
+  durationTiers: DurationTiers,
+  silenceKey: string,
+  durationKey: string
+): DurationTier | undefined {
+  return getDurationTierMap(durationTiers, silenceKey)[durationKey];
+}
+
+/**
+ * Compute a flat `Record<durationKey, totalSlots>` for a meditation given the
+ * chosen silence length. Sums fixedSlots + durationTier.totalSlots
  * for the *first* meditation entry (e.g. anapanasati).
  */
-export function getComputedSentencesByDuration(config: MeditationsConfig): Record<string, number> {
+export function getComputedSentencesByDuration(
+  config: MeditationsConfig,
+  silenceKey: string
+): Record<string, number> {
   const meditation = Object.values(config.meditations)[0];
   if (!meditation) return {};
-  const fixedTotal = Object.values(meditation.fixedSlots).reduce((sum, v) => sum + v, 0);
+  const fixedTotal = Object.values(meditation.fixedSlots ?? {}).reduce((sum, v) => sum + v, 0);
   const result: Record<string, number> = {};
-  for (const [key, tier] of Object.entries(meditation.durationTiers)) {
+  for (const [key, tier] of Object.entries(getDurationTierMap(meditation.durationTiers, silenceKey))) {
     result[key] = fixedTotal + tier.totalSlots;
   }
   return result;
@@ -71,7 +101,8 @@ export function getComputedSentencesByDuration(config: MeditationsConfig): Recor
 export function getSectionCounts(
   config: MeditationsConfig,
   durationKey: string,
-  levelKey: string
+  levelKey: string,
+  silenceKey: string
 ): Record<string, number> {
   const meditation = Object.values(config.meditations)[0];
   if (!meditation) return {};
@@ -79,14 +110,15 @@ export function getSectionCounts(
   const levelConfig: LevelConfig | undefined = meditation.level?.[levelKey];
   if (!levelConfig) return {};
 
-  const durationTier = meditation.durationTiers[durationKey];
+  const durationTier = getDurationTier(meditation.durationTiers, silenceKey, durationKey);
   if (!durationTier) return {};
 
   const totalSlots = durationTier.totalSlots;
 
   // Identify fixed sections (inicio, cierre)
-  const fixedSections = Object.keys(meditation.fixedSlots);
-  const fixedTotal = fixedSections.reduce((sum, s) => sum + (meditation.fixedSlots[s] ?? 0), 0);
+  const fixedSlots = meditation.fixedSlots ?? {};
+  const fixedSections = Object.keys(fixedSlots);
+  const fixedTotal = fixedSections.reduce((sum, s) => sum + (fixedSlots[s] ?? 0), 0);
 
   // remaining slots to distribute among variable sections (those in phaseOrder that are not fixed)
   const variableSections = levelConfig.phaseOrder.filter(s => !fixedSections.includes(s));
@@ -96,7 +128,7 @@ export function getSectionCounts(
 
   // First assign fixed slots
   for (const section of fixedSections) {
-    result[section] = meditation.fixedSlots[section] ?? 0;
+    result[section] = fixedSlots[section] ?? 0;
   }
 
   // Then distribute remaining slots by ratios among variable sections

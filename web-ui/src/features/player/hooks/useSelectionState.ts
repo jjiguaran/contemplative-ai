@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SentencesRepo, SentenceEntry, BackgroundLog, MeditationsConfig } from '../../../shared/types/types';
-import { isBackgroundAvailable, getComputedSentencesByDuration, getSectionCounts } from '../../../shared/utils/utils';
+import { isBackgroundAvailable, getComputedSentencesByDuration, getSectionCounts, getDurationTier } from '../../../shared/utils/utils';
 
 export function useSelectionState(sentencesRepo: SentencesRepo | null, backgroundsLog: BackgroundLog | null, meditationsConfig: MeditationsConfig | null) {
   const [duracion, setDuracion] = useState<string>('');
@@ -31,8 +31,9 @@ export function useSelectionState(sentencesRepo: SentencesRepo | null, backgroun
       const meditation = Object.values(meditationsConfig.meditations)[0];
       if (!meditation?.level?.[nivel]) return [];
 
-      const levelConfig = meditation.level[nivel];
-      const sectionCounts = getSectionCounts(meditationsConfig, duracion, nivel);
+      const levelConfig = meditation.level?.[nivel];
+      if (!levelConfig) return [];
+      const sectionCounts = getSectionCounts(meditationsConfig, duracion, nivel, silencios);
 
       // Group sentences by section
       const sentencesBySection: Record<string, SentenceEntry[]> = {};
@@ -61,21 +62,29 @@ export function useSelectionState(sentencesRepo: SentencesRepo | null, backgroun
     if (tipo === null) return false;
     if (tipo === true) {
       if (!duracion || !nivel || !musica || !silencios) return false;
-      const sentencesByDuration = meditationsConfig ? getComputedSentencesByDuration(meditationsConfig) : {};
+      const sentencesByDuration = meditationsConfig ? getComputedSentencesByDuration(meditationsConfig, silencios) : {};
       const requiredSegments = sentencesByDuration[duracion] ?? 0;
       if (allSentences.length < requiredSegments) return false;
       if (musica !== 'silence' && !isBackgroundAvailable(backgroundsLog, durationLabel, musica)) return false;
     } else {
-      if (!duracion || !musica || !silencios) return false;
+      if (!duracion || !musica) return false;
+      // "En silencio": the session needs the silence (gong) assets plus a
+      // duration tier for the chosen duration in the silence meditation config.
+      // "En silencio" always uses the "cortos" silence length.
+      const silenceTiers = meditationsConfig?.meditations?.['silence']?.durationTiers;
+      const silenceTier = silenceTiers ? getDurationTier(silenceTiers, 'cortos', duracion) : undefined;
+      if (!silenceTier || !meditationsConfig?.gongsURL || !meditationsConfig?.silenceURL) return false;
     }
     return true;
   };
 
+  // `silencios` only applies to guided sessions ("En silencio" always uses "cortos"),
+  // so it is not required to mark the selection as complete in the unguided branch.
   const allSelected = tipo === null
     ? false
     : tipo === true
       ? !!(duracion && nivel && musica && silencios)
-      : !!(duracion && musica && silencios);
+      : !!(duracion && musica);
 
   return {
     duracion,

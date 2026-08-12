@@ -38,6 +38,15 @@ export interface DurationTier {
   totalSlots: number;
 }
 
+/** Flat `durationKey → DurationTier` map (e.g. the "silence" meditation). */
+export type DurationTierMap = Record<string, DurationTier>;
+
+/** Nested `silenceKey → durationKey → DurationTier` map (e.g. guided meditations). */
+export type NestedDurationTiers = Record<string, DurationTierMap>;
+
+/** durationTiers may be flat or nested by silence length (cortos/largos). */
+export type DurationTiers = DurationTierMap | NestedDurationTiers;
+
 export interface LevelConfig {
   phaseOrder: string[];
   ratios: Record<string, number>;
@@ -52,16 +61,22 @@ export interface MeditationConfig {
   sensacionesPath?: string;
   mentePath?: string;
   dhammasPath?: string;
-  fixedSlots: Record<string, number>;
-  durationTiers: Record<string, DurationTier>;
-  level: Record<string, LevelConfig>;
+  fixedSlots?: Record<string, number>;
+  durationTiers: DurationTiers;
+  level?: Record<string, LevelConfig>;
 }
 
 export interface SilenceURLConfig {
   /** Silence file for short pauses (cortos) — 20 seconds */
   cortos?: string;
-  /** Silence file for long pauses (largos) — 40 seconds */
+  /** Silence file for medium pauses (medios) — 40 seconds */
+  medios?: string;
+  /** Silence file for long pauses (largos) — 65 seconds */
   largos?: string;
+  /** Extra silence clip used as the closing pause before the cierre in "medios" sessions */
+  medios_complement?: string;
+  /** Extra silence clip used as the closing pause before the cierre in "largos" sessions */
+  largos_complement?: string;
 }
 
 export interface MeditationsConfig {

@@ -3,7 +3,10 @@
   "gongsURL":"sounds/freesound_community-gong-79191--extended.mp3",
   "silenceURL":{
     "cortos": "sounds/organic_silence_20.0s.opus",
-    "largos": "sounds/organic_silence_40.0s.opus"
+    "medios": "sounds/organic_silence_40.0s.opus",
+    "largos": "sounds/organic_silence_65.0s.opus",
+    "medios_complement": "sounds/organic_silence_10.0s.opus",
+    "largos_complement": "sounds/organic_silence_36.0s.opus"
   },
   "meditations": {
     "anapanasati": {
@@ -19,13 +22,33 @@
         "cierre": 1
       },
       "durationTiers": {
-        "5min":  { "totalSlots": 8 },
-        "10min": { "totalSlots": 18 },
-        "15min": { "totalSlots": 28 },
-        "20min": { "totalSlots": 38 },
-        "30min": { "totalSlots": 58},
-        "45min": { "totalSlots": 88 },
-        "60min": { "totalSlots": 118}
+        "cortos": {
+          "5min":  { "totalSlots": 8 },
+          "10min": { "totalSlots": 18 },
+          "15min": { "totalSlots": 28 },
+          "20min": { "totalSlots": 38 },
+          "30min": { "totalSlots": 58},
+          "45min": { "totalSlots": 88 },
+          "60min": { "totalSlots": 118}
+        },
+        "medios": {
+          "5min":  { "totalSlots": 5 },
+          "10min": { "totalSlots": 11 },
+          "15min": { "totalSlots": 17 },
+          "20min": { "totalSlots": 23 },
+          "30min": { "totalSlots": 35},
+          "45min": { "totalSlots": 53 },
+          "60min": { "totalSlots": 71 }
+        },
+        "largos": {
+          "5min":  { "totalSlots": 3 },
+          "10min": { "totalSlots": 7 },
+          "15min": { "totalSlots": 11 },
+          "20min": { "totalSlots": 15 },
+          "30min": { "totalSlots": 23},
+          "45min": { "totalSlots": 35 },
+          "60min": { "totalSlots": 47}
+        }
       },
       "level": {
         "principiante": {
@@ -51,6 +74,18 @@
             "dhammas": 0.25
           }
         }
+      }
+    },
+    "silence": {
+      "label": "Silencio",
+      "durationTiers": {
+        "5min":  { "totalSlots": 13 },
+        "10min": { "totalSlots": 28 },
+        "15min": { "totalSlots": 43 },
+        "20min": { "totalSlots": 58 },
+        "30min": { "totalSlots": 88},
+        "45min": { "totalSlots": 133 },
+        "60min": { "totalSlots": 178}
       }
     }
   }
