@@ -253,12 +253,19 @@ export function usePlayerSession(
       player.pause();
       if (bg) bg.pause();
       setPlaying(false);
+      const pausePct = duration > 0 ? Math.round((currentTime / duration) * 100) : 0;
+      captureEvent('meditation_paused', {
+        duration: selectedDuration,
+        music: musica,
+        progress_seconds: currentTime,
+        progress_pct: pausePct,
+      });
     } else {
       player.play();
       setPlaying(true);
       if (bg) bg.play().catch(console.error);
     }
-  }, [playing, sessionActive]);
+  }, [playing, sessionActive, currentTime, duration, musica, selectedDuration]);
 
   const handleSeek = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const player = playerRef.current;
