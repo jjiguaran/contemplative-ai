@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { SentenceEntry, MeditationsConfig } from '../../../shared/types/types';
-import { buildBackgroundUrl, getComputedSentencesByDuration } from '../../../shared/utils/utils';
+import { buildBackgroundUrl, getComputedSentencesByDuration, getDurationTier } from '../../../shared/utils/utils';
 import { R2_BUCKET_URL } from '../../../shared/constants/constants';
 import { createSegmentedPlayer, SegmentedPlayerHandle } from '../api/segmentedPlayer';
 import { buildDownloadableWav } from '../api/wavExport';
@@ -27,6 +27,7 @@ export function usePlayerSession(
   getMatchingSentences: () => SentenceEntry[],
   meditationsConfig: MeditationsConfig | null,
   selectedDuration: string,
+  silencios: string,
   onSessionEnded: () => void
 ) {
   const [playing, setPlaying] = useState(false);
@@ -98,8 +99,31 @@ export function usePlayerSession(
     const isGuided = tipo === true;
     const durationMinutes = parseInt(selectedDuration, 10) || 0;
 
-    const silencePath = meditationsConfig?.silenceURL;
+    // Interleave silence after every sentence, with an extra pause before the cierre (closing) sentence.
+    // `silencios` selects which silence file to use:
+    // 'cortos' → 20s, 'medios' → 40s, 'largos' → 65s.
+    // "En silencio" (unguided) always uses the short (cortos) silence file.
+    const silencePaths = meditationsConfig?.silenceURL;
+    const effectiveSilencios = tipo === false ? 'cortos' : silencios;
+    const silencePath = silencePaths
+      ? effectiveSilencios === 'largos'
+        ? (silencePaths.largos ?? silencePaths.medios ?? silencePaths.cortos)
+        : effectiveSilencios === 'medios'
+          ? (silencePaths.medios ?? silencePaths.cortos ?? silencePaths.largos)
+          : (silencePaths.cortos ?? silencePaths.medios ?? silencePaths.largos)
+      : null;
     const silenceUrl = silencePath ? `${R2_BUCKET_URL}/${silencePath}` : null;
+    // For "medios" and "largos" sessions, the extra pause placed before the
+    // closing (cierre) sentence uses the dedicated *_complement clip instead of
+    // the regular silence. For any other silence length it uses the regular silence.
+    const closingSilencePath = silencePaths
+      ? effectiveSilencios === 'largos'
+        ? (silencePaths.largos_complement ?? silencePaths.largos ?? silencePaths.medios ?? silencePaths.cortos)
+        : effectiveSilencios === 'medios'
+          ? (silencePaths.medios_complement ?? silencePaths.medios ?? silencePaths.cortos ?? silencePaths.largos)
+          : (silencePaths.cortos ?? silencePaths.medios ?? silencePaths.largos)
+      : null;
+    const closingSilenceUrl = closingSilencePath ? `${R2_BUCKET_URL}/${closingSilencePath}` : null;
     const gongPath = meditationsConfig?.gongsURL;
     const gongUrl = gongPath ? `${R2_BUCKET_URL}/${gongPath}` : null;
 
@@ -110,7 +134,7 @@ export function usePlayerSession(
       sentences = getMatchingSentences();
       if (!sentences.length) return;
 
-      const sentencesByDuration = meditationsConfig ? getComputedSentencesByDuration(meditationsConfig) : {};
+      const sentencesByDuration = meditationsConfig ? getComputedSentencesByDuration(meditationsConfig, silencios) : {};
       const maxSegments = sentencesByDuration[selectedDuration] ?? 0;
 
       // Interleave silence after every sentence, with an extra pause before the cierre (closing) sentence
@@ -120,8 +144,8 @@ export function usePlayerSession(
         // Skip sentences without an audio file (safety net)
         if (!sentence.audioUrl) continue;
         // Extra silence before the closing (cierre) section sentence
-        if (sentence.section === 'cierre' && silenceUrl && gongUrl) {
-          urlsWithSilence.push(silenceUrl);
+        if (sentence.section === 'cierre' && closingSilenceUrl && gongUrl) {
+          urlsWithSilence.push(closingSilenceUrl);
         }
         urlsWithSilence.push(`${R2_BUCKET_URL}/${sentence.audioUrl}`);
         if (silenceUrl) urlsWithSilence.push(silenceUrl);
@@ -134,8 +158,9 @@ export function usePlayerSession(
     } else {
       // "En silencio": gong + (totalSlots × 20s silence file) + gong.
       // totalSlots comes from the silence meditation durationTier of the
-      // chosen duration in meditations_config.json.
-      const totalSlots = meditationsConfig?.meditations?.['silence']?.durationTiers?.[selectedDuration]?.totalSlots ?? 0;
+      // chosen duration in meditations_config.json ("cortos" is always used).
+      const silenceTiers = meditationsConfig?.meditations?.['silence']?.durationTiers;
+      const totalSlots = silenceTiers ? (getDurationTier(silenceTiers, 'cortos', selectedDuration)?.totalSlots ?? 0) : 0;
       if (!silenceUrl || !gongUrl || totalSlots <= 0) {
         setAudioError('No se pudo preparar el audio. Intenta de nuevo.');
         setPreparingAudio(false);
@@ -164,6 +189,7 @@ export function usePlayerSession(
     captureEvent('meditation_started', {
       duration: selectedDuration,
       music: musica,
+      silencios: effectiveSilencios,
     });
 
     setPreparingAudio(true);
@@ -197,6 +223,7 @@ export function usePlayerSession(
         captureEvent('meditation_completed', {
           duration: selectedDuration,
           music: musica,
+          silencios: effectiveSilencios,
         });
         onSessionEnded();
       });
@@ -216,7 +243,7 @@ export function usePlayerSession(
       setAudioError('No se pudo preparar el audio. Intenta de nuevo.');
       setPreparingAudio(false);
     }
-  }, [getMatchingSentences, musica, tipo, meditationsConfig, concatenatedUrl, selectedDuration, onSessionEnded]);
+  }, [getMatchingSentences, musica, tipo, meditationsConfig, concatenatedUrl, selectedDuration, silencios, onSessionEnded]);
 
   const togglePlayPause = useCallback(() => {
     const player = playerRef.current;
